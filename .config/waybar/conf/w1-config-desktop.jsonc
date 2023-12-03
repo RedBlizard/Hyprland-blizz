@@ -200,13 +200,16 @@
 //      "signal": 8,
 //      "tooltip": false
       
+ 
    },    
-    "custom/updates": {
+   "custom/updates": {
         "exec": "~/.config/waybar/scripts/updates.sh",
         "exec-if": "exit 0",
-        "interval": 900,
-        "format": "<span font='13' rise='1000'></span> {}",
-        "on-click": "kitty --ti10le 'Updates' sh -c 'sudo pacman -Syu && yay -Syu --noconfirm && ~/.config/waybar/scripts/updates.sh && pkill -RTMIN+8 waybar'",
+        "interval": 900,      
+        "format": "<span font='10' rise='1000'></span> {}",
+        "on-click": "kitty --title 'Updates' sh -c 'sudo pacman -Syu && yay -Syu --noconfirm && ~/.config/waybar/scripts/updates.sh && pkill -RTMIN+8 waybar'",
+        "signal": 8,
+        "tooltip": false
         "signal": 8,
         "tooltip": false       
         
