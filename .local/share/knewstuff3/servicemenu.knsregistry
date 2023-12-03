@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE khotnewstuff3>
+<hotnewstuffregistry>
+ <stuff category="102">
+  <name>Color Folder</name>
+  <providerid>https://api.kde-look.org/ocs/v1/</providerid>
+  <author>HessiJames</author>
+  <homepage>https://store.kde.org/p/998450</homepage>
+  <licence></licence>
+  <version>2.1.0</version>
+  <rating>83</rating>
+  <downloads>31700</downloads>
+  <installedfile>/home/denise/.local/share/servicemenu-download/v2.0.2.tar.gz</installedfile>
+  <id>998450</id>
+  <releasedate>2018-08-06</releasedate>
+  <summary>A KDE service menu for changing the color of specific folders, compatible with KDE4 and Plasma 5.&lt;br />
+&lt;br />
+Install by running the install.sh file.</summary>
+  <changelog></changelog>
+  <preview>https://images.pling.com/cache/100x100-0/img/00/00/03/18/67/998450/550c912daa4b1b555e7fa49ca31803dfbe37.png</preview>
+  <previewBig>https://images.pling.com/cache/770x540-0/img/00/00/03/18/67/998450/550c912daa4b1b555e7fa49ca31803dfbe37.png</previewBig>
+  <payload>https://files03.pling.com/api/files/download/j/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjE1MDEyNzM3NzAiLCJvIjoiMSIsInMiOiJjOGYyNGQ5Y2JhOGZjMjIzMGQ5M2JkMjA3ZjBiODY1Y2VhYmY3YThjOTU1OTU0OWYxOTgyMmJiMTYzN2QxOTA2YmM0NmI2YTIzY2I3ZDVjNmZhMzUyMmJjMjBlYTRjMzRiNWQzZmE0YzhjMWZmZTAzY2E1MzAzNDIwNDc4NzQ1YiIsInQiOjE2NzA5NzkxNzUsInN0ZnAiOm51bGwsInN0aXAiOiIzMS4yMDEuMi43MSJ9.DagxTXEqQPdBxv4v_oZmc54rD4Gy1On4Pl0ojjnoXMM/v2.0.2.tar.gz</payload>
+  <tags>addon,dolphin-service-menu,gplv2-later</tags>
+  <status>installed</status>
+ </stuff>
+ <stuff category="102">
+  <name>Your Terminal Menu - Run in Terminal</name>
+  <providerid>https://api.kde-look.org/ocs/v1/</providerid>
+  <author>loup</author>
+  <homepage>https://store.kde.org/p/1515477</homepage>
+  <licence></licence>
+  <version>1.0</version>
+  <rating>58</rating>
+  <downloads>2798</downloads>
+  <installedfile>/home/denise/.local/share/servicemenu-download/terminalexec.desktop</installedfile>
+  <id>1515477</id>
+  <releasedate>2021-05-02</releasedate>
+  <summary>the service for opening executable programs in your terminal&lt;br />
+&lt;br />
+Your Terminal menu is a dolphin service that provides you a compact menu with your installed terminals,first you need to click the update list button to see your terminal in the menu; &lt;br />
+&lt;br />
+There are 25 terminals...</summary>
+  <changelog></changelog>
+  <preview>https://images.pling.com/cache/100x100-0/img/00/00/56/42/80/1515477/b741a5b24bbec34cab137ac773a91e5307c7dc6ef557b4c05053ae3a4713003cf97f.png</preview>
+  <previewBig>https://images.pling.com/cache/770x540-0/img/00/00/56/42/80/1515477/b741a5b24bbec34cab137ac773a91e5307c7dc6ef557b4c05053ae3a4713003cf97f.png</previewBig>
+  <payload>https://files03.pling.com/api/files/download/j/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjE2MTk5NzY5MzgiLCJvIjoiMSIsInMiOiI1MWJjOWEyZTQxZDdmYjgyYzM2NmNiMTZhYWM1MGZlZmZiOWFhMTRjZWQzNDRiNDg4M2Y1ZGU2N2NhN2FjNGZhNWMwYjAwMzIzOWU0ZTVlNWMxMmY0OWZiMzliMGVjNjE0NTIxZjg3M2M0MjEzODY5Mjk1MjMzNmU0YzAwNjU2OCIsInQiOjE2NzEwNjQ5NjUsInN0ZnAiOm51bGwsInN0aXAiOiIzMS4yMDEuMi43MSJ9.xjerIQaa37LgnRxwaBe6fksYZu-iIaOvGPBHrfPjMYU/terminalexec.desktop</payload>
+  <tags>addon,run,terminal,execute,lgplv3,in,original-product</tags>
+  <status>installed</status>
+ </stuff>
+ <stuff category="102">
+  <name>Open Kitty Here</name>
+  <providerid>https://api.kde-look.org/ocs/v1/</providerid>
+  <author>raphtlw</author>
+  <homepage>https://store.kde.org/p/1378539</homepage>
+  <licence></licence>
+  <version>0.1</version>
+  <rating>50</rating>
+  <downloads>1384</downloads>
+  <installedfile>/home/denise/.local/share/servicemenu-download/kittyhere.desktop</installedfile>
+  <id>1378539</id>
+  <releasedate>2020-04-26</releasedate>
+  <summary>Allows you to open the Kitty terminal in the current directory&lt;br />
+&lt;br />
+To install, just place the file in ~/.local/share/kservices5/ServiceMenus&lt;br />
+&lt;br />
+Inspired by "Open Terminal Here" in the default plasma menu</summary>
+  <changelog></changelog>
+  <preview>https://images.pling.com/cache/100x100-0/img/00/00/57/04/02/1378539/26968f50b9a1cd39654c3e5c6e59bb4eb5cb.png</preview>
+  <previewBig>https://images.pling.com/cache/770x540-0/img/00/00/57/04/02/1378539/26968f50b9a1cd39654c3e5c6e59bb4eb5cb.png</previewBig>
+  <payload>https://files03.pling.com/api/files/download/j/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjE1ODc4Nzk1NTIiLCJvIjoiMSIsInMiOiJhYWQ0OWIzMGYxYTEyZWI1Yjg0NjQ5MjM1MzZhOTFiMTgyYjllYjIzZTRlMjA1N2Q1Y2ViZTZlOTZiYzFkMzhiNzBiYmUyYmE4NzY4ZDFkMzBkYjBkNjFiNTgwNmJjZTczYTk2NzYzOGM1M2Y3M2VhNDcyYzc3YzA1Nzk0ODNkMiIsInQiOjE2NzEwNjU2NDIsInN0ZnAiOm51bGwsInN0aXAiOiIzMS4yMDEuMi43MSJ9.EWDMvXkimthaHJPJKajMBYQxi-3bDZOdbvGxQzVVihA/kittyhere.desktop</payload>
+  <tags>original-product,mit-license,services,addon,kde</tags>
+  <status>installed</status>
+ </stuff>
+</hotnewstuffregistry>

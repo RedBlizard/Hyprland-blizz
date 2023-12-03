@@ -1,0 +1,16 @@
+[MIME Cache]
+application/pdf=chromium.desktop;
+application/rdf+xml=chromium.desktop;
+application/rss+xml=chromium.desktop;
+application/xhtml+xml=chromium.desktop;
+application/xhtml_xml=chromium.desktop;
+application/xml=chromium.desktop;
+image/gif=chromium.desktop;
+image/jpeg=chromium.desktop;
+image/png=chromium.desktop;
+image/webp=chromium.desktop;
+text/html=chromium.desktop;
+text/xml=chromium.desktop;
+x-scheme-handler/http=chromium.desktop;
+x-scheme-handler/https=chromium.desktop;
+x-scheme-handler/mailto=brave-eigpmdhekjlgjgcppnanaanbdmnlnagl-Default.desktop;

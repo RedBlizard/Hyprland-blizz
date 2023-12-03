@@ -10,4 +10,4 @@ https://hyprland.org/
 
 ## For the moment please do not use the install script !
 
-## This repo is intended to be the new EndeavourOS Hyprland community edition
+## This repo is intended to be the new EndeavourOS Hyprland NVIDIA community edition
