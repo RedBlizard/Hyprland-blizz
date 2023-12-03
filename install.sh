@@ -250,7 +250,14 @@ while true; do
 
             
             # Set the Qogir-dark cursor theme
-            xsetroot -cursor_name left_ptr                        
+            xsetroot -cursor_name left_ptr 
+
+
+            # ------------------------------------------------------  
+            # Install Nerd Fonts from Arch repositories
+            sudo pacman -S nerd-fonts-complete
+            # ------------------------------------------------------  
+            
 
             # ------------------------------------------------------  
             # Check if Fish is installed
