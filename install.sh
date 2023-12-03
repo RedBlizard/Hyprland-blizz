@@ -499,6 +499,6 @@ sudo papirus-folders -C cat-frappe-blue --theme Papirus-Dark
 echo ""
 echo "DONE!"
 echo "Open ~/.config/hypr/hyprland.conf to change your keyboard layout (default is us) and your screen resolution best to change the moinitors to (default is preferred) and change keybinds if needed."
-echo "Open ~/.config/hypr/hyprland.conf Nvidia GPU users needs uncomment the nvidia env rules and place a comment (#) in front of env=WLR_NO_HARDWARE_CURSORS=1."
-echo "Open ~/.config/waybar/conf/w1-config-desktop.jsonc and ~/.config/waybar/conf/w2-config-laptop.jsonc and edit the outputs."
+echo "Nvidia GPU users all the settings for Nvidia have already been activated!!!"
+echo "Open ~/.config/waybar/conf/w1-config-desktop.jsonc and ~/.config/waybar/conf/w2-config-laptop.jsonc and edit the outputs and dont forget to set your network device see traffic module!!."
 echo "Then reboot your system!"
