@@ -8,6 +8,6 @@ https://hyprland.org/
 
 ## This repo is still work in progress, its still not official  released and under initial development.
 
-## For the moment please do not use the install script !
+## For the moment please do not use the install script until i say so !
 
-## This repo is intended to be the new EndeavourOS Hyprland NVIDIA community edition
+
