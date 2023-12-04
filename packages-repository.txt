@@ -51,7 +51,7 @@ gvfs-smb
 htop
 hwdetect
 hwinfo
-hyprland-git
+hyprland
 hyprpicker
 hyprshot
 inotify-tools
