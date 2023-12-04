@@ -191,7 +191,7 @@ fi
 # Remove unwanted fonts these fonts conflict with the waybar icons
 # --------------------------------------------------------------------------------
 
-unwanted_fonts=("noto-fonts-extra" "noto-fonts-emoji" "noto-fonts-cjk")
+unwanted_fonts=("noto-fonts-emoji")
 
 for font in "${unwanted_fonts[@]}"; do
     if yay -Rns --noconfirm "$font"; then
