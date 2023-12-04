@@ -255,7 +255,7 @@ while true; do
 
             # ------------------------------------------------------  
             # Install Nerd Fonts from Arch repositories
-            sudo pacman -S nerd-fonts-complete
+            sudo pacman -S nerd-fonts
             # ------------------------------------------------------  
             
 
