@@ -50,8 +50,6 @@ fi
 if [ "$cpu_vendor" == "AuthenticAMD" ]; then
     echo "AMD CPU detected. Running AMD-specific code..."
 
-    # AMD-specific code goes here
-
 else
     echo "Not an AMD CPU. Skipping AMD-specific code."
 fi
@@ -168,9 +166,10 @@ if [ ! -f "$sddm_conf" ]; then
 fi
 
 
-# --------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------------------------------------------
 # Remove unwanted fonts these fonts conflict with the waybar icons
-# --------------------------------------------------------------------------------
+echo "For now we need to remove the noto-fonts-emoji but we are working on a fix that we dont have to do this anymore."
+# ----------------------------------------------------------------------------------------------------------------------
 
 unwanted_fonts=("noto-fonts-emoji")
 
