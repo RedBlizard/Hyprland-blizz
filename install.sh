@@ -24,29 +24,10 @@ cpu_vendor=$(lscpu | grep -i "vendor" | awk '{print $2}')
 # Check if Nvidia GPU is present
 if lspci | grep -i "NVIDIA" &> /dev/null; then
     echo "Nvidia GPU detected. Installing Nvidia packages..."
-    
-    # Check if nvidia-dkms is installed and remove it
-    echo "Dont panic we need to remove nvidia-dkms to make hyprland work with nvidia!!!"
-    if pacman -Qi nvidia-dkms &> /dev/null; then
-        echo "Removing nvidia-dkms..."
-        sudo pacman -Rdd --noconfirm nvidia-dkms
-    fi
 
-    # Check if nvidia-utils is installed
-    echo "We need to remove the nvidia-utils before we can continue so if you want hyprland to work say yes !!!"
-    if pacman -Qi nvidia-utils &> /dev/null; then
-        read -p "nvidia-utils is installed and is a conflict. Remove nvidia-utils? [y/N] " remove_nvidia_utils
-        if [[ $remove_nvidia_utils =~ ^[Yy]$ ]]; then
-            echo "Removing nvidia-utils..."
-            sudo pacman -Rdd --noconfirm nvidia-utils
-        else
-            echo "Aborting installation. Please manually resolve the conflict."
-            exit 1
-        fi
-    fi
 
     # Install Nvidia-specific packages
-    nvidia_packages=("nvidia-open-dkms" "libva" "libva-nvidia-driver-git" "nvidia-settings")
+    nvidia_packages=("libva" "libva-nvidia-driver-git")
 
     for package in "${nvidia_packages[@]}"; do
         if pacman -Qi "$package" &> /dev/null; then
@@ -255,6 +236,7 @@ while true; do
 
             # ------------------------------------------------------  
             # Install Nerd Fonts from Arch repositories
+            echo "Just a friendly reminder just select (enter) for all the fonts !!!..."
             sudo pacman -S nerd-fonts
             # ------------------------------------------------------  
             
