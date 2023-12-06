@@ -54,6 +54,14 @@ else
     echo "Not an AMD CPU. Skipping AMD-specific code."
 fi
 
+# Check CPU vendor and execute INTEL-specific code if CPU is detected
+if [ "$cpu_vendor" == "AuthenticAMD" ]; then
+    echo "INTEL CPU detected. Running INTEL-specific code..."
+
+else
+    echo "Not an INTEL CPU. Skipping INTEL-specific code."
+fi
+
 
 echo ""
 echo "WELCOME TO THE HYPRLAND STARTER INSTALLATION SCRIPT"
