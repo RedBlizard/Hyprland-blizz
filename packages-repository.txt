@@ -94,7 +94,7 @@ unzip
 update-grub
 vi
 vscode-json-languageserver
-waybar-cava
+waybar
 wireplumber
 wlogout
 wlr-randr
