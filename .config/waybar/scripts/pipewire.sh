@@ -20,9 +20,9 @@ while snore $DELAY; do
         else
             VOLUME=$((10#${BASH_REMATCH[1]}${BASH_REMATCH[2]}))
             ICON=(
-                "🔈"  # Icon for volume level > 50
-                "🔉"  # Icon for volume level > 25
-                "<span font='9' rise='1000'>🔇</span>"  # Icon for volume level >= 0
+                "<span font='10' rise='1000'></span>"
+                "<span font='10' rise='1000'></span>"
+                "<span font='9' rise='1000'></span>"
             )
 
             if [[ $VOLUME -gt 50 ]]; then
@@ -39,5 +39,6 @@ while snore $DELAY; do
 done
 
 exit 0
+
 
 
