@@ -1,4 +1,4 @@
-# Hyprland-blizz-nvidia
+# Hyprland-blizz
 
 * Developer RedBlizard
 
