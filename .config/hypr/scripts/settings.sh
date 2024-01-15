@@ -14,7 +14,7 @@ while true; do
 
     case $selected_config in
         "1. Hyprland")
-            submenu=$(echo -e "0. Back to main menu\n2. ~/.config/hypr/hyprland.conf\n3. ~/.config/hypr/keybindings.conf" | wofi --dmenu --term=kitty --width=600 --columns 1 -I -s ~/.config/wofi/style.css)
+            submenu=$(echo -e "0. Back to main menu\n1. ~/.config/hypr/hyprland.conf\n2. ~/.config/hypr/keybindings.conf" | wofi --dmenu --term=kitty --width=600 --columns 1 -I -s ~/.config/wofi/style.css)
             echo "Selected submenu: $submenu"
             case $submenu in
                 "0. Back to main menu")
