@@ -1,9 +1,0 @@
-hide_search=false
-hide_scroll=true
-insensitive=true
-prompt=Choose...
-width=960
-show=dmenu
-lines=8
-location=centre
-
