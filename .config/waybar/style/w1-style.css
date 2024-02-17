@@ -16,7 +16,7 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: Roboto, Helvetica, monospace, sans-serif, "FontAwesome 6 Free";
+    font-family: FontAwesome6, Roboto, Helvetica, monospace, sans-serif;
     font-weight: bold;
     font-size: 12px;    
     padding: 0;
