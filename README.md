@@ -8,7 +8,8 @@ https://hyprland.org/
 
 ## This repo is still work in progress, its still not official  released and under initial development.
 
-![2023-12-12-124635_hyprshot](https://github.com/RedBlizard/Hyprland-blizz/assets/108489214/1bef8c69-afe2-4db5-b041-c3f5edd4d734)
+![20240218180601_1](https://github.com/RedBlizard/Hyprland-blizz/assets/108489214/7e44257a-76bb-408f-bbc1-bf154ae1093c)
+
 
 ![20240218180345_1](https://github.com/RedBlizard/Hyprland-blizz/assets/108489214/f2535303-c452-4a20-bd9f-65e6a176cd18)
 
