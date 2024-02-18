@@ -14,7 +14,8 @@ https://hyprland.org/
 
 ![2023-12-12-125036_hyprshot](https://github.com/RedBlizard/Hyprland-blizz/assets/108489214/55d4355a-ca69-4577-81c5-cb2c9fa1d7f8)
 
-![2023-12-12-164248_hyprshot](https://github.com/RedBlizard/Hyprland-blizz/assets/108489214/a639bcbe-44fd-469e-90f5-db7e9000b6a8)
+![20240218172423_1](https://github.com/RedBlizard/Hyprland-blizz/assets/108489214/77e86770-b890-45bb-82c9-53312e8c375b)
+
 
 
 
