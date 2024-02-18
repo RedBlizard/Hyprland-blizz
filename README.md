@@ -16,6 +16,11 @@ https://hyprland.org/
 
 ![20240218172423_1](https://github.com/RedBlizard/Hyprland-blizz/assets/108489214/77e86770-b890-45bb-82c9-53312e8c375b)
 
+# waybar desktop version
+
+![20240218181113_1](https://github.com/RedBlizard/Hyprland-blizz/assets/108489214/af1a198e-d8ff-4332-a665-21d740d83ae2)
+
+
 
 
 
