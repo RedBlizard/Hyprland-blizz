@@ -1,0 +1,12 @@
+#
+# This file is parsed by pam_env module
+#
+# Syntax: simple "KEY=VAL" pairs on separate lines
+#
+#BROWSER=chromium
+#BROWSER=firefox
+BROWSER=brave
+#BROWSER=microsoft-edge-stable
+#BROWSER=vivaldi
+
+EDITOR=nano 
