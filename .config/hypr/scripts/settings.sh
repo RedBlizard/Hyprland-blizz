@@ -1,7 +1,7 @@
 #!/bin/bash
 
 while true; do
-    main_menu="1. Hyprland\n2. Waybar configs\n3. Waybar style options\n4. Swww options"
+    main_menu="1. Hyprland\n2. Waybar configs\n3. Waybar styles\n4. Swww options"
     selected_config=$(echo -e "$main_menu" | wofi --dmenu --hide_search=true --prompt=Choose... --term=kitty --width=600 --columns 1 -I -s ~/.config/wofi/style.css)
     
     # Check if the escape key was pressed
@@ -45,7 +45,7 @@ while true; do
                     echo "Invalid submenu selection: $submenu" ;;
             esac
             ;;
-        "3. Waybar style options")
+        "3. Waybar styles")
             submenu=$(echo -e "0. Back to main menu\n1. ~/.config/waybar/style/w1-style.css\n2. ~/.config/waybar/style/w2-style.css" | wofi --dmenu --hide_search=true --prompt=Choose... --term=kitty --width=600 --columns 1 -I -s ~/.config/wofi/style.css)
             echo "Selected submenu: $submenu"
             case $submenu in
