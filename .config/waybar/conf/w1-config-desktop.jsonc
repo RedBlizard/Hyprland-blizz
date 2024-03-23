@@ -203,7 +203,7 @@
 //      "exec-if": "exit 0", 
 //      "interval": 900,
 //      "format": "<span font='10' rise='1000'>󰏔</span> {}",
-//      "on-click": "kitty --title 'Updates' sh -c 'sudo pacman -Syu && yay -Syu --noconfirm && ~/.config/waybar/scripts/uparch.sh && pkill -RTMIN+8 waybar'",
+//      "on-click": "kitty --title 'Updates' sh -c 'sudo pacman -Syu && yay -Syu --noconfirm && ~/.config/waybar/scripts/updates.sh && pkill -RTMIN+8 waybar'",
 //      "signal": 8,
 //      "tooltip": false
       
@@ -211,7 +211,7 @@
    "custom/updates": {
         "exec": "~/.config/waybar/scripts/updates.sh",
         "exec-if": "exit 0",
-        "interval": 900,      
+        "interval": 300,      
         "format": "<span font='10' rise='1000'>󰏔 </span>{}",
         "on-click": "kitty --title 'Updates' sh -c 'sudo pacman -Syu && yay -Syu --noconfirm && ~/.config/waybar/scripts/updates.sh && pkill -RTMIN+8 waybar'",
         "signal": 8,
@@ -258,7 +258,7 @@
       "tooltip": false,
       "max-length": 8,
       "exec": "$HOME/.config/waybar/scripts/pipewire.sh", // script cause higher cpuload and higher cpu-temp
-      "on-click": "~/.config/hypr/scripts/volume_ctl.sh mute",      
+      "on-click": ".config/waybar/scripts/mute_toggle.sh",      
       "on-click-right": "kitty --class update -T update -e pulsemixer",
       "on-scroll-up": "~/.config/hypr/scripts/volume_ctl.sh up",
       "on-scroll-down": "~/.config/hypr/scripts/volume_ctl.sh down",
@@ -270,10 +270,10 @@
       "format": "{icon} {volume}%",
       "format-muted": " Muted",
       "tooltip": true,
-      "on-click": "~/.config/hypr/scripts/volume_ctl.sh mute",
+      "on-click": ".config/waybar/scripts/mute_toggle.sh",
       "on-click-right": "kitty --class update -T update -e pulsemixer",
-      "on-scroll-up": "bash ~/.config/hypr/scripts/volume.sh up",
-      "on-scroll-down": "bash ~/.config/hypr/scripts/volume.sh down",
+      "on-scroll-up": "bash ~/.config/hypr/scripts/volume_ctl.sh up",
+      "on-scroll-down": "bash ~/.config/hypr/scripts/volume_ctl.sh down",
       "scroll-step": 5,
       "format-icons": {
       "headphone": "",
@@ -283,20 +283,18 @@
       "portable": "",
       "car": "",
       "default": ["", "", "", ""]
-      }     
+      }   
           
-  },
-  "pulseaudio#microphone": {
-      "format": "{format_source}",
-      "tooltip": true,
-      "on-scroll-up": "shift_up",
-      "on-scroll-down": "shift_down",
-      "format-source": " {volume}%",
-      "format-source-muted": " Muted",
-      "on-click": "pamixer --default-source -t",
-      "on-scroll-up": "pamixer --default-source -i 5",
-      "on-scroll-down": "pamixer --default-source -d 5",
-      "scroll-step": 5
+    },
+    "pulseaudio#microphone": {
+        "format": "{format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": " Muted",
+        "on-click": "~/.config/hypr/scripts/volume_ctl.sh mute",
+        "on-click-right": "pavucontrol",
+        "on-scroll-up": "~/.config/hypr/scripts/volume_ctl.sh up",
+        "on-scroll-down": "~/.config/hypr/scripts/volume_ctl.sh down",    
+        "scroll-step": 5
   
   },
   "custom/cycle_wall":{     
