@@ -5,7 +5,7 @@
 #
 #BROWSER=chromium
 #BROWSER=firefox
-BROWSER=brave
+#BROWSER=brave
 #BROWSER=microsoft-edge-stable
 #BROWSER=vivaldi
 
