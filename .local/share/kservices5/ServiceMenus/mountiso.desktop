@@ -1,0 +1,20 @@
+[Desktop Entry]
+Type=Service
+ServiceTypes=KonqPopupMenu/Plugin
+MimeType=application/x-cd-image;model/x.stl-binary
+Actions=mount;unmount;
+X-KDE-Priority=TopLevel
+X-KDE-StartupNotify=false
+Icon=application-x-cd-image
+X-KDE-Submenu=Mount/unmount iso image
+
+
+[Desktop Action unmount]
+Name=Unmount
+Icon=media-eject
+Exec=udisksctl loop-delete -b `losetup -j %f | cut -d ':' -f 1`
+
+[Desktop Action mount]
+Name=Mount
+Icon=media-mount
+Exec=udisksctl loop-setup -r -f %f
