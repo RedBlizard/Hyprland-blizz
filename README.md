@@ -1,0 +1,2 @@
+# Hyprland-blizz
+Hyprland dotfiles
