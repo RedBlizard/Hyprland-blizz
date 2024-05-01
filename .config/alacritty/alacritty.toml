@@ -1,0 +1,96 @@
+[font]
+size = 11.0
+
+[font.offset]
+x = 0
+y = 1
+
+[font.normal]
+family = "Notomono Nerd Font"
+style = "Regular"
+
+[window]
+decorations = "None"
+dynamic_padding = true
+opacity = 0.87
+blur = false
+title = "Alacritty"
+
+[window.class]
+general = "Alacritty"
+instance = "Alacritty"
+
+[window.padding]
+x = 6
+y = 6
+
+[scrolling]
+history = 65535
+
+[colors.primary]
+background = '#303446'  # black
+foreground = '#C6D0F5' # text
+dim_foreground = '#626880' # original black color
+bright_foreground = '#626880' # original black color
+
+[colors.cursor]
+text = '#303446' # base
+cursor = '#F4DBD6' # flamingo / rosewater
+
+[colors.vi_mode_cursor]
+text = '#303446' # base
+cursor = '#7DC4E4' # cyan / sapphire
+
+[colors.search.matches]
+foreground = '#303446' # base
+background = '#7F3FBF' # green
+
+[colors.search.focused_match]
+foreground = '#303446' # base
+background = '#7F7FFF' # cyan / sapphire
+
+[colors.footer_bar]
+foreground = '#303446' # base
+background = '#7DC4E4' # cyan / sapphire
+
+[colors.hints.start]
+foreground = '#303446' # base
+background = '#E5C890' # yellow / orange
+
+[colors.hints.end]
+foreground = '#303446' # base
+background = '#7DC4E4' # cyan / sapphire
+
+[colors.selection]
+text = '#303446' # base
+background = '#F4DBD6' # flamingo / rosewater
+
+[colors.normal]
+black = '#08052B' # black
+red = '#ED8796' # red / maroon
+green = '#7F3FBF' # green
+yellow = '#E5C890' # yellow / orange
+blue = '#7CB6F5' # blue / endeavouros-blue
+magenta = '#8358E1' # magenta / pink
+cyan = '#7F7FFF' # cyan / sapphire
+white = '#F0C6C6' # flamingo / rosewater
+
+[colors.bright]
+black = '#626880' # original black color
+red = '#FF7F7F' # red / maroon
+green = '#A3BE8C' # green
+yellow = '#EF9F76' # yellow / orange
+blue = '#8AADF4' # blue / endeavouros-blue
+magenta = '#F5BDE6' # magenta / pink
+cyan = '#7DC4E4' # cyan / sapphire
+white = '#F4DBD6' # flamingo / rosewater
+
+[colors.dim]
+black = '#626880' # original black color
+red = '#FF7F7F' # red / maroon
+green = '#A3BE8C' # green
+yellow = '#EF9F76' # yellow / orange
+blue = '#8AADF4' # blue / endeavouros-blue
+magenta = '#F5BDE6' # magenta / pink
+cyan = '#7DC4E4' # cyan / sapphire
+white = '#F4DBD6' # flamingo / rosewater

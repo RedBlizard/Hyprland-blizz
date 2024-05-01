@@ -1,0 +1,104 @@
+[global]
+
+### Display ###
+geometry = "300x100+100+100"
+follow = mouse
+indicate_hidden = yes
+offset = 10x10
+notification_height = 0
+font = monospace 14
+separator_height = 2
+
+padding = 8
+horizontal_padding = 8
+text_icon_padding = 0
+frame_width = 2
+
+frame_color = "#FD807E"
+separator_color = frame
+
+sort = yes
+idle_threshold = 120
+font = monospace 10
+line_height = 0
+markup = full
+vertical_alignment = center
+show_age_threshold = 60
+word_wrap = yes
+stack_duplicates = true
+hide_duplicate_count = false
+show_indicators = yes
+ignore_dbusclose = false
+
+# Markup is allowed
+format = "%a\n<b>%s</b>\n%b"
+
+# Alignment of message text.
+# Possible values are "left", "center" and "right".
+alignment = left
+
+# Show age of message if message is older than show_age_threshold
+# seconds.
+# Set to -1 to disable.
+show_age_threshold = 60
+
+# Should a notification popped up from history be sticky or timeout
+# as if it would normally do.
+sticky_history = yes
+
+# Maximum amount of notifications kept in history
+history_length = 20
+
+# Define the title of the windows spawned by dunst
+title = Dunst
+# Define the class of the windows spawned by dunst
+class = Dunst
+
+### Legacy
+force_xinerama = false
+
+### Wayland ###
+force_xwayland = false
+
+### Icons ###
+icon_theme = Papirus-Dark
+min_icon_size = 0
+max_icon_size = 64
+enable_recursive_icon_lookup = true
+
+# Align icons left/right/off
+icon_position = left
+
+# dmenu settings
+dmenu = /usr/bin/wofi -p dunst:
+
+# browser setting
+browser = /usr/bin/firefox --new-tab
+
+corner_radius = 10
+timeout = 3
+
+# notify config
+[urgency_low]
+background = "#39404f"
+foreground = "#d8dee9"
+frame_color = "#95D189"
+#icon = /path/to/icon
+
+[urgency_normal]
+background = "#39404f"
+foreground = "##d8dee9"
+frame_color = "#7CB6F5"
+#icon = /path/to/icon
+
+[urgency_high]
+background = "#39404f"
+foreground = "#d8dee9"
+frame_color = "#FD807E"
+#icon = /path/to/icon
+
+[urgency_critical]
+background = "#FD807E"
+foreground = "#0A0B0B"
+frame_color = "#FD807E"
+#icon = /path/to/icon

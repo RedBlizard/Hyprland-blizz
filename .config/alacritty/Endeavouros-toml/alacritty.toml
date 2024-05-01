@@ -1,0 +1,96 @@
+[font]
+size = 11.0
+
+[font.offset]
+x = 0
+y = 1
+
+[font.normal]
+family = "Notomono Nerd Font"
+style = "Regular"
+
+[window]
+decorations = "None"
+dynamic_padding = true
+opacity = 0.87
+blur = false
+title = "Alacritty"
+
+[window.class]
+general = "Alacritty"
+instance = "Alacritty"
+
+[window.padding]
+x = 6
+y = 6
+
+[scrolling]
+history = 65535
+
+[colors.primary]
+background = '#08052B' # base
+foreground = '#C6D0F5' # text
+dim_foreground = '#C6D0F5' # text
+bright_foreground = '#C6D0F5' # text
+
+[colors.cursor]
+text = '#C6D0F5' # base
+cursor = '#FF7F7F' # red
+
+[colors.vi_mode_cursor]
+text = '#C6D0F5' # base
+cursor = '#FF7F7F' # red
+
+[colors.search.matches]
+foreground = '#C6D0F5' # base
+background = '#7F3FBF' # magenta
+
+[colors.search.focused_match]
+foreground = '#C6D0F5' # base
+background = '#FF7F7F' # red
+
+[colors.footer_bar]
+foreground = '#C6D0F5' # base
+background = '#7F3FBF' # magenta
+
+[colors.hints.start]
+foreground = '#C6D0F5' # base
+background = '#E3E3EA' # white
+
+[colors.hints.end]
+foreground = '#C6D0F5' # base
+background = '#7F3FBF' # magenta
+
+[colors.selection]
+text = '#C6D0F5' # base
+background = '#FF7F7F' # red
+
+[colors.normal]
+black = '#08052B' # base
+red = '#FF7F7F' # red
+green = '#7F3FBF' # magenta
+yellow = '#CC3980' # magenta
+blue = '#7FBAFF' # blue
+magenta = '#7F3FBF' # magenta
+cyan = '#7F7FFF' # cyan
+white = '#CDCCDB' # white
+
+[colors.bright]
+black = '#232634' # active_tab_background
+red = '#FF7F7F' # red
+green = '#9999CC' # blue
+yellow = '#FF7F7F' # red
+blue = '#7FBAFF' # blue
+magenta = '#7F7FFF' # blue
+cyan = '#7F7FFF' # blue
+white = '#CA9EE6' # active_tab_background
+
+[colors.dim]
+black = '#292C3C' # inactive_tab_background
+red = '#100F27' # inactive_border_color
+green = '#7F3FBF' # magenta
+yellow = '#CC3980' # magenta
+blue = '#7FBAFF' # blue
+magenta = '#7F3FBF' # magenta
+cyan = '#7F7FFF' # cyan
+white = '#232634' # active_tab_background
