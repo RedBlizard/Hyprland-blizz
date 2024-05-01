@@ -157,37 +157,28 @@ if [ "$update_choice" == "y" ] || [ "$update_choice" == "Y" ]; then
     cp -r "$HOME/Hyprland-blizz"/Pictures ~/
     cp -r "$HOME/Hyprland-blizz"/.config ~/
 
-    # Path to your welcome script
-     welcome_script="$HOME/.config/hypr/scripts/hypr-welcome"
+# Path to your welcome script
+welcome_script="$HOME/.config/hypr/scripts/hypr-welcome"
 
-     echo "Hypr Welcome script installation complete."
+# Path to the symlink in /usr/bin
+symlink="/usr/bin/hypr-welcome"
 
-    # Change directory to home
-     cd "$HOME" || { show_message "Failed to change directory to home." "$RED"; exit 1; }
-
-    # Path to the symlink in /usr/bin
-     symlink="/usr/bin/hypr-welcome"
-
-    # Check if the symlink exists
-     if [ -L "$symlink" ]; then
-    # Commands to execute if the symlink exists
-      echo "Old symlink found. Removing..."
-      sudo rm "$symlink" || { show_message "Failed to remove old symlink." "$RED"; exit 1; }
-      echo "Old symlink removed."
-
-    # Create new symlink
-    echo "Creating new symlink..."
-    echo "You may be prompted to enter your sudo password."
-    # Prompt for sudo password
-    sudo ln -sf "$welcome_script" "$symlink" || { show_message "Failed to create new symlink." "$RED"; exit 1; }
-    echo "New symlink created."
-
-    show_message "Dotfiles updated successfully." "$BLUE"
-else
-    show_message "You chose not to update your dotfiles." "$BLUE"
-    # Notify the user about updates
-    notify-send "Dotfiles update reminder" "There are pending updates for your dotfiles. Please consider updating."
+# Check if the symlink exists and remove it if it does
+if [ -L "$symlink" ]; then
+    echo "Old symlink found. Removing..."
+    # Remove the old symlink without prompting for a password
+    echo "$USER ALL=(ALL) NOPASSWD: /bin/rm $symlink" | sudo EDITOR='tee -a' visudo >/dev/null
+    sudo rm "$symlink" && echo "Old symlink removed." || echo "Failed to remove old symlink."
 fi
+
+# Create new symlink without prompting for a password
+echo "Creating new symlink..."
+echo "You may be prompted to enter your sudo password."
+echo "$USER ALL=(ALL) NOPASSWD: /bin/ln -sf $welcome_script $symlink" | sudo EDITOR='tee -a' visudo >/dev/null
+sudo ln -sf "$welcome_script" "$symlink" && echo "New symlink created." || echo "Failed to create new symlink."
+
+echo "Hypr-welcome script installation complete."
 
 # Notify user about the end of the script
 notify-send "We are done enjoy your updated Hyprland experience"
+
