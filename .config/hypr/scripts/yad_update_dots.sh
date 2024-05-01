@@ -107,16 +107,23 @@ if [ ! -d "$HOME/Hyprland-blizz" ]; then
     show_message "Cloning dotfiles repository..." "$BLUE"
     git clone "https://github.com/RedBlizard/Hyprland-blizz.git" "$DOTFILES_DIR" || { show_message "Failed to clone dotfiles repository." "$RED"; exit 1; }
 else
-    # Pull the latest changes from the dotfiles repository
-    show_message "Pulling the latest changes from the dotfiles repository..." "$BLUE"
     # Change to the dotfiles directory
     cd "$HOME/Hyprland-blizz" || { show_message "Failed to change to dotfiles directory." "$RED"; exit 1; }
-    git pull origin main || { show_message "Failed to pull dotfiles repository." "$RED"; exit 1; }
+
+    # Pull the latest changes from the dotfiles repository
+    show_message "Pulling the latest changes from the dotfiles repository..." "$BLUE"
+    if ! git pull origin main; then
+        show_message "Failed to pull dotfiles repository." "$RED"
+        exit 1
+    fi
+
+    # Get the commit hash after the pull
+    new_commit=$(git rev-parse HEAD)
 fi
 
-# Get the commit hash before and after the pull
+# Get the commit hash before the pull (if it's the first time, $current_commit will be empty)
 current_commit=$(git rev-parse HEAD)
-new_commit=$(git rev-parse HEAD@{1})
+
 
 # Check if there are updates
 if [ "$current_commit" != "$new_commit" ]; then
