@@ -158,22 +158,22 @@ if [ "$update_choice" == "y" ] || [ "$update_choice" == "Y" ]; then
     cp -r "$HOME/Hyprland-blizz"/.config ~/
 
     # Path to your welcome script
-    welcome_script="$HOME/.config/hypr/scripts/hypr-welcome"
+     welcome_script="$HOME/.config/hypr/scripts/hypr-welcome"
 
-    echo "Hypr Welcome script installation complete."
+     echo "Hypr Welcome script installation complete."
 
     # Change directory to home
-    cd "$HOME" || { show_message "Failed to change directory to home." "$RED"; exit 1; }
+     cd "$HOME" || { show_message "Failed to change directory to home." "$RED"; exit 1; }
 
     # Path to the symlink in /usr/bin
-    symlink="/usr/bin/hypr-welcome"
+     symlink="/usr/bin/hypr-welcome"
 
     # Check if the symlink exists
-    if [ -L "$symlink" ]; then
-        echo "Old symlink found. Removing..."
-        sudo rm "$symlink" || { show_message "Failed to remove old symlink." "$RED"; exit 1; }
-        echo "Old symlink removed."
-    fi
+     if [ -L "$symlink" ]; then
+    # Commands to execute if the symlink exists
+      echo "Old symlink found. Removing..."
+      sudo rm "$symlink" || { show_message "Failed to remove old symlink." "$RED"; exit 1; }
+      echo "Old symlink removed."
 
     # Create new symlink
     echo "Creating new symlink..."
