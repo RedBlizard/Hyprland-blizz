@@ -144,18 +144,37 @@ else
     # Stop the script here if there are no updates
 fi
 
+# Define the show_message function
+show_message() {
+    local message="$1"
+    local color="$2"
+    echo -e "${color}${message}${NC}"
+}
+
+# Change to the dotfiles directory
+cd "$HOME/Hyprland-blizz" || { show_message "Failed to change to dotfiles directory." "$RED"; exit 1; }
+
 # Ask the user if they want to update dotfiles
 read -rp "Do you want to update your dotfiles? (Enter 'Yy' for yes or 'Nn' for no): (Yy/Nn): " update_choice
 
 if [ "$update_choice" == "y" ] || [ "$update_choice" == "Y" ]; then
     # Copy dotfiles and directories to home directory
     show_message "Updating dotfiles..." "$BLUE"
-    cp -r "$HOME/Hyprland-blizz"/* ~/
-    cp -r "$HOME/Hyprland-blizz"/.icons ~/
-    cp -r "$HOME/Hyprland-blizz"/.Kvantum-themes ~/
-    cp -r "$HOME/Hyprland-blizz"/.local ~/
-    cp -r "$HOME/Hyprland-blizz"/Pictures ~/
-    cp -r "$HOME/Hyprland-blizz"/.config ~/
+    cp -r "$HOME/Hyprland-blizz"/* ~/ || { show_message "Failed to update dotfiles." "$RED"; exit 1; }
+    cp -r "$HOME/Hyprland-blizz"/.icons ~/ || { show_message "Failed to update dotfiles." "$RED"; exit 1; }
+    cp -r "$HOME/Hyprland-blizz"/.Kvantum-themes ~/ || { show_message "Failed to update dotfiles." "$RED"; exit 1; }
+    cp -r "$HOME/Hyprland-blizz"/.local ~/ || { show_message "Failed to update dotfiles." "$RED"; exit 1; }
+    cp -r "$HOME/Hyprland-blizz"/Pictures ~/ || { show_message "Failed to update dotfiles." "$RED"; exit 1; }
+    cp -r "$HOME/Hyprland-blizz"/.config ~/ || { show_message "Failed to update dotfiles." "$RED"; exit 1; }
+fi
+
+# Change to the home directory
+cd "$HOME" || { echo 'Failed to change directory to home directory.'; exit 1; }
+
+# Cleanup
+rm -rf $HOME/README.md
+rm -rf $HOME/sddm-images
+rm -rf $HOME/LICENSE
 
 # Path to your welcome script
 welcome_script="$HOME/.config/hypr/scripts/hypr-welcome"
@@ -181,4 +200,3 @@ echo "Hypr-welcome script installation complete."
 
 # Notify user about the end of the script
 notify-send "We are done enjoy your updated Hyprland experience"
-
