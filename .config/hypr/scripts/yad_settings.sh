@@ -36,7 +36,13 @@ show_main_menu() {
 launch_hyprland_settings() {
     while true; do
         submenu="Back to main menu\n~/.config/hypr/hyprland.conf\n~/.config/hypr/conf/exec_once.conf\n~/.config/hypr/conf/env_var.conf\n~/.config/hypr/conf/monitor.conf\n~/.config/hypr/conf/workspaces.conf\n~/.config/hypr/conf/key_binds.conf\n~/.config/hypr/conf/window_binds.conf\n~/.config/hypr/conf/window_rules.conf"
-        selected_submenu=$(echo -e "$submenu" | yad --title="Hyprland Settings" --text="" --width=600 --height=300 --list --column="Settings" --separator='\n' --no-buttons --center --image="$logo_path")
+        selected_submenu=$(echo -e "$submenu" | yad --title="Hyprland Settings" --text="" --width=600 --height=300 --list --column="Settings" --separator='\n' --no-buttons --center --image="$logo_path") 
+        
+        # Check if the escape button was pressed or the dialog was closed
+        if [ "$selected_submenu" == "" ]; then
+            echo "Escape key pressed or dialog closed. Exiting script."
+            exit
+        fi
 
         case $selected_submenu in
             "Back to main menu")
@@ -53,6 +59,12 @@ launch_waybar_configs() {
     while true; do
         submenu="Back to main menu\n~/.config/waybar/conf/w1-config-desktop.jsonc\n~/.config/waybar/conf/w2-config-laptop.jsonc"
         selected_submenu=$(echo -e "$submenu" | yad --title="Waybar Configs" --text="" --width=600 --height=300 --list --column="Configs" --separator='\n' --no-buttons --center --image="$logo_path")
+        
+        # Check if the escape button was pressed or the dialog was closed
+        if [ "$selected_submenu" == "" ]; then
+            echo "Escape key pressed or dialog closed. Exiting script."
+            exit
+        fi
 
         case $selected_submenu in
             "Back to main menu")
@@ -69,6 +81,12 @@ launch_waybar_styles() {
     while true; do
         submenu="Back to main menu\n~/.config/waybar/style/w1-style.css\n~/.config/waybar/style/w2-style.css"
         selected_submenu=$(echo -e "$submenu" | yad --title="Waybar Styles" --text="" --width=600 --height=300 --list --column="Styles" --separator='\n' --no-buttons --center --image="$logo_path")
+        
+        # Check if the escape button was pressed or the dialog was closed
+        if [ "$selected_submenu" == "" ]; then
+            echo "Escape key pressed or dialog closed. Exiting script."
+            exit
+        fi
 
         case $selected_submenu in
             "Back to main menu")
@@ -85,6 +103,12 @@ launch_swww_options() {
     while true; do
         submenu="Back to main menu\nKill swww\nChange Wallpaper Directory\nInitialize swww"
         selected_submenu=$(echo -e "$submenu" | yad --title="Swww Options" --text="" --width=600 --height=300 --list --column="Options" --separator='\n' --no-buttons --center --image="$logo_path")
+        
+        # Check if the escape button was pressed or the dialog was closed
+        if [ "$selected_submenu" == "" ]; then
+            echo "Escape key pressed or dialog closed. Exiting script."
+            exit
+        fi
 
         case $selected_submenu in
             "Back to main menu")
@@ -106,5 +130,3 @@ launch_swww_options() {
 
 # Start the main menu loop
 show_main_menu
-
-### TEST ###
