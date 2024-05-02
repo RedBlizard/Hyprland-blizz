@@ -1,7 +1,5 @@
 #!/bin/bash
 
-pkill -f yad
-
 # Function to launch a Kitty terminal
 launch_kitty() {
     # Check if the current terminal is Kitty
@@ -194,7 +192,3 @@ echo "Hypr-welcome script installation complete."
 
 # Notify user about the end of the script
 notify-send "We are done enjoy your updated Hyprland experience"
-
-# Run the welcome script again after a short delay
-sleep 2
-bash $HOME/.config/hypr/scripts/hypr-welcome
