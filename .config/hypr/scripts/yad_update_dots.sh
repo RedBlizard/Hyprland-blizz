@@ -81,39 +81,6 @@ echo -e "${RED}░█─░█ ▄▄▄█ █▀▀▀ ▀─▀▀ ▀▀▀ 
 echo
 NC='\033[0m' # No Color
 
-# Function to clone or pull the dotfiles repository
-clone_or_pull_repository() {
-    # Check if the dotfiles directory exists
-    if [ ! -d "$HOME/Hyprland-blizz" ]; then
-        # Dotfiles directory doesn't exist, so clone the repository
-        read -p "Dotfiles repository doesn't exist. Do you want to clone it? Please answer with 'Y' for yes and 'N' for no (Yy/Nn): " choice
-        case "$choice" in
-            [Yy]* )
-                # Clone the dotfiles repository
-                echo "Cloning dotfiles repository..."
-                if ! git clone "https://github.com/RedBlizard/Hyprland-blizz.git" "$HOME/Hyprland-blizz"; then
-                   dunstify -p 1 -u critical "Failed to clone dotfiles repository."
-                   exit 1
-                fi
-                ;;
-            * )
-                echo "Exiting..."
-                exit 0
-                ;;
-        esac
-    else
-        # Change to the dotfiles directory
-        cd "$HOME/Hyprland-blizz" || { echo "Failed to change to dotfiles directory."; exit 1; }
-
-        # Pull the latest changes from the dotfiles repository
-        echo "Pulling the latest changes from the dotfiles repository..."
-        if ! git pull origin main; then
-            echo "Failed to pull dotfiles repository."
-            exit 1
-        fi
-    fi
-}
-
 # Function to check for updates and generate notification if updates are available
 check_updates() {
     # Fetch the latest changes from the remote repository
@@ -122,6 +89,7 @@ check_updates() {
     # Compare the local branch with the remote repository
     if [ $(git rev-list HEAD...origin/main --count) -gt 0 ]; then
         # Updates are available
+        dunstify -p 1 -u critical "Updates are available for the dotfiles repository. Run the Hyprland welcome app to apply updates."
         return 0
     else
         # No updates available
@@ -129,52 +97,55 @@ check_updates() {
     fi
 }
 
-# Function to ask if user wants to clone the repository again
-ask_to_clone() {
-    read -p "Updates are available for the dotfiles repository. Do you want to clone the repository again? Please answer with 'Y' for yes and 'N' for no (Yy/Nn): " choice
-    case "$choice" in
-        [Yy]* )
-            # Clone or pull the dotfiles repository
-            clone_or_pull_repository
-            ;;
-        * )
-            # Continue with infinite loop for periodic checks
-            while true; do
-                # Execute the check every 5 minutes (300 seconds)
-                if check_updates; then
-                    # If updates are available, sleep for a longer time before next check
-                    sleep 3600  # 1 hour
-                else
-                    # If no updates, sleep for 5 minutes before next check
-                    sleep 300
-                fi
-            done
-            ;;
-    esac
+# Ask if user wants to clone the repository again (if updates are available)
+read -p "Do you want to clone the dotfiles repository to apply updates? Please answer with 'Y' for yes and 'N' for no (Yy/Nn): " choice
+case "$choice" in
+    [Yy]* )
+        # Clone the dotfiles repository
+        clone_dotfiles_repository
+        ;;
+    * )
+        # No cloning, continue with reminder loop
+        ;;
+esac
+
+# Function to clone the dotfiles repository
+clone_dotfiles_repository() {
+    # Clone the dotfiles repository
+    echo "Cloning dotfiles repository..."
+    if ! git clone "https://github.com/RedBlizard/Hyprland-blizz.git" "$HOME/Hyprland-blizz"; then
+        dunstify -p 1 -u critical "Failed to clone dotfiles repository."
+        exit 1
+    fi
 }
 
-# Execute the function to clone or pull the repository
-clone_or_pull_repository
+# Reminder loop if user chooses not to clone immediately
+reminder_count=0
+while true; do
+    # Increment reminder count
+    ((reminder_count++))
 
-# Check for updates
-if check_updates; then
-    # Updates are available, ask if user wants to clone the repository again
-    ask_to_clone
-else
-    # No updates available, continue with infinite loop for periodic checks
-    while true; do
-        # Execute the check every 5 minutes (300 seconds)
-        if check_updates; then
-            # If updates are available, sleep for a longer time before next check
-            sleep 3600  # 1 hour
-        else
-            # If no updates, sleep for 5 minutes before next check
-            sleep 300
-        fi
-    done
-fi
+    # Set default urgency to normal
+    urgency="normal"
 
+    # Update urgency based on reminder count
+    if [ $reminder_count -ge 3 ]; then
+        urgency="critical"
+    elif [ $reminder_count -eq 2 ]; then
+        urgency="high"
+    elif [ $reminder_count -eq 1 ]; then
+        urgency="normal"
+    fi
 
+    # Check for updates
+    if check_updates; then
+        # If updates are available, remind the user to apply updates
+        dunstify -p 1 -u "$urgency" "Updates are still available for the dotfiles repository. Run the Hyprland welcome app to apply updates."
+    fi
+
+    # Sleep for 1 hour
+    sleep 3600
+done
 
 # Ask the user if they want to update dotfiles
 read -rp "Do you want to update your dotfiles? (Enter 'Y' for yes or 'N' for no): (Yy/Nn): " update_choice
