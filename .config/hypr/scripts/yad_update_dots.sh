@@ -90,8 +90,7 @@ check_updates() {
 
     # Compare the local branch with the remote repository
     if [ $(git rev-list HEAD...origin/main --count) -gt 0 ]; then
-        # Updates are available
-        echo -e "${RED}Updates are available for the dotfiles repository. Run the Hyprland welcome app to apply updates!.${NC}"
+        # Updates are available        
         dunstify -p 1 -u critical "Updates are available for the dotfiles repository. Run the Hyprland welcome app to apply updates."
         return 0
     else
@@ -105,19 +104,26 @@ BLUE='\033[1;34m'
 NC='\033[0m' # No Color
 
 # Ask if user wants to clone the repository again (if updates are available)
-cd "$HOME/Hyprland-blizz" || { echo 'Failed to change directory to Hyprland-blizz.'; exit 1; }
 read -p "Do you want to clone the dotfiles repository to apply updates? Please answer with 'Y' for yes and 'N' for no (Yy/Nn): " choice
 case "$choice" in
     [Yy]* )
-     # Function to clone the dotfiles repository
-     clone_dotfiles_repository() {
-     # Clone the dotfiles repository
-     echo -e "${BLUE}Now we are getting in the dotfiles. Please be patient, this might take a while this depens on your internet speed!.${NC}"
-     if ! git clone "https://github.com/RedBlizard/Hyprland-blizz.git" "$HOME/Hyprland-blizz"; then
-        dunstify -p 1 -u critical "Failed to clone dotfiles repository."
-        exit 1
-    fi
-}
+        # Function to clone the dotfiles repository
+        clone_dotfiles_repository() {
+            # Clone the dotfiles repository
+            echo -e "${BLUE}Now we are getting in the dotfiles. Please be patient, this might take a while this depens on your internet speed!.${NC}"
+            if ! git clone "https://github.com/RedBlizard/Hyprland-blizz.git" "$HOME/Hyprland-blizz"; then
+                dunstify -p 1 -u critical "Failed to clone dotfiles repository."
+                exit 1
+            fi
+        }
+
+        # Clone the dotfiles repository
+        clone_dotfiles_repository
+        ;;
+    * )
+        # No cloning, continue with reminder loop
+        ;;
+esac
 
 # Reminder loop if user chooses not to clone immediately
 reminder_count=0
