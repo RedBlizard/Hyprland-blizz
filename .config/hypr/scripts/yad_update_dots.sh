@@ -80,7 +80,9 @@ echo -e "${RED}░█─░█ ▄▄▄█ █▀▀▀ ▀─▀▀ ▀▀▀ 
 # Add two empty rows
 echo
 NC='\033[0m' # No Color
-
+echo
+RED='\033[0;31m'
+NC='\033[0m' # No Color
 # Function to check for updates and generate notification if updates are available
 check_updates() {
     # Fetch the latest changes from the remote repository
@@ -89,6 +91,7 @@ check_updates() {
     # Compare the local branch with the remote repository
     if [ $(git rev-list HEAD...origin/main --count) -gt 0 ]; then
         # Updates are available
+        echo -e "${RED}Updates are available for the dotfiles repository. Run the Hyprland welcome app to apply updates!.${NC}"
         dunstify -p 1 -u critical "Updates are available for the dotfiles repository. Run the Hyprland welcome app to apply updates."
         return 0
     else
@@ -97,23 +100,20 @@ check_updates() {
     fi
 }
 
+RED='\033[0;31m'
+BLUE='\033[1;34m'
+NC='\033[0m' # No Color
+
 # Ask if user wants to clone the repository again (if updates are available)
+cd "$HOME/Hyprland-blizz" || { echo 'Failed to change directory to Hyprland-blizz.'; exit 1; }
 read -p "Do you want to clone the dotfiles repository to apply updates? Please answer with 'Y' for yes and 'N' for no (Yy/Nn): " choice
 case "$choice" in
     [Yy]* )
-        # Clone the dotfiles repository
-        clone_dotfiles_repository
-        ;;
-    * )
-        # No cloning, continue with reminder loop
-        ;;
-esac
-
-# Function to clone the dotfiles repository
-clone_dotfiles_repository() {
-    # Clone the dotfiles repository
-    echo "Cloning dotfiles repository..."
-    if ! git clone "https://github.com/RedBlizard/Hyprland-blizz.git" "$HOME/Hyprland-blizz"; then
+     # Function to clone the dotfiles repository
+     clone_dotfiles_repository() {
+     # Clone the dotfiles repository
+     echo -e "${BLUE}Now we are getting in the dotfiles. Please be patient, this might take a while this depens on your internet speed!.${NC}"
+     if ! git clone "https://github.com/RedBlizard/Hyprland-blizz.git" "$HOME/Hyprland-blizz"; then
         dunstify -p 1 -u critical "Failed to clone dotfiles repository."
         exit 1
     fi
@@ -169,6 +169,9 @@ rm -rf $HOME/README.md
 rm -rf $HOME/sddm-images
 rm -rf $HOME/LICENSE
 
+GREEN='\033[38;2;149;209;137m'
+NC='\033[0m' # No Color
+
 # Path to your welcome script
 welcome_script="$HOME/.config/hypr/scripts/hypr-welcome"
 
@@ -192,4 +195,6 @@ sudo ln -sf "$welcome_script" "$symlink" && echo "New symlink created." || echo 
 echo "Hypr-welcome script installation complete."
 
 # Notify user about the end of the script
-notify-send --urgency=normal "We are done enjoy your updated Hyprland experience"
+echo
+echo -e "${GREEN}We are done enjoy your updated Hyprland experience....${NC}"
+notify-send --urgency=normal "We are done enjoy your updated Hyprland experience..."
