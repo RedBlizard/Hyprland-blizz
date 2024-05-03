@@ -118,9 +118,6 @@ clone_or_pull_repository() {
     fi
 }
 
-# Execute the function to clone or pull the repository
-clone_or_pull_repository
-
 # Function to check for updates and generate notification if updates are available
 check_updates() {
     # Fetch the latest changes from the remote repository
@@ -137,11 +134,19 @@ check_updates() {
     fi
 }
 
+# Execute the function to clone or pull the repository
+clone_or_pull_repository
+
 # Infinite loop to check for updates periodically
 while true; do
     # Execute the check every 5 minutes (300 seconds)
-    sleep 300
-    check_updates
+    if check_updates; then
+        # If updates are available, sleep for a longer time before next check
+        sleep 3600  # 1 hour
+    else
+        # If no updates, sleep for 5 minutes before next check
+        sleep 300
+    fi
 done
 
 # Ask the user if they want to update dotfiles
