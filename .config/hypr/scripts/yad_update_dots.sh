@@ -68,9 +68,8 @@ for folder in "${folders[@]}"; do
     fi
 done
 
-# Ensure the script is in the correct directory
-SCRIPT_DIR="$HOME/Hyprland-blizz"
-cd "$SCRIPT_DIR" || { echo 'Failed to change directory to script directory.'; exit 1; }
+# Change into the Hyprland-blizz directory
+cd "$HOME/Hyprland-blizz" || { echo 'Failed to change directory to Hyprland-blizz.'; exit 1; }
 
 RED='\033[0;31m'
 NC='\033[0m' # No Color
@@ -102,6 +101,8 @@ check_updates() {
 RED='\033[0;31m'
 BLUE='\033[1;34m'
 NC='\033[0m' # No Color
+
+cd "$HOME/Hyprland-blizz" || { echo 'Failed to change directory to Hyprland-blizz.'; exit 1; }
 
 # Ask if user wants to clone the repository again (if updates are available)
 read -p "Do you want to clone the dotfiles repository to apply updates? Please answer with 'Y' for yes and 'N' for no (Yy/Nn): " choice
