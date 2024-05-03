@@ -81,6 +81,8 @@ echo -e "${RED}░█─░█ ▄▄▄█ █▀▀▀ ▀─▀▀ ▀▀▀ 
 echo
 NC='\033[0m' # No Color
 
+#!/bin/bash
+
 # Function to clone or pull the dotfiles repository
 clone_or_pull_repository() {
     # Check if the dotfiles directory exists
@@ -107,9 +109,7 @@ clone_or_pull_repository() {
 
         # Pull the latest changes from the dotfiles repository
         echo "Pulling the latest changes from the dotfiles repository..."
-        if git pull origin main; then
-            echo "Dotfiles repository is up to date."
-        else
+        if ! git pull origin main; then
             echo "Failed to pull dotfiles repository."
             exit 1
         fi
@@ -135,17 +135,43 @@ check_updates() {
 # Execute the function to clone or pull the repository
 clone_or_pull_repository
 
-# Infinite loop to check for updates periodically
-while true; do
-    # Execute the check every 5 minutes (300 seconds)
-    if check_updates; then
-        # If updates are available, sleep for a longer time before next check
-        sleep 3600  # 1 hour
-    else
-        # If no updates, sleep for 5 minutes before next check
-        sleep 300
-    fi
-done
+# Function to ask user if they want to clone the repository even if it's up to date
+ask_to_clone() {
+    read -p "Dotfiles repository is up to date. Do you want to clone it again? Please answer with 'Y' for yes and 'N' for no (Yy/Nn): " choice
+    case "$choice" in
+        [Yy]* )
+            # Clone the dotfiles repository
+            echo "Cloning dotfiles repository..."
+            if ! git clone "https://github.com/RedBlizard/Hyprland-blizz.git" "$HOME/Hyprland-blizz"; then
+               dunstify -p 1 -u critical "Failed to clone dotfiles repository."
+               exit 1
+            fi
+            ;;
+        * )
+            echo "Exiting..."
+            exit 0
+            ;;
+    esac
+}
+
+# Check for updates
+if check_updates; then
+    # Updates are available, ask if user wants to clone the repository again
+    ask_to_clone
+else
+    # No updates available, continue with infinite loop for periodic checks
+    while true; do
+        # Execute the check every 5 minutes (300 seconds)
+        if check_updates; then
+            # If updates are available, sleep for a longer time before next check
+            sleep 3600  # 1 hour
+        else
+            # If no updates, sleep for 5 minutes before next check
+            sleep 300
+        fi
+    done
+fi
+
 
 # Ask the user if they want to update dotfiles
 read -rp "Do you want to update your dotfiles? (Enter 'Y' for yes or 'N' for no): (Yy/Nn): " update_choice
