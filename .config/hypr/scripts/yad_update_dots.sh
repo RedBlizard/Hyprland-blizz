@@ -68,8 +68,9 @@ for folder in "${folders[@]}"; do
     fi
 done
 
-# Change into the Hyprland-blizz directory
-cd "$HOME/Hyprland-blizz" || { echo 'Failed to change directory to Hyprland-blizz.'; exit 1; }
+# Ensure the script is in the correct directory
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+cd "$SCRIPT_DIR" || { echo 'Failed to change directory to script directory.'; exit 1; }
 
 RED='\033[0;31m'
 NC='\033[0m' # No Color
@@ -109,15 +110,15 @@ case "$choice" in
         # Function to clone the dotfiles repository
         clone_dotfiles_repository() {
             # Clone the dotfiles repository
-            echo -e "${BLUE}Now we are getting in the dotfiles. Please be patient, this might take a while depending on your internet speed!${NC}"
-            # Remove the existing directory if it exists
+            echo -e "${BLUE}Now we are getting the dotfiles. Please be patient, this might take a while depending on your internet speed!${NC}"
             if [ -d "$HOME/Hyprland-blizz" ]; then
-                rm -rf "$HOME/Hyprland-blizz"
-            fi
-            # Clone the dotfiles repository
-            if ! git clone "https://github.com/RedBlizard/Hyprland-blizz.git" "$HOME/Hyprland-blizz"; then
-                dunstify -p 1 -u critical "Failed to clone dotfiles repository."
-                exit 1
+                # If the directory exists, reset it to match the remote repository
+                cd "$HOME/Hyprland-blizz" || { echo "Failed to change to dotfiles directory."; exit 1; }
+                git fetch origin main || { echo "Failed to fetch updates from dotfiles repository."; dunstify -p 1 -u critical "Failed to fetch updates from dotfiles repository."; exit 1; }
+                git reset --hard origin/main || { echo "Failed to reset dotfiles repository."; dunstify -p 1 -u critical "Failed to reset dotfiles repository."; exit 1; }
+            else
+                # If the directory doesn't exist, clone it
+                git clone "https://github.com/RedBlizard/Hyprland-blizz.git" "$HOME/Hyprland-blizz" || { echo "Failed to clone dotfiles repository."; dunstify -p 1 -u critical "Failed to clone dotfiles repository."; exit 1; }
             fi
         }
 
@@ -125,10 +126,9 @@ case "$choice" in
         clone_dotfiles_repository
         ;;
     * )
-        # No cloning, continue with reminder loop
+        # No cloning, continue with the reminder loop
         ;;
 esac
-
 
 # Reminder loop if user chooses not to clone immediately
 reminder_count=0
