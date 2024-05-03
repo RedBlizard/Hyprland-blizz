@@ -113,7 +113,6 @@ clone_or_pull_repository() {
             check_updates
         else
             echo "Failed to pull dotfiles repository."
-            exit 1
         fi
     fi
 }
