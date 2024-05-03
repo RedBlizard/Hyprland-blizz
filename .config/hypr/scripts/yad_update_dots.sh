@@ -109,10 +109,9 @@ clone_or_pull_repository() {
         echo "Pulling the latest changes from the dotfiles repository..."
         if git pull origin main; then
             echo "Dotfiles repository is up to date."
-            # Execute the function to check for updates
-            check_updates
         else
             echo "Failed to pull dotfiles repository."
+            exit 1
         fi
     fi
 }
@@ -147,6 +146,7 @@ while true; do
         sleep 300
     fi
 done
+
 
 # Ask the user if they want to update dotfiles
 read -rp "Do you want to update your dotfiles? (Enter 'Y' for yes or 'N' for no): (Yy/Nn): " update_choice
