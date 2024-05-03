@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# Function to show a message with color
+show_message() {
+    local message="$1"
+    local color="$2"
+    echo -e "${color}${message}${NC}"
+}
+
 # Function to launch an Alacritty terminal if not already launched
 launch_alacritty_terminal() {
     # Check if the current terminal is already Alacritty
@@ -17,7 +24,6 @@ launch_alacritty_terminal() {
 
 # Call the function to launch Alacritty terminal
 launch_alacritty_terminal
-
 
 # Set the log file path
 log_file="$HOME/dotfiles-update_log.txt"
@@ -81,87 +87,79 @@ echo -e "${RED}░█─░█ ▄▄▄█ █▀▀▀ ▀─▀▀ ▀▀▀ 
 echo
 NC='\033[0m' # No Color
 
+# Ensure the script is in the correct directory
+cd "$HOME/Hyprland-blizz" || { echo 'Failed to change directory to dotfiles directory.'; exit 1; }
+
+# Check for updates from GitHub repository
+show_message "Checking for updates from GitHub repository..." "$BLUE"
+if git fetch origin main &>/dev/null; then
+    # Get the commit hash before the fetch
+    current_commit=$(git rev-parse HEAD)
+    # Perform the fetch
+    git fetch origin main &>/dev/null
+    # Get the commit hash after the fetch
+    new_commit=$(git rev-parse HEAD)
+
+    # Check if there are updates
+    if [ "$current_commit" != "$new_commit" ]; then
+        show_message "Updates found. Notifying user..." "$BLUE"
+        # Send a dunst notification about available updates
+        dunstify -u low "Reminder: Dotfile updates available" "There are updates available for your dotfiles. Would you like to update now? Run the script with the '--update-now' option to update immediately." -a "update_dotfiles" -r 99999
+        exit 0
+    else
+        show_message "No updates found for dotfiles." "$BLUE"
+    fi
+else
+    show_message "Failed to check for updates from GitHub repository." "$RED"
+fi
+
+
 BLUE='\033[0;38;5;38m'
 NC='\033[0m' # No Color
-# Getting in the dotfiles
 
-echo -e "${BLUE}Now we are getting in the dotfiles. Please be patient, this might take a while.${NC}"
-echo
-# Clone the dotfiles repository, overwriting if it already exists
-echo "Cloning dotfiles repository..."
-#!/bin/bash
-
-# Function to show a message with color
-show_message() {
-    local message="$1"
-    local color="$2"
-    echo -e "${color}${message}${NC}"
-}
-
-# Define colors
-BLUE='\033[1;34m'
-NC='\033[0m' # No Color
-
-show_message "Now we are getting in the dotfiles. Please be patient, this might take a while." "$BLUE"
-echo
-
-# Check if the dotfiles directory exists
-if [ ! -d "$HOME/Hyprland-blizz" ]; then
-    # Clone the dotfiles repository
-    show_message "Cloning dotfiles repository..." "$BLUE"
-    git clone "https://github.com/RedBlizard/Hyprland-blizz.git" "$DOTFILES_DIR" || { show_message "Failed to clone dotfiles repository." "$RED"; exit 1; }
-else
-    # Change to the dotfiles directory
-    cd "$HOME/Hyprland-blizz" || { show_message "Failed to change to dotfiles directory." "$RED"; exit 1; }
-
-    # Pull the latest changes from the dotfiles repository
-    show_message "Pulling the latest changes from the dotfiles repository..." "$BLUE"
-    if ! git pull origin main; then
-        show_message "Failed to pull dotfiles repository." "$RED"
-        exit 1
-    fi
-
-    # Get the commit hash after the pull
-    new_commit=$(git rev-parse HEAD)
-fi
-
-# Get the commit hash before the pull (if it's the first time, $current_commit will be empty)
-current_commit=$(git rev-parse HEAD)
-
-# Check if there are updates
-if [ "$current_commit" != "$new_commit" ]; then
-    # Updates found, execute the rest of the code
-    show_message "Checking for updates..." "$BLUE"
-    if yay -Q xdg-desktop-portal-hyprland hyprland waybar &>/dev/null; then
+# If user chooses to update now
+if [ "$1" == "--update-now" ]; then
+    # Pull the latest changes from GitHub repository
+    show_message "Pulling changes from GitHub repository..." "$BLUE"
+    echo -e "${BLUE}Pulling changes from GitHub repository....${NC}"
+    if git -C "$HOME/Hyprland-blizz" pull origin main; then
         show_message "Hyprland, desktop portal, and Waybar have been updated." "$BLUE"
-        # Show a notification for the update
-        notify-send "Hyprland update available" "There is an update available for Hyprland. Please run the update script."
+        # Ensure the script is in the correct directory
+        # Copy dotfiles and directories to home directory
+        cd "$HOME/Hyprland-blizz" || { echo 'Failed to change directory to home directory.'; exit 1; }        
+        show_message "Updating dotfiles..." "$BLUE"
+        cp -r "$HOME/Hyprland-blizz"/* ~/ || { show_message "Failed to update dotfiles." "$RED"; exit 1; }
+        cp -r "$HOME/Hyprland-blizz"/.local ~/ || { show_message "Failed to update dotfiles." "$RED"; exit 1; }
+        cp -r "$HOME/Hyprland-blizz"/Pictures ~/ || { show_message "Failed to update dotfiles." "$RED"; exit 1; }
+        cp -r "$HOME/Hyprland-blizz"/.config ~/ || { show_message "Failed to update dotfiles." "$RED"; exit 1; }
+        # Notify user about the end of the update process
+        notify-send "Dotfiles updated" "Your dotfiles have been successfully updated."
     else
-        show_message "No updates found for Hyprland, desktop portal, and Waybar." "$BLUE"
+        show_message "Failed to pull updates from GitHub repository." "$RED"
     fi
 else
-    # No updates found for dotfiles
-    show_message "No updates found for dotfiles." "$BLUE"
-    # Notify the user about no dotfiles updates
-    notify-send "No dotfile updates found you are fully up to date."
-    # Stop the script here if there are no updates
-fi
+    # If user chooses to update later, set up a periodic reminder
+    while true; do
+        show_message "Checking for updates from GitHub repository..." "$BLUE"
+        if git -C "$HOME/Hyprland-blizz" fetch origin main; then
+            # Get the commit hash before the fetch
+            current_commit=$(git -C "$HOME/Hyprland-blizz" rev-parse HEAD)
+            # Perform the fetch
+            git -C "$HOME/Hyprland-blizz" fetch origin main
+            # Get the commit hash after the fetch
+            new_commit=$(git -C "$HOME/Hyprland-blizz" rev-parse HEAD)
 
-# Change to the dotfiles directory
-cd "$HOME/Hyprland-blizz" || { show_message "Failed to change to dotfiles directory." "$RED"; exit 1; }
-
-# Ask the user if they want to update dotfiles
-read -rp "Do you want to update your dotfiles? (Enter 'Yy' for yes or 'Nn' for no): (Yy/Nn): " update_choice
-
-if [ "$update_choice" == "y" ] || [ "$update_choice" == "Y" ]; then
-    # Copy dotfiles and directories to home directory
-    show_message "Updating dotfiles..." "$BLUE"
-    cp -r "$HOME/Hyprland-blizz"/* ~/ || { show_message "Failed to update dotfiles." "$RED"; exit 1; }
-    cp -r "$HOME/Hyprland-blizz"/.icons ~/ || { show_message "Failed to update dotfiles." "$RED"; exit 1; }
-    cp -r "$HOME/Hyprland-blizz"/.Kvantum-themes ~/ || { show_message "Failed to update dotfiles." "$RED"; exit 1; }
-    cp -r "$HOME/Hyprland-blizz"/.local ~/ || { show_message "Failed to update dotfiles." "$RED"; exit 1; }
-    cp -r "$HOME/Hyprland-blizz"/Pictures ~/ || { show_message "Failed to update dotfiles." "$RED"; exit 1; }
-    cp -r "$HOME/Hyprland-blizz"/.config ~/ || { show_message "Failed to update dotfiles." "$RED"; exit 1; }
+            # Check if there are updates
+            if [ "$current_commit" != "$new_commit" ]; then
+                show_message "Reminder: Dotfile updates available" "$BLUE"
+                dunstify -u low "Reminder: Dotfile updates available" "There are updates available for your dotfiles. Would you like to update now? Run the script with the '--update-now' option to update immediately." -a "update_dotfiles" -I "$HOME/.config/hypr/icons/hypr-icon.png" -r 99999
+                sleep 1800 # Sleep for 30 minutes
+            fi
+        else
+            show_message "Failed to check for updates from GitHub repository." "$RED"
+        fi
+        sleep 1800 # Sleep for 30 minutes
+    done
 fi
 
 # Change to the home directory
