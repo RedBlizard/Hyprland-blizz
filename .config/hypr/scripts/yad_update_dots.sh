@@ -102,8 +102,6 @@ RED='\033[0;31m'
 BLUE='\033[1;34m'
 NC='\033[0m' # No Color
 
-cd "$HOME/Hyprland-blizz" || { echo 'Failed to change directory to Hyprland-blizz.'; exit 1; }
-
 # Ask if user wants to clone the repository again (if updates are available)
 read -p "Do you want to clone the dotfiles repository to apply updates? Please answer with 'Y' for yes and 'N' for no (Yy/Nn): " choice
 case "$choice" in
@@ -111,7 +109,12 @@ case "$choice" in
         # Function to clone the dotfiles repository
         clone_dotfiles_repository() {
             # Clone the dotfiles repository
-            echo -e "${BLUE}Now we are getting in the dotfiles. Please be patient, this might take a while this depens on your internet speed!.${NC}"
+            echo -e "${BLUE}Now we are getting in the dotfiles. Please be patient, this might take a while depending on your internet speed!${NC}"
+            # Remove the existing directory if it exists
+            if [ -d "$HOME/Hyprland-blizz" ]; then
+                rm -rf "$HOME/Hyprland-blizz"
+            fi
+            # Clone the dotfiles repository
             if ! git clone "https://github.com/RedBlizard/Hyprland-blizz.git" "$HOME/Hyprland-blizz"; then
                 dunstify -p 1 -u critical "Failed to clone dotfiles repository."
                 exit 1
@@ -125,6 +128,7 @@ case "$choice" in
         # No cloning, continue with reminder loop
         ;;
 esac
+
 
 # Reminder loop if user chooses not to clone immediately
 reminder_count=0
