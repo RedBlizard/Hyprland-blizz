@@ -81,14 +81,12 @@ echo -e "${RED}░█─░█ ▄▄▄█ █▀▀▀ ▀─▀▀ ▀▀▀ 
 echo
 NC='\033[0m' # No Color
 
-#!/bin/bash
-
 # Function to clone or pull the dotfiles repository
 clone_or_pull_repository() {
     # Check if the dotfiles directory exists
     if [ ! -d "$HOME/Hyprland-blizz" ]; then
         # Dotfiles directory doesn't exist, so clone the repository
-        read -p "Dotfiles repository doesn't exist. Do you want to clone it? please answer with 'Y' for yes and 'N' for no (Yy/Nn): " choice
+        read -p "Dotfiles repository doesn't exist. Do you want to clone it? Please answer with 'Y' for yes and 'N' for no (Yy/Nn): " choice
         case "$choice" in
             [Yy]* )
                 # Clone the dotfiles repository
@@ -116,6 +114,9 @@ clone_or_pull_repository() {
     fi
 }
 
+# Execute the function to clone or pull the repository
+clone_or_pull_repository
+
 # Function to check for updates and generate notification if updates are available
 check_updates() {
     # Fetch the latest changes from the remote repository
@@ -130,28 +131,6 @@ check_updates() {
         # No updates available
         return 1
     fi
-}
-
-# Execute the function to clone or pull the repository
-clone_or_pull_repository
-
-# Function to ask user if they want to clone the repository even if it's up to date
-ask_to_clone() {
-    read -p "Dotfiles repository is up to date. Do you want to clone it again? Please answer with 'Y' for yes and 'N' for no (Yy/Nn): " choice
-    case "$choice" in
-        [Yy]* )
-            # Clone the dotfiles repository
-            echo "Cloning dotfiles repository..."
-            if ! git clone "https://github.com/RedBlizard/Hyprland-blizz.git" "$HOME/Hyprland-blizz"; then
-               dunstify -p 1 -u critical "Failed to clone dotfiles repository."
-               exit 1
-            fi
-            ;;
-        * )
-            echo "Exiting..."
-            exit 0
-            ;;
-    esac
 }
 
 # Check for updates
