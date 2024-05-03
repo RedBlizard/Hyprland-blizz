@@ -147,7 +147,6 @@ while true; do
     fi
 done
 
-
 # Ask the user if they want to update dotfiles
 read -rp "Do you want to update your dotfiles? (Enter 'Y' for yes or 'N' for no): (Yy/Nn): " update_choice
 
