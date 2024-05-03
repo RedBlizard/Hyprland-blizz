@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Check if the script is executed within a Git repository
+if ! git rev-parse --is-inside-work-tree &>/dev/null; then
+    echo "Error: This script must be executed within a Git repository."
+    exit 1
+fi
+
 # Function to launch an Alacritty terminal if not already launched
 launch_alacritty_terminal() {
     # Check if the current terminal is already Alacritty
@@ -17,7 +23,6 @@ launch_alacritty_terminal() {
 
 # Call the function to launch Alacritty terminal
 launch_alacritty_terminal
-
 
 # Set the log file path
 log_file="$HOME/dotfiles-update_log.txt"
@@ -68,9 +73,8 @@ for folder in "${folders[@]}"; do
     fi
 done
 
-# Ensure the script is in the correct directory
-SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-cd "$SCRIPT_DIR" || { echo 'Failed to change directory to script directory.'; exit 1; }
+# Change to the dotfiles directory
+cd "$HOME/Hyprland-blizz" || { show_message "Failed to change to dotfiles directory." "$RED"; exit 1; }
 
 RED='\033[0;31m'
 NC='\033[0m' # No Color
@@ -86,11 +90,13 @@ NC='\033[0m' # No Color
 # Function to check for updates and generate notification if updates are available
 check_updates() {
     # Fetch the latest changes from the remote repository
-    git fetch
+    git fetch origin main
 
     # Compare the local branch with the remote repository
-    if [ $(git rev-list HEAD...origin/main --count) -gt 0 ]; then
-        # Updates are available        
+    local commits_behind=$(git rev-list --count HEAD..origin/main)
+    if [ "$commits_behind" -gt 0 ]; then
+        # Updates are available
+        echo -e "${RED}Updates are available for the dotfiles repository. Run the Hyprland welcome app to apply updates!.${NC}"
         dunstify -p 1 -u critical "Updates are available for the dotfiles repository. Run the Hyprland welcome app to apply updates."
         return 0
     else
@@ -99,9 +105,7 @@ check_updates() {
     fi
 }
 
-RED='\033[0;31m'
 BLUE='\033[1;34m'
-NC='\033[0m' # No Color
 
 # Ask if user wants to clone the repository again (if updates are available)
 read -p "Do you want to clone the dotfiles repository to apply updates? Please answer with 'Y' for yes and 'N' for no (Yy/Nn): " choice
@@ -110,15 +114,10 @@ case "$choice" in
         # Function to clone the dotfiles repository
         clone_dotfiles_repository() {
             # Clone the dotfiles repository
-            echo -e "${BLUE}Now we are getting the dotfiles. Please be patient, this might take a while depending on your internet speed!${NC}"
-            if [ -d "$HOME/Hyprland-blizz" ]; then
-                # If the directory exists, reset it to match the remote repository
-                cd "$HOME/Hyprland-blizz" || { echo "Failed to change to dotfiles directory."; exit 1; }
-                git fetch origin main || { echo "Failed to fetch updates from dotfiles repository."; dunstify -p 1 -u critical "Failed to fetch updates from dotfiles repository."; exit 1; }
-                git reset --hard origin/main || { echo "Failed to reset dotfiles repository."; dunstify -p 1 -u critical "Failed to reset dotfiles repository."; exit 1; }
-            else
-                # If the directory doesn't exist, clone it
-                git clone "https://github.com/RedBlizard/Hyprland-blizz.git" "$HOME/Hyprland-blizz" || { echo "Failed to clone dotfiles repository."; dunstify -p 1 -u critical "Failed to clone dotfiles repository."; exit 1; }
+            echo -e "${BLUE}Now we are getting in the dotfiles. Please be patient, this might take a while depending on your internet speed!${NC}"
+            if ! git clone "https://github.com/RedBlizard/Hyprland-blizz.git" "$HOME/Hyprland-blizz"; then
+                dunstify -p 1 -u critical "Failed to clone dotfiles repository."
+                exit 1
             fi
         }
 
@@ -126,9 +125,19 @@ case "$choice" in
         clone_dotfiles_repository
         ;;
     * )
-        # No cloning, continue with the reminder loop
+        # No cloning, continue with reminder loop
         ;;
 esac
+
+# Function to clone the dotfiles repository
+clone_dotfiles_repository() {
+    # Clone the dotfiles repository
+    echo -e "${BLUE}Now we are getting in the dotfiles. Please be patient, this might take a while depending on your internet speed!${NC}"
+    if ! git clone "https://github.com/RedBlizard/Hyprland-blizz.git" "$HOME/Hyprland-blizz"; then
+        dunstify -p 1 -u critical "Failed to clone dotfiles repository."
+        exit 1
+    fi
+}
 
 # Reminder loop if user chooses not to clone immediately
 reminder_count=0
@@ -209,4 +218,3 @@ echo "Hypr-welcome script installation complete."
 echo
 echo -e "${GREEN}We are done enjoy your updated Hyprland experience....${NC}"
 notify-send --urgency=normal "We are done enjoy your updated Hyprland experience..."
-
