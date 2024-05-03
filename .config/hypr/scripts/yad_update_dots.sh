@@ -198,3 +198,4 @@ echo "Hypr-welcome script installation complete."
 echo
 echo -e "${GREEN}We are done enjoy your updated Hyprland experience....${NC}"
 notify-send --urgency=normal "We are done enjoy your updated Hyprland experience..."
+
