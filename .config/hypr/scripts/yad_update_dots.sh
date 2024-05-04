@@ -170,6 +170,24 @@ else
     fi
 fi
 
+# Function to check for updates and generate notification if updates are available
+check_updates() {
+    # Fetch the latest changes from the remote repository
+    git fetch origin main
+
+    # Compare the local branch with the remote repository
+    local commits_behind=$(git rev-list --count HEAD..origin/main)
+    if [ "$commits_behind" -gt 0 ]; then
+        # Updates are available
+        echo -e "${RED}Updates are available for the dotfiles repository. Run the Hyprland welcome app to apply updates!.${NC}"
+        send_notification "Updates are available for the dotfiles repository. Run the Hyprland welcome app to apply updates." "critical"
+        return 0
+    else
+        # No updates available
+        return 1
+    fi
+}
+
 # Send a low-urgency dunst notification that the script is done
 send_notification "Hyprland dotfiles updated successfully!" "low"
 
@@ -194,12 +212,13 @@ while true; do
     # Check for updates
     if check_updates; then
         # If updates are available, remind the user to apply updates
-        dunstify -p 1 -u "$urgency" "Updates are still available for the dotfiles repository. Run the Hyprland welcome app to apply updates."
+        send_notification "Updates are still available for the dotfiles repository. Run the Hyprland welcome app to apply updates." "$urgency"
     fi
 
     # Sleep for 1 hour
     sleep 3600
 done
+
 
 # Ask the user if they want to update dotfiles
 read -rp "Do you want to update your dotfiles? (Enter 'Y' for yes or 'N' for no): (Yy/Nn): " update_choice
