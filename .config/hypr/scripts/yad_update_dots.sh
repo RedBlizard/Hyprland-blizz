@@ -152,33 +152,51 @@ else
     new_commit=$(git rev-parse HEAD)
 fi
 
-# Reminder loop if user chooses not to clone immediately
-reminder_count=0
-while true; do
-    # Increment reminder count
-    ((reminder_count++))
-
-    # Set default urgency to normal
-    urgency="normal"
-
-    # Update urgency based on reminder count
-    if [ $reminder_count -ge 3 ]; then
-        urgency="critical"
-    elif [ $reminder_count -eq 2 ]; then
-        urgency="high"
-    elif [ $reminder_count -eq 1 ]; then
-        urgency="normal"
+# Function to check if the current directory is a git repository
+is_git_repo() {
+    if [ -d ".git" ]; then
+        return 0  # It's a git repository
+    else
+        return 1  # It's not a git repository
     fi
+}
 
-    # Check for updates by calling the function
-    if check_updates; then
-        # If updates are available, remind the user to apply updates
-        send_notification "Updates are still available for the dotfiles repository. Run the Hyprland welcome app to apply updates." "$urgency"
+# Function to send a notification using dunst
+send_notification() {
+    local message="$1"
+    local urgency="$2"
+    dunstify -p "$urgency" -u "$urgency" "$message"
+}
+
+# Check if the current directory is a git repository
+if ! is_git_repo; then
+    echo "Error: Not inside a git repository. Please run this script from within the Hyprland-blizz repository." >&2
+    exit 1
+fi
+
+# Function to check for updates and generate notification if updates are available
+check_updates() {
+    # Fetch the latest changes from the remote repository
+    git fetch origin main
+
+    # Compare the local branch with the remote repository
+    local commits_behind=$(git rev-list --count HEAD..origin/main)
+    if [ "$commits_behind" -gt 0 ]; then
+        # Updates are available
+        send_notification "Updates are available for the dotfiles repository. Run the Hyprland welcome app to apply updates." "critical"
+        return 0
+    else
+        # No updates available
+        return 1
     fi
+}
 
-    # Sleep for 1 hour
-    sleep 3600
-done
+# Call the function to check for updates
+if check_updates; then
+    echo "Updates are available for the dotfiles repository."
+else
+    echo "No updates available for the dotfiles repository."
+fi
 
 # Change to the dotfiles directory
 cd "$HOME/Hyprland-blizz" || { show_message "Failed to change to dotfiles directory." "$RED"; exit 1; }
