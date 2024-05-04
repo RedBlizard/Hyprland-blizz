@@ -134,22 +134,23 @@ else
     # Change to the dotfiles directory
     cd "$HOME/Hyprland-blizz" || { echo -e "${RED}Failed to change to dotfiles directory.${NC}"; exit 1; }
 
-# Check if the repository is already up to date
-if git pull --dry-run origin main | grep -q 'Already up to date'; then
-    echo -e "${BLUE}Dotfiles repository is already up to date.${NC}"
-else
-    # Ask the user if they want to clone the dotfiles repository again to apply updates
-    read -p "The dotfiles repository is not up to date. Do you want to clone it again to apply updates? (Y/N): " update_choice
-    case "$update_choice" in
-        [Yy]* )
-            # Update the dotfiles repository
-            clone_or_update_dotfiles_repository
-            ;;
-        * )
-            # User chose not to update, continue
-            echo -e "${BLUE}Continuing without updating dotfiles.${NC}"
-            ;;
-    esac
+    # Check if the repository is already up to date
+    if git pull --dry-run origin main | grep -q 'Already up to date'; then
+        echo -e "${BLUE}Dotfiles repository is already up to date.${NC}"
+    else
+        # Ask the user if they want to clone the dotfiles repository again to apply updates
+        read -p "The dotfiles repository is not up to date. Do you want to clone it again to apply updates? (Y/N): " update_choice
+        case "$update_choice" in
+            [Yy]* )
+                # Update the dotfiles repository
+                clone_or_update_dotfiles_repository
+                ;;
+            * )
+                # User chose not to update, continue
+                echo -e "${BLUE}Continuing without updating dotfiles.${NC}"
+                ;;
+        esac
+    fi
 fi
 
 # Continue with the rest of the script
@@ -187,9 +188,30 @@ while true; do
     sleep 3600
 done
 
-
 # Change to the dotfiles directory
-cd "$HOME/Hyprland-blizz" || { echo -e "${RED}Failed to change to dotfiles directory.${NC}"; exit 1; }
+cd "$HOME/Hyprland-blizz" || { show_message "Failed to change to dotfiles directory." "$RED"; exit 1; }
+
+# Ask the user if they want to update dotfiles
+read -rp "Do you want to update your dotfiles? (Enter 'Yy' for yes or 'Nn' for no): (Yy/Nn): " update_choice
+
+if [ "$update_choice" == "y" ] || [ "$update_choice" == "Y" ]; then
+    # Copy dotfiles and directories to home directory
+    show_message "Updating dotfiles..." "$BLUE"
+    cp -r "$HOME/Hyprland-blizz"/* ~/ || { show_message "Failed to update dotfiles." "$RED"; exit 1; }
+    cp -r "$HOME/Hyprland-blizz"/.icons ~/ || { show_message "Failed to update dotfiles." "$RED"; exit 1; }
+    cp -r "$HOME/Hyprland-blizz"/.Kvantum-themes ~/ || { show_message "Failed to update dotfiles." "$RED"; exit 1; }
+    cp -r "$HOME/Hyprland-blizz"/.local ~/ || { show_message "Failed to update dotfiles." "$RED"; exit 1; }
+    cp -r "$HOME/Hyprland-blizz"/Pictures ~/ || { show_message "Failed to update dotfiles." "$RED"; exit 1; }
+    cp -r "$HOME/Hyprland-blizz"/.config ~/ || { show_message "Failed to update dotfiles." "$RED"; exit 1; }
+fi
+
+# Change to the home directory
+cd "$HOME" || { echo 'Failed to change directory to home directory.'; exit 1; }
+
+# Cleanup
+rm -rf $HOME/README.md
+rm -rf $HOME/sddm-images
+rm -rf $HOME/LICENSE
 
 # Path to your welcome script
 welcome_script="$HOME/.config/hypr/scripts/hypr-welcome"
