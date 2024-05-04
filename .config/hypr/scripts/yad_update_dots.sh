@@ -1,11 +1,5 @@
 #!/bin/bash
 
-# Check if the script is executed within a Git repository
-if ! git rev-parse --is-inside-work-tree &>/dev/null; then
-    echo "Error: This script must be executed within a Git repository."
-    exit 1
-fi
-
 # Function to launch an Alacritty terminal if not already launched
 launch_alacritty_terminal() {
     # Check if the current terminal is already Alacritty
@@ -23,6 +17,7 @@ launch_alacritty_terminal() {
 
 # Call the function to launch Alacritty terminal
 launch_alacritty_terminal
+
 
 # Set the log file path
 log_file="$HOME/dotfiles-update_log.txt"
