@@ -108,17 +108,27 @@ show_message() {
     echo -e "${color}${message}${NC}"
 }
 
+# Function to send a notification using dunst with different urgencies
+send_notification() {
+    local message="$1"
+    local urgency="$2"
+    dunstify -p "$urgency" -u "$urgency" "$message"
+}
+
 BLUE='\033[1;34m'
 NC='\033[0m' # No Color
 
-# Function to clone the dotfiles repository
-clone_dotfiles_repository() {
+# Function to clone or update the dotfiles repository
+clone_or_update_dotfiles_repository() {
     # Check if the dotfiles directory exists
     if [ ! -d "$HOME/Hyprland-blizz" ]; then
         # Clone the dotfiles repository
         echo -e "${BLUE}Now we are getting in the dotfiles. Please be patient, this might take a while depending on your internet speed!${NC}"
         show_message "Cloning dotfiles repository..." "$BLUE"
-        git clone "https://github.com/RedBlizard/Hyprland-blizz.git" "$HOME/Hyprland-blizz" || { dunstify -p 1 -u critical "Failed to clone dotfiles repository."; exit 1; }
+        if ! git clone "https://github.com/RedBlizard/Hyprland-blizz.git" "$HOME/Hyprland-blizz"; then
+            send_notification "Failed to clone dotfiles repository." "critical"
+            exit 1
+        fi
     else
         # Change to the dotfiles directory
         cd "$HOME/Hyprland-blizz" || { show_message "Failed to change to dotfiles directory." "$RED"; exit 1; }
@@ -126,24 +136,42 @@ clone_dotfiles_repository() {
         # Pull the latest changes from the dotfiles repository
         show_message "Pulling the latest changes from the dotfiles repository..." "$BLUE"
         if ! git pull origin main; then
-            show_message "Failed to pull dotfiles repository." "$RED"
+            send_notification "Failed to pull dotfiles repository." "critical"
             exit 1
         fi
     fi
 }
 
-# Ask if user wants to clone the repository again (if updates are available)
-read -p "Do you want to clone the dotfiles repository to apply updates? Please answer with 'Y' for yes and 'N' for no (Yy/Nn): " choice
-case "$choice" in
-    [Yy]* )
-        # Call the function to clone the dotfiles repository
-        clone_dotfiles_repository
-        ;;
-    * )
-        # No cloning, continue with the reminder loop
-        ;;
-esac
+# Check if the dotfiles repository needs to be cloned or updated
+if [ ! -d "$HOME/Hyprland-blizz" ]; then
+    # Dotfiles directory doesn't exist, clone the repository
+    clone_or_update_dotfiles_repository
+else
+    # Change to the dotfiles directory
+    cd "$HOME/Hyprland-blizz" || { show_message "Failed to change to dotfiles directory." "$RED"; exit 1; }
 
+    # Check if the repository is already up to date
+    if git pull --dry-run origin main | grep -q 'Already up to date'; then
+        show_message "Dotfiles repository is already up to date." "$BLUE"
+    else
+        # Ask the user if they want to clone the dotfiles repository again to apply updates
+        read -p "The dotfiles repository is not up to date. Do you want to clone it again to apply updates? (Y/N): " update_choice
+        case "$update_choice" in
+            [Yy]* )
+                # Update the dotfiles repository
+                clone_or_update_dotfiles_repository
+                ;;
+            * )
+                # User chose not to update, exit
+                show_message "Exiting without updating dotfiles." "$BLUE"
+                exit 0
+                ;;
+        esac
+    fi
+fi
+
+# Send a low-urgency dunst notification that the script is done
+send_notification "Hyprland dotfiles updated successfully!" "low"
 
 # Reminder loop if user chooses not to clone immediately
 reminder_count=0
