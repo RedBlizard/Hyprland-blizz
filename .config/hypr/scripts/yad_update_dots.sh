@@ -152,39 +152,6 @@ else
     new_commit=$(git rev-parse HEAD)
 fi
 
-
-# Function to check for updates and generate notification if updates are available
-check_updates
-
-# Reminder loop if user chooses not to clone immediately
-reminder_count=0
-while true; do
-    # Increment reminder count
-    ((reminder_count++))
-
-    # Set default urgency to normal
-    urgency="normal"
-
-    # Update urgency based on reminder count
-    if [ $reminder_count -ge 3 ]; then
-        urgency="critical"
-    elif [ $reminder_count -eq 2 ]; then
-        urgency="high"
-    elif [ $reminder_count -eq 1 ]; then
-        urgency="normal"
-    fi
-
-    # Check for updates
-    if check_updates; then
-        # If updates are available, remind the user to apply updates
-        send_notification "Updates are still available for the dotfiles repository. Run the Hyprland welcome app to apply updates." "$urgency"
-    fi
-
-    # Sleep for 1 hour
-    sleep 3600
-done
-
-
 # Change to the dotfiles directory
 cd "$HOME/Hyprland-blizz" || { show_message "Failed to change to dotfiles directory." "$RED"; exit 1; }
 
