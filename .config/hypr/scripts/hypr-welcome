@@ -1,0 +1,44 @@
+#!/bin/bash
+
+# Define paths
+logo_path="$HOME/.config/hypr/imgs/yad_settings.png"
+settings_script="$HOME/.config/hypr/scripts/yad_settings.sh"
+update_mirrors_script="$HOME/.config/hypr/scripts/reflector_simple.sh"
+eos_rankmirrors_script="$HOME/.config/hypr/scripts/eos-rankmirrors.sh"
+cleanup_script="$HOME/.config/hypr/scripts/cleanup.sh"
+kitty_script="$HOME/.config/hypr/scripts/yad_update_dots.sh"
+waybar_script="$HOME/.config/waybar/scripts/yad_switch-waybar-config.sh"
+flag_path="$HOME/.config/hypr/flags/welcome_flag"
+
+# Function to show the main menu
+hypr_welcome() {
+    # Show main menu
+    yad --title="Settings" --image="$logo_path" --image-on-top --borders=9 -timeout=5 --button=exit \
+        --form --on-top --undecorated \
+        --field="Wiki Hyprland:FBTN" "$HOME/.config/hypr/scripts/welcome_browser.sh 'https://wiki.hyprland.org/'" \
+        --field="Waybar Wiki:FBTN" "$HOME/.config/hypr/scripts/welcome_browser.sh 'https://github.com/Alexays/Waybar/wiki'" \
+        --field="Discovery:FBTN" "$HOME/.config/hypr/scripts/welcome_browser.sh 'https://discovery.endeavouros.com/'" \
+        --field="Arch Wiki:FBTN" "$HOME/.config/hypr/scripts/welcome_browser.sh 'https://wiki.archlinux.org/'" \
+        --field="Update mirrors:FBTN" "bash $update_mirrors_script" \
+        --field="Rank mirrors:FBTN" "bash $eos_rankmirrors_script" \
+        --field="Endeavouros:FBTN" "$HOME/.config/hypr/scripts/welcome_browser.sh 'https://endeavouros.com/'" \
+        --field="Forum:FBTN" "$HOME/.config/hypr/scripts/welcome_browser.sh 'https://forum.endeavouros.com/'" \
+        --field="Update hyprland:FBTN" "bash $kitty_script" \
+        --field="Set your waybar:FBTN" "bash $waybar_script" \
+        --field="Settings:FBTN" "bash $settings_script" \
+        --field="Maintenance:FBTN" "bash $cleanup_script" \
+        --width=800 --height=360 --button-layout=spread --columns=3 &
+    
+    # Trap to clean up zombie processes    trap "sleep 0.2 ; hypr-eos-kill-yad-zombies --silent" EXIT}
+    trap "sleep 0.2 ; hypr-eos-kill-yad-zombies --silent" EXIT
+
+    StartHere "$@"
+
+
+
+}
+
+# Call the function to launch the welcome app
+hypr_welcome
+
+exit 0
