@@ -93,7 +93,7 @@ check_updates() {
     if [ "$commits_behind" -gt 0 ]; then
         # Updates are available
         echo -e "${RED}Updates are available for the dotfiles repository. Run the Hyprland welcome app to apply updates!.${NC}"
-        dunstify -p 1 -u critical "Updates are available for the dotfiles repository. Run the Hyprland welcome app to apply updates."
+        send_notification "Updates are available for the dotfiles repository. Run the Hyprland welcome app to apply updates." "critical"
         return 0
     else
         # No updates available
@@ -162,34 +162,16 @@ else
                 clone_or_update_dotfiles_repository
                 ;;
             * )
-                # User chose not to update, exit
-                show_message "Exiting without updating dotfiles." "$BLUE"
-                exit 0
+                # User chose not to update, continue
+                show_message "Continuing without updating dotfiles." "$BLUE"
                 ;;
         esac
     fi
 fi
 
+# Continue with the rest of the script
 # Function to check for updates and generate notification if updates are available
-check_updates() {
-    # Fetch the latest changes from the remote repository
-    git fetch origin main
-
-    # Compare the local branch with the remote repository
-    local commits_behind=$(git rev-list --count HEAD..origin/main)
-    if [ "$commits_behind" -gt 0 ]; then
-        # Updates are available
-        echo -e "${RED}Updates are available for the dotfiles repository. Run the Hyprland welcome app to apply updates!.${NC}"
-        send_notification "Updates are available for the dotfiles repository. Run the Hyprland welcome app to apply updates." "critical"
-        return 0
-    else
-        # No updates available
-        return 1
-    fi
-}
-
-# Send a low-urgency dunst notification that the script is done
-send_notification "Hyprland dotfiles updated successfully!" "low"
+check_updates
 
 # Reminder loop if user chooses not to clone immediately
 reminder_count=0
@@ -218,7 +200,6 @@ while true; do
     # Sleep for 1 hour
     sleep 3600
 done
-
 
 # Ask the user if they want to update dotfiles
 read -rp "Do you want to update your dotfiles? (Enter 'Y' for yes or 'N' for no): (Yy/Nn): " update_choice
