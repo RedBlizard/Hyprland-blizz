@@ -114,7 +114,7 @@ case "$choice" in
                 # If the directory exists, fetch and reset to the latest changes
                 cd "$HOME/Hyprland-blizz" || exit 1
                 git fetch origin main
-                git reset --hard origin/main
+                git reset --hard origin/main || { dunstify -p 1 -u critical "Failed to reset dotfiles repository."; exit 1; }
             else
                 # If the directory doesn't exist, clone the repository
                 git clone "https://github.com/RedBlizard/Hyprland-blizz.git" "$HOME/Hyprland-blizz" || { dunstify -p 1 -u critical "Failed to clone dotfiles repository."; exit 1; }
