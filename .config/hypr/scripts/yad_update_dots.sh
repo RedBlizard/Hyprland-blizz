@@ -82,6 +82,7 @@ NC='\033[0m' # No Color
 echo
 RED='\033[0;31m'
 NC='\033[0m' # No Color
+
 # Function to check for updates and generate notification if updates are available
 check_updates() {
     # Fetch the latest changes from the remote repository
@@ -101,6 +102,7 @@ check_updates() {
 }
 
 BLUE='\033[1;34m'
+NC='\033[0m' # No Color
 
 # Ask if user wants to clone the repository again (if updates are available)
 read -p "Do you want to clone the dotfiles repository to apply updates? Please answer with 'Y' for yes and 'N' for no (Yy/Nn): " choice
@@ -108,16 +110,22 @@ case "$choice" in
     [Yy]* )
         # Function to clone the dotfiles repository
         clone_dotfiles_repository() {
-            # Clone the dotfiles repository
-            echo -e "${BLUE}Now we are getting in the dotfiles. Please be patient, this might take a while depending on your internet speed!${NC}"
-            if [ -d "$HOME/Hyprland-blizz" ]; then
-                # If the directory exists, fetch and reset to the latest changes
-                cd "$HOME/Hyprland-blizz" || exit 1
-                git fetch origin main
-                git reset --hard origin/main || { dunstify -p 1 -u critical "Failed to reset dotfiles repository."; exit 1; }
-            else
-                # If the directory doesn't exist, clone the repository
+            # Check if the dotfiles directory exists
+            if [ ! -d "$HOME/Hyprland-blizz" ]; then
+                # Clone the dotfiles repository
+                echo -e "${BLUE}Now we are getting in the dotfiles. Please be patient, this might take a while depending on your internet speed!${NC}"
+                show_message "Cloning dotfiles repository..." "$BLUE"
                 git clone "https://github.com/RedBlizard/Hyprland-blizz.git" "$HOME/Hyprland-blizz" || { dunstify -p 1 -u critical "Failed to clone dotfiles repository."; exit 1; }
+            else
+                # Change to the dotfiles directory
+                cd "$HOME/Hyprland-blizz" || { show_message "Failed to change to dotfiles directory." "$RED"; exit 1; }
+
+                # Pull the latest changes from the dotfiles repository
+                show_message "Pulling the latest changes from the dotfiles repository..." "$BLUE"
+                if ! git pull origin main; then
+                    show_message "Failed to pull dotfiles repository." "$RED"
+                    exit 1
+                fi
             fi
         }
 
@@ -128,6 +136,7 @@ case "$choice" in
         # No cloning, continue with reminder loop
         ;;
 esac
+
 
 # Reminder loop if user chooses not to clone immediately
 reminder_count=0
