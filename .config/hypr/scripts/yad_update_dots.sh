@@ -110,9 +110,14 @@ case "$choice" in
         clone_dotfiles_repository() {
             # Clone the dotfiles repository
             echo -e "${BLUE}Now we are getting in the dotfiles. Please be patient, this might take a while depending on your internet speed!${NC}"
-            if ! git clone "https://github.com/RedBlizard/Hyprland-blizz.git" "$HOME/Hyprland-blizz"; then
-                dunstify -p 1 -u critical "Failed to clone dotfiles repository."
-                exit 1
+            if [ -d "$HOME/Hyprland-blizz" ]; then
+                # If the directory exists, fetch and reset to the latest changes
+                cd "$HOME/Hyprland-blizz" || exit 1
+                git fetch origin main
+                git reset --hard origin/main
+            else
+                # If the directory doesn't exist, clone the repository
+                git clone "https://github.com/RedBlizard/Hyprland-blizz.git" "$HOME/Hyprland-blizz" || { dunstify -p 1 -u critical "Failed to clone dotfiles repository."; exit 1; }
             fi
         }
 
@@ -123,16 +128,6 @@ case "$choice" in
         # No cloning, continue with reminder loop
         ;;
 esac
-
-# Function to clone the dotfiles repository
-clone_dotfiles_repository() {
-    # Clone the dotfiles repository
-    echo -e "${BLUE}Now we are getting in the dotfiles. Please be patient, this might take a while depending on your internet speed!${NC}"
-    if ! git clone "https://github.com/RedBlizard/Hyprland-blizz.git" "$HOME/Hyprland-blizz"; then
-        dunstify -p 1 -u critical "Failed to clone dotfiles repository."
-        exit 1
-    fi
-}
 
 # Reminder loop if user chooses not to clone immediately
 reminder_count=0
