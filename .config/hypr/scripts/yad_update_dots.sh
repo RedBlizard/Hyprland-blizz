@@ -171,6 +171,9 @@ else
     # Stop the script here if there are no updates
 fi
 
+# Function to check for updates and generate notification if updates are available
+check_updates
+
 # Reminder loop if user chooses not to clone immediately
 reminder_count=0
 while true; do
