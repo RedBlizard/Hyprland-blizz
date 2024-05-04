@@ -134,24 +134,27 @@ else
     # Change to the dotfiles directory
     cd "$HOME/Hyprland-blizz" || { echo -e "${RED}Failed to change to dotfiles directory.${NC}"; exit 1; }
 
-    # Check if the repository is already up to date
-    if git pull --dry-run origin main | grep -q 'Already up to date'; then
-        echo -e "${BLUE}Dotfiles repository is already up to date.${NC}"
-    else
-        # Ask the user if they want to clone the dotfiles repository again to apply updates
-        read -p "The dotfiles repository is not up to date. Do you want to clone it again to apply updates? (Y/N): " update_choice
-        case "$update_choice" in
-            [Yy]* )
-                # Update the dotfiles repository
-                clone_or_update_dotfiles_repository
-                ;;
-            * )
-                # User chose not to update, continue
-                echo -e "${BLUE}Continuing without updating dotfiles.${NC}"
-                ;;
-        esac
-    fi
+# Check if the repository is already up to date
+if git pull --dry-run origin main | grep -q 'Already up to date'; then
+    echo -e "${BLUE}Dotfiles repository is already up to date.${NC}"
+else
+    # Ask the user if they want to clone the dotfiles repository again to apply updates
+    read -p "The dotfiles repository is not up to date. Do you want to clone it again to apply updates? (Y/N): " update_choice
+    case "$update_choice" in
+        [Yy]* )
+            # Update the dotfiles repository
+            clone_or_update_dotfiles_repository
+            ;;
+        * )
+            # User chose not to update, continue
+            echo -e "${BLUE}Continuing without updating dotfiles.${NC}"
+            ;;
+    esac
 fi
+
+# Continue with the rest of the script
+echo -e "${BLUE}Dotfiles repository updated successfully.${NC}"
+echo -e "${BLUE}Continuing with the rest of the script.${NC}"
 
 # Function to check for updates and generate notification if updates are available
 check_updates
@@ -183,6 +186,7 @@ while true; do
     # Sleep for 1 hour
     sleep 3600
 done
+
 
 # Change to the dotfiles directory
 cd "$HOME/Hyprland-blizz" || { echo -e "${RED}Failed to change to dotfiles directory.${NC}"; exit 1; }
