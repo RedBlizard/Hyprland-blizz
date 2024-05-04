@@ -101,6 +101,13 @@ check_updates() {
     fi
 }
 
+# Function to show messages
+show_message() {
+    local message="$1"
+    local color="$2"
+    echo -e "${color}${message}${NC}"
+}
+
 BLUE='\033[1;34m'
 NC='\033[0m' # No Color
 
@@ -136,7 +143,6 @@ case "$choice" in
         # No cloning, continue with reminder loop
         ;;
 esac
-
 
 # Reminder loop if user chooses not to clone immediately
 reminder_count=0
