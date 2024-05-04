@@ -129,6 +129,9 @@ NC='\033[0m' # No Color
 show_message "Now we are getting in the dotfiles. Please be patient, this might take a while." "$BLUE"
 echo
 
+# Get the commit hash before the pull (if it's the first time, $current_commit will be empty)
+current_commit=$(git rev-parse HEAD)
+
 # Check if the dotfiles directory exists
 if [ ! -d "$HOME/Hyprland-blizz" ]; then
     # Clone the dotfiles repository
@@ -149,27 +152,6 @@ else
     new_commit=$(git rev-parse HEAD)
 fi
 
-# Get the commit hash before the pull (if it's the first time, $current_commit will be empty)
-current_commit=$(git rev-parse HEAD)
-
-# Check if there are updates
-if [ "$current_commit" != "$new_commit" ]; then
-    # Updates found, execute the rest of the code
-    show_message "Checking for updates..." "$BLUE"
-    if yay -Q xdg-desktop-portal-hyprland hyprland waybar &>/dev/null; then
-        show_message "Hyprland, desktop portal, and Waybar have been updated." "$BLUE"
-        # Show a notification for the update
-        notify-send "Hyprland update available" "There is an update available for Hyprland. Please run the update script."
-    else
-        show_message "No updates found for Hyprland, desktop portal, and Waybar." "$BLUE"
-    fi
-else
-    # No updates found for dotfiles
-    show_message "No updates found for dotfiles." "$BLUE"
-    # Notify the user about no dotfiles updates
-    notify-send "No dotfile updates found you are fully up to date."
-    # Stop the script here if there are no updates
-fi
 
 # Function to check for updates and generate notification if updates are available
 check_updates
