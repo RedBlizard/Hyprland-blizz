@@ -227,49 +227,14 @@ rm -rf $HOME/README.md
 rm -rf $HOME/sddm-images
 rm -rf $HOME/LICENSE
 
-# Path to your welcome script
-welcome_script="$HOME/.config/hypr/scripts/hypr-welcome"
+#!/bin/bash
 
-# Path to the symlink in /usr/bin
-symlink="/usr/bin/hypr-welcome"
+# Change to the scripts directory
+cd "$HOME/.config/hypr/scripts" || { echo "Failed to change to the scripts directory." >&2; exit 1; }
 
-# Check if the symlink exists and remove it if it does
-if [ -L "$symlink" ]; then
-    echo "Old symlink found. Removing..."
-    # Remove the old symlink without prompting for a password
-    echo "$USER ALL=(ALL) NOPASSWD: /bin/rm $symlink" | sudo EDITOR='tee -a' visudo >/dev/null
-    sudo rm "$symlink" && echo "Old symlink removed." || echo "Failed to remove old symlink."
-fi
-
-# Create new symlink without prompting for a password
-echo "Creating new symlink..."
-echo "You may be prompted to enter your sudo password."
-echo "$USER ALL=(ALL) NOPASSWD: /bin/ln -sf $welcome_script $symlink" | sudo EDITOR='tee -a' visudo >/dev/null
-sudo ln -sf "$welcome_script" "$symlink" && echo "New symlink created." || echo "Failed to create new symlink."
-
-echo "Hypr-welcome script installation complete."
-
-# Path to your hypr-eos-kill-yad-zombies script
-kill_zombies_script="$HOME/.config/hypr/scripts/hypr-eos-kill-yad-zombies"
-
-# Path to the symlink in /usr/bin
-symlink="/usr/bin/hypr-eos-kill-yad-zombies"
-
-# Check if the symlink exists and remove it if it does
-if [ -L "$symlink" ]; then
-    echo "Old symlink found. Removing..."
-    # Remove the old symlink without prompting for a password
-    echo "$USER ALL=(ALL) NOPASSWD: /bin/rm $symlink" | sudo EDITOR='tee -a' visudo >/dev/null
-    sudo rm "$symlink" && echo "Old symlink removed." || echo "Failed to remove old symlink."
-fi
-
-# Create new symlink without prompting for a password
-echo "Creating new symlink..."
-echo "You may be prompted to enter your sudo password."
-echo "$USER ALL=(ALL) NOPASSWD: /bin/ln -sf $kill_zombies_script $symlink" | sudo EDITOR='tee -a' visudo >/dev/null
-sudo ln -sf "$kill_zombies_script" "$symlink" && echo "New symlink created." || echo "Failed to create new symlink."
-
-echo "hypr-eos-kill-yad-zombies script installation complete."
+# Create symlink in /usr/bin for easy access, suppress output and errors
+sudo ln -s "$(pwd)/hypr-welcome" /usr/bin/hypr-welcome >/dev/null 2>&1
+sudo ln -s "$(pwd)/hypr-eos-kill-yad-zombies" /usr/bin/hypr-eos-kill-yad-zombies >/dev/null 2>&1
 
 # Notify user about the end of the script
 notify-send "We are done enjoy your updated Hyprland experience"
