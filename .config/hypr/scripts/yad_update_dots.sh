@@ -227,14 +227,5 @@ rm -rf $HOME/README.md
 rm -rf $HOME/sddm-images
 rm -rf $HOME/LICENSE
 
-#!/bin/bash
-
-# Change to the scripts directory
-cd "$HOME/.config/hypr/scripts" || { echo "Failed to change to the scripts directory." >&2; exit 1; }
-
-# Create symlink in /usr/bin for easy access, suppress output and errors
-sudo ln -s "$(pwd)/hypr-welcome" /usr/bin/hypr-welcome >/dev/null 2>&1
-sudo ln -s "$(pwd)/hypr-eos-kill-yad-zombies" /usr/bin/hypr-eos-kill-yad-zombies >/dev/null 2>&1
-
 # Notify user about the end of the script
 notify-send "We are done enjoy your updated Hyprland experience"
