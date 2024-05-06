@@ -1,0 +1,46 @@
+#!/bin/bash
+
+# Function to check for updates and generate notification if updates are available
+check_updates() {
+    # Fetch the latest changes from the remote repository
+    git fetch origin main
+
+    # Compare the local branch with the remote repository
+    local commits_behind=$(git rev-list --count HEAD..origin/main)
+    if [ "$commits_behind" -gt 0 ]; then
+        # Updates are available
+        send_notification "Updates are available for the dotfiles repository. Run the Hyprland welcome app to apply updates." "critical"
+        return 0
+    else
+        # No updates available
+        return 1
+    fi
+}
+
+# Function to send a notification using dunst
+send_notification() {
+    local message="$1"
+    local urgency="$2"
+    dunstify -p "$urgency" -u "$urgency" "$message"
+}
+
+# Check if the current directory is a git repository
+if ! git rev-parse --is-inside-work-tree &>/dev/null; then
+    echo "Error: Not inside a git repository. Please run this script from within the Hyprland-blizz repository." >&2
+    exit 1
+fi
+
+# Loop to check for updates and send reminders until updates are applied
+while true; do
+    if check_updates; then
+        echo "Updates are available for the dotfiles repository."
+        # Wait for an hour before checking again
+        sleep 3600  # 3600 seconds = 1 hour
+    else
+        echo "No updates available for the dotfiles repository."
+        break  # Exit the loop if no updates are available
+    fi
+done
+
+# Create symlink in /usr/bin for easy access
+sudo ln -s "$PWD/$0" /usr/bin/hypr_check_updates
