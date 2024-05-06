@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Change to the dotfiles directory
+cd "$HOME/Hyprland-blizz" || { show_message "Failed to change to dotfiles directory." "$RED"; exit 1; }
+
 # Function to check for updates and generate notification if updates are available
 check_updates() {
     # Fetch the latest changes from the remote repository
