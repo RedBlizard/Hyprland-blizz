@@ -1,5 +1,4 @@
-#!/bin/bash
-
+sudo bash -c '
 # Function to check for updates and generate notification if updates are available
 check_updates() {
     # Change to the dotfiles directory
@@ -42,5 +41,12 @@ done
 # Change to the scripts directory
 cd "$HOME/.config/hypr/scripts" || { echo "Failed to change to the scripts directory." >&2; exit 1; }
 
-# Create symlink in /usr/bin for easy access
-ln -s "$(pwd)/hypr_check_updates.sh" /usr/bin/hypr_check_updates >/dev/null 2>&1
+# Create symlink in /usr/bin for easy access, suppress output and errors
+sudo ln -sf "$(pwd)/hypr_check_updates.sh" /usr/bin/hypr_check_updates >/dev/null 2>&1
+
+# Create symlink for hypr-welcome
+sudo ln -sf "$(pwd)/hypr-welcome" /usr/bin/hypr-welcome >/dev/null 2>&1
+
+# Create symlink for hypr-eos-kill-yad-zombies
+sudo ln -sf "$(pwd)/hypr-eos-kill-yad-zombies" /usr/bin/hypr-eos-kill-yad-zombies >/dev/null 2>&1
+'
