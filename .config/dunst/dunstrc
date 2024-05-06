@@ -82,7 +82,7 @@ corner_radius = 10
 background = "#39404f"
 foreground = "#d8dee9"
 frame_color = "#95D189"
-timeout = 4
+timeout = 3
 #icon = /path/to/icon
 
 [urgency_normal]
