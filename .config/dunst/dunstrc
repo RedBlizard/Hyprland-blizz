@@ -73,32 +73,36 @@ icon_position = left
 dmenu = /usr/bin/wofi -p dunst:
 
 # browser setting
-browser = /usr/bin/firefox --new-tab
+browser = /usr/bin/brave --new-tab
 
 corner_radius = 10
-timeout = 3
 
 # notify config
 [urgency_low]
 background = "#39404f"
 foreground = "#d8dee9"
 frame_color = "#95D189"
+timeout = 4
 #icon = /path/to/icon
 
 [urgency_normal]
 background = "#39404f"
-foreground = "##d8dee9"
+foreground = "#d8dee9"
 frame_color = "#7CB6F5"
+timeout = 6
 #icon = /path/to/icon
 
 [urgency_high]
 background = "#39404f"
 foreground = "#d8dee9"
 frame_color = "#FD807E"
+timeout = 8
 #icon = /path/to/icon
 
 [urgency_critical]
 background = "#FD807E"
 foreground = "#0A0B0B"
 frame_color = "#FD807E"
+timeout = 5
+
 #icon = /path/to/icon
