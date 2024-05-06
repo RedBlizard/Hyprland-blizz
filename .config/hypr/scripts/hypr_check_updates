@@ -45,5 +45,9 @@ while true; do
     fi
 done
 
+# Change to the scripts directory
+cd "$HOME/.config/hypr/scripts" || { echo "Failed to change to the scripts directory." >&2; exit 1; }
+
 # Create symlink in /usr/bin for easy access
-sudo ln -s "$PWD/$0" /usr/bin/hypr_check_updates
+sudo ln -s "$(pwd)/hypr_check_updates.sh" /usr/bin/hypr_check_updates
+
