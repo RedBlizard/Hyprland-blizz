@@ -32,7 +32,7 @@ while true; do
     if check_updates; then
         echo "Updates are available for the dotfiles repository."
         # Wait for an hour before checking again
-        sleep 300  # 3600 seconds = 1 hour
+        sleep 900  # 3600 seconds = 1 hour
     else
         echo "No updates available for the dotfiles repository."
         break  # Exit the loop if no updates are available
