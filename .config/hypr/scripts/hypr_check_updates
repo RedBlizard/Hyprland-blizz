@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# Change to the dotfiles directory
-cd "$HOME/Hyprland-blizz" || { show_message "Failed to change to dotfiles directory." "$RED"; exit 1; }
-
 # Function to check for updates and generate notification if updates are available
 check_updates() {
+    # Change to the dotfiles directory
+    cd "$HOME/Hyprland-blizz" || { echo "Failed to change to dotfiles directory." >&2; exit 1; }
+
     # Fetch the latest changes from the remote repository
     git fetch origin main
 
@@ -27,12 +27,6 @@ send_notification() {
     dunstify -p "$urgency" -u "$urgency" "$message"
 }
 
-# Check if the current directory is a git repository
-if ! git rev-parse --is-inside-work-tree &>/dev/null; then
-    echo "Error: Not inside a git repository. Please run this script from within the Hyprland-blizz repository." >&2
-    exit 1
-fi
-
 # Loop to check for updates and send reminders until updates are applied
 while true; do
     if check_updates; then
@@ -49,5 +43,4 @@ done
 cd "$HOME/.config/hypr/scripts" || { echo "Failed to change to the scripts directory." >&2; exit 1; }
 
 # Create symlink in /usr/bin for easy access
-sudo ln -s "$(pwd)/hypr_check_updates.sh" /usr/bin/hypr_check_updates
-
+ln -s "$(pwd)/hypr_check_updates.sh" /usr/bin/hypr_check_updates >/dev/null 2>&1
