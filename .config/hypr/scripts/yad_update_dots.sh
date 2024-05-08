@@ -264,8 +264,9 @@ fi
 # Change to the scripts directory
 cd "$HOME/.config/hypr/scripts" || { echo "Failed to change to the scripts directory." >&2; exit 1; }
 
-# Execute the relaunch the welcome app script
-./hypr-welcome
+# Run the welcome script again after a short delay
+sleep 2
+bash $HOME/.config/hypr/scripts/hypr-welcome
 
 # Notify user about the end of the script
 notify-send "We are done enjoy your updated Hyprland experience"
