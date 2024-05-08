@@ -261,5 +261,8 @@ else
     sudo ln -sf "$(pwd)/hypr-eos-kill-yad-zombies" /usr/bin/hypr-eos-kill-yad-zombies >/dev/null 2>&1
 fi
 
+# Execute the relaunch the welcome app script
+./hypr-welcome-lock
+
 # Notify user about the end of the script
 notify-send "We are done enjoy your updated Hyprland experience"
