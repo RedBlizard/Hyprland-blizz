@@ -219,6 +219,9 @@ else
     exit 0
 fi
 
+# Change to the scripts directory
+cd "$HOME/.config/waybar/scripts" || { echo "Failed to change to the waybar scripts directory." >&2; exit 1; }
+
 # Execute the toggle-waybar script
 ./toggle-waybar.sh
 
