@@ -261,6 +261,9 @@ else
     sudo ln -sf "$(pwd)/hypr-eos-kill-yad-zombies" /usr/bin/hypr-eos-kill-yad-zombies >/dev/null 2>&1
 fi
 
+# Change to the scripts directory
+cd "$HOME/.config/hypr/scripts" || { echo "Failed to change to the scripts directory." >&2; exit 1; }
+
 # Execute the relaunch the welcome app script
 ./hypr-welcome
 
