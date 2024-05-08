@@ -220,13 +220,13 @@ else
 fi
 
 # Terminate already running bar instances
-killall -q waybar
+if pgrep -x "waybar" >/dev/null; then
+    killall -q waybar
+    # Wait until the waybar processes have been shut down
+    while pgrep -x waybar >/dev/null; do sleep 1; done
+fi
 
-# Wait until the waybar processes have been shut down
-
-while pgrep -x waybar >/dev/null; do sleep 0; done
-
-# Launch main
+# Launch waybar
 waybar &
 
 # Change to the home directory
