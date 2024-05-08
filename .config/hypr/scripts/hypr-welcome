@@ -27,8 +27,8 @@ hypr_welcome() {
         --field="    Arch News:FBTN" "bash $arch_news_script" \
         --field=":LBL" "" \
         --field="  ENDEAVOUROS:BTN" "" \
-        --field="Update mirrors:FBTN" "bash $update_mirrors_script" \
-        --field="Rank mirrors:FBTN" "bash $eos_rankmirrors_script" \
+        --field="Update Mirrors:FBTN" "bash $update_mirrors_script" \
+        --field="Rank Mirrors:FBTN" "bash $eos_rankmirrors_script" \
         --field="Endeavouros:FBTN" "$HOME/.config/hypr/scripts/welcome_browser.sh 'https://endeavouros.com/'" \
         --field="Forum:FBTN" "$HOME/.config/hypr/scripts/welcome_browser.sh 'https://forum.endeavouros.com/'" \
         --field="<span foreground='white'>   </span>                                        :LBL" "" \
@@ -36,8 +36,8 @@ hypr_welcome() {
         --field="  Trouble Shoot Logs:FBTN" "bash $eos_log_tool_script" \
         --field=":LBL" "" \
         --field="  HYPRLAND:BTN" "" \
-        --field="Update hyprland:FBTN" "bash $kitty_script" \
-        --field="Set  your waybar:FBTN" "bash $waybar_script" \
+        --field="Update Hyprland:FBTN" "bash $kitty_script" \
+        --field="Set  Your Waybar:FBTN" "bash $waybar_script" \
         --field="Settings:FBTN" "bash $settings_script" \
         --field="Maintenance:FBTN" "bash $cleanup_script" \
         --field="<span foreground='white'>   </span>                                        :LBL" "" \
