@@ -37,7 +37,7 @@ hypr_welcome() {
         --field=":LBL" "" \
         --field="  HYPRLAND:BTN" "" \
         --field="Update hyprland:FBTN" "bash $kitty_script" \
-        --field="Set your waybar:FBTN" "bash $waybar_script" \
+        --field="Set  your waybar:FBTN" "bash $waybar_script" \
         --field="Settings:FBTN" "bash $settings_script" \
         --field="Maintenance:FBTN" "bash $cleanup_script" \
         --field="<span foreground='white'>   </span>                                        :LBL" "" \
