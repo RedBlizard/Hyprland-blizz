@@ -219,15 +219,23 @@ else
     exit 0
 fi
 
-# Terminate already running bar instances
-if pgrep -x "waybar" >/dev/null; then
-    killall -q waybar
-    # Wait until the waybar processes have been shut down
-    while pgrep -x waybar >/dev/null; do sleep 1; done
+
+# Change to the dotfiles directory
+cd "$HOME/.config/waybar" || { show_message "Failed to change to waybar directory." "$RED"; exit 1; }
+
+# Check if any of the waybar configs have changed
+if ! git diff --quiet HEAD ~/.config/waybar/conf ~/.config/waybar/style; then
+    # Terminate already running bar instances
+    if pgrep -x "waybar" >/dev/null; then
+        killall -q waybar
+        # Wait until the waybar processes have been shut down
+        while pgrep -x waybar >/dev/null; do sleep 1; done
+    fi
+
+    # Launch waybar
+    waybar &
 fi
 
-# Launch waybar
-waybar &
 
 # Change to the home directory
 cd "$HOME" || { echo 'Failed to change directory to home directory.'; exit 1; }
