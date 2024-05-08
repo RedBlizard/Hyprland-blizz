@@ -219,10 +219,6 @@ else
     exit 0
 fi
 
-
-# Change to the scripts directory
-cd "$HOME/.config/waybar/scripts" || { show_message "Failed to change to waybar directory." "$RED"; exit 1; }
-
 # Execute the toggle-waybar script
 ./toggle-waybar.sh
 
