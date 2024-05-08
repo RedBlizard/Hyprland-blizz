@@ -262,7 +262,7 @@ else
 fi
 
 # Execute the relaunch the welcome app script
-./hypr-welcome-lock
+./hypr-welcome
 
 # Notify user about the end of the script
 notify-send "We are done enjoy your updated Hyprland experience"
