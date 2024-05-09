@@ -53,9 +53,11 @@ done
 while true; do
     if check_updates; then
         send_notification "Updates are available for the dotfiles repository." "normal"
+        # Wait for 15 minutes
+        sleep 900
     else
-        send_notification "No updates available for the dotfiles repository." "normal"
+        # No updates available, wait for 15 minutes without notification
+        sleep 900
     fi
-    # Wait for 15 minutes
-    sleep 900
 done
+
