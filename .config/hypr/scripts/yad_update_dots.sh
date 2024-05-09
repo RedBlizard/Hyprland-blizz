@@ -228,6 +228,32 @@ rm -rf $HOME/sddm-images
 rm -rf $HOME/LICENSE
 rm -rf $HOME/sddm.conf
 
+# Change to the scripts directory
+cd "$HOME/.config/hypr/scripts" || { echo "Failed to change to the scripts directory." >&2; exit 1; }
+
+# Function to check if all required symlinks exist
+check_symlinks() {
+    local hypr_dir="$HOME/.config/hypr/scripts"
+    local symlinks=("hypr-welcome" "hypr-eos-kill-yad-zombies" "hypr_check_updates")
+    local all_exist=true
+    
+    for symlink in "${symlinks[@]}"; do
+        if [ ! -L "/usr/bin/$symlink" ]; then
+            all_exist=false
+            break
+        fi
+    done
+    
+    if $all_exist; then
+        echo "All required symlinks exist."
+    else
+        echo "Some symlinks are missing. Please create them before running the script."
+        exit 1
+    fi
+}
+
+# Call the function to check symlinks
+check_symlinks
 
 # Change to the scripts directory
 cd "$HOME/.config/hypr/scripts" || { echo "Failed to change to the scripts directory." >&2; exit 1; }
@@ -272,9 +298,6 @@ symlink="/usr/bin/hypr_check_updates"
 if [ -L "$symlink" ]; then    
     sudo rm "$symlink"
 fi
-
-# Create new symlink
-sudo ln -sf "$update_script" "$symlink"
 
 # Notify user about the end of the script
 notify-send "We are done enjoy your updated Hyprland experience"
