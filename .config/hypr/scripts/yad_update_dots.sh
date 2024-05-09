@@ -226,6 +226,7 @@ cd "$HOME" || { echo 'Failed to change directory to home directory.'; exit 1; }
 rm -rf $HOME/README.md
 rm -rf $HOME/sddm-images
 rm -rf $HOME/LICENSE
+rm -rf $HOME/sddm.conf
 
 # Change to the scripts directory
 cd "$HOME/.config/hypr/scripts" || { echo "Failed to change to the scripts directory." >&2; exit 1; }
@@ -250,10 +251,11 @@ if symlink_exists "/usr/bin/hypr_check_updates" && \
     echo "Symlinks already exist. Continuing..."
 else
     # Ask for sudo password only if the symlinks don't exist
-    sudo ln -sf "$(pwd)/hypr_check_updates.sh" /usr/bin/hypr_check_updates >/dev/null 2>&1
-    sudo ln -sf "$(pwd)/hypr-welcome" /usr/bin/hypr-welcome >/dev/null 2>&1
-    sudo ln -sf "$(pwd)/hypr-eos-kill-yad-zombies" /usr/bin/hypr-eos-kill-yad-zombies >/dev/null 2>&1
+    create_symlink "$HOME/.config/hypr/scripts/hypr_check_updates.sh" "/usr/bin/hypr_check_updates"
+    create_symlink "$HOME/.config/hypr/scripts/hypr-welcome" "/usr/bin/hypr-welcome"
+    create_symlink "$HOME/.config/hypr/scripts/hypr-eos-kill-yad-zombies" "/usr/bin/hypr-eos-kill-yad-zombies"
 fi
+
 
 # Notify user about the end of the script
 notify-send "We are done enjoy your updated Hyprland experience"
