@@ -219,6 +219,11 @@ else
     exit 0
 fi
 
+# Enable hypridle.service if not already enabled
+if ! systemctl --user is-enabled hypridle.service >/dev/null 2>&1; then
+    systemctl --user enable --now hypridle.service
+fi
+
 # Change to the home directory
 cd "$HOME" || { echo 'Failed to change directory to home directory.'; exit 1; }
 
