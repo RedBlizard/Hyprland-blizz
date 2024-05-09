@@ -266,9 +266,5 @@ else
     change_symlink_owner "/usr/bin/hypr_check_updates"
 fi
 
-
-# Change to the scripts directory
-cd "$HOME/.config/hypr/scripts" || { echo "Failed to change to the scripts directory." >&2; exit 1; }
-
 # Notify user about the end of the script
 notify-send "We are done enjoy your updated Hyprland experience"
