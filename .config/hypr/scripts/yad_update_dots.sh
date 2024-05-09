@@ -232,71 +232,40 @@ rm -rf $HOME/sddm.conf
 cd "$HOME/.config/hypr/scripts" || { echo "Failed to change to the scripts directory." >&2; exit 1; }
 
 # Function to check if all required symlinks exist
-check_symlinks() {
-    local hypr_dir="$HOME/.config/hypr/scripts"
-    local symlinks=("hypr-welcome" "hypr-eos-kill-yad-zombies" "hypr_check_updates")
-    local all_exist=true
+if ! check_symlinks; then
+    echo "Creating missing symlinks..."
     
-    for symlink in "${symlinks[@]}"; do
-        if [ ! -L "/usr/bin/$symlink" ]; then
-            all_exist=false
-            break
-        fi
-    done
-    
-    if $all_exist; then
-        echo "All required symlinks exist."
-    else
-        echo "Some symlinks are missing. Please create them before running the script."
-        exit 1
-    fi
-}
+    # Change to the scripts directory
+    cd "$HOME/.config/hypr/scripts" || { echo "Failed to change to the scripts directory." >&2; exit 1; }
 
-# Call the function to check symlinks
-check_symlinks
+    # Path to your welcome script
+    welcome_script="$HOME/.config/hypr/scripts/hypr-welcome"
 
-# Change to the scripts directory
-cd "$HOME/.config/hypr/scripts" || { echo "Failed to change to the scripts directory." >&2; exit 1; }
+    # Path to the symlink in /usr/bin
+    symlink="/usr/bin/hypr-welcome"
 
-# Path to your welcome script
-welcome_script="$HOME/.config/hypr/scripts/hypr-welcome"
-
-# Path to the symlink in /usr/bin
-symlink="/usr/bin/hypr-welcome"
-
-# Check if the symlink exists
-if [ -L "$symlink" ]; then    
-    sudo rm "$symlink"
-fi
-
-# Create new symlink
-sudo ln -sf "$welcome_script" "$symlink"
+    # Create new symlink
+    sudo ln -sf "$welcome_script" "$symlink"
 
 
-# Path to your kill script
-kill_script="$HOME/.config/hypr/scripts/hypr-eos-kill-yad-zombies"
+    # Path to your kill script
+    kill_script="$HOME/.config/hypr/scripts/hypr-eos-kill-yad-zombies"
 
-# Path to the symlink in /usr/bin
-symlink="/usr/bin/hypr-eos-kill-yad-zombies"
+    # Path to the symlink in /usr/bin
+    symlink="/usr/bin/hypr-eos-kill-yad-zombies"
 
-# Check if the symlink exists
-if [ -L "$symlink" ]; then    
-    sudo rm "$symlink"
-fi
-
-# Create new symlink
-sudo ln -sf "$kill_script" "$symlink"
+    # Create new symlink
+    sudo ln -sf "$kill_script" "$symlink"
 
 
-# Path to your update script
-update_script="$HOME/.config/hypr/scripts/hypr_check_updates.sh"
+    # Path to your update script
+    update_script="$HOME/.config/hypr/scripts/hypr_check_updates.sh"
 
-# Path to the symlink in /usr/bin
-symlink="/usr/bin/hypr_check_updates"
+    # Path to the symlink in /usr/bin
+    symlink="/usr/bin/hypr_check_updates"
 
-# Check if the symlink exists
-if [ -L "$symlink" ]; then    
-    sudo rm "$symlink"
+    # Create new symlink
+    sudo ln -sf "$update_script" "$symlink"
 fi
 
 # Notify user about the end of the script
