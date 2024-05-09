@@ -232,30 +232,49 @@ rm -rf $HOME/sddm.conf
 # Change to the scripts directory
 cd "$HOME/.config/hypr/scripts" || { echo "Failed to change to the scripts directory." >&2; exit 1; }
 
-# Function to check if a symlink exists
-symlink_exists() {
-    local symlink=$1
-    [[ -L $symlink && -e $symlink ]]
-}
+# Path to your welcome script
+welcome_script="$HOME/.config/hypr/scripts/hypr-welcome"
 
-# Function to create a symlink without sudo
-create_symlink() {
-    local source_file=$1
-    local symlink=$2
-    ln -sf "$source_file" "$symlink" >/dev/null 2>&1
-}
+# Path to the symlink in /usr/bin
+symlink="/usr/bin/hypr-welcome"
 
-# Create symlinks in /usr/bin for easy access, suppress output and errors
-if symlink_exists "/usr/bin/hypr_check_updates" && \
-   symlink_exists "/usr/bin/hypr-welcome" && \
-   symlink_exists "/usr/bin/hypr-eos-kill-yad-zombies"; then
-    echo "Symlinks already exist. Continuing..."
-else
-    # Ask for sudo password only if the symlinks don't exist
-    create_symlink "$HOME/.config/hypr/scripts/hypr_check_updates.sh" "/usr/bin/hypr_check_updates"
-    create_symlink "$HOME/.config/hypr/scripts/hypr-welcome" "/usr/bin/hypr-welcome"
-    create_symlink "$HOME/.config/hypr/scripts/hypr-eos-kill-yad-zombies" "/usr/bin/hypr-eos-kill-yad-zombies"
+# Check if the symlink exists
+if [ -L "$symlink" ]; then    
+    sudo rm "$symlink"
 fi
+
+# Create new symlink
+sudo ln -sf "$welcome_script" "$symlink"
+
+
+# Path to your kill script
+kill_script="$HOME/.config/hypr/scripts/hypr-eos-kill-yad-zombies"
+
+# Path to the symlink in /usr/bin
+symlink="/usr/bin/hypr-eos-kill-yad-zombies"
+
+# Check if the symlink exists
+if [ -L "$symlink" ]; then    
+    sudo rm "$symlink"
+fi
+
+# Create new symlink
+sudo ln -sf "$kill_script" "$symlink"
+
+
+# Path to your update script
+update_script="$HOME/.config/hypr/scripts/hypr_check_updates.sh"
+
+# Path to the symlink in /usr/bin
+symlink="/usr/bin/hypr_check_updates"
+
+# Check if the symlink exists
+if [ -L "$symlink" ]; then    
+    sudo rm "$symlink"
+fi
+
+# Create new symlink
+sudo ln -sf "$update_script" "$symlink"
 
 # Notify user about the end of the script
 notify-send "We are done enjoy your updated Hyprland experience"
