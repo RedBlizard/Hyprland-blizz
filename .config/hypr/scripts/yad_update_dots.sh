@@ -232,6 +232,27 @@ rm -rf $HOME/sddm.conf
 cd "$HOME/.config/hypr/scripts" || { echo "Failed to change to the scripts directory." >&2; exit 1; }
 
 # Function to check if all required symlinks exist
+check_symlinks() {
+    local symlinks=("hypr-welcome" "hypr-eos-kill-yad-zombies" "hypr_check_updates")
+    local all_exist=true
+    
+    for symlink in "${symlinks[@]}"; do
+        if [ ! -L "/usr/bin/$symlink" ]; then
+            all_exist=false
+            break
+        fi
+    done
+    
+    if $all_exist; then
+        echo "All required symlinks exist."
+        return 0
+    else
+        echo "Some symlinks are missing."
+        return 1
+    fi
+}
+
+# Check if the symlinks exist
 if ! check_symlinks; then
     echo "Creating missing symlinks..."
     
