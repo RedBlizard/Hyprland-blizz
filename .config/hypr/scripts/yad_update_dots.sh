@@ -237,7 +237,7 @@ check_symlinks() {
     local all_exist=true
     
     for symlink in "${symlinks[@]}"; do
-        if [ ! -L "$HOME/.local/bin/$symlink" ]; then
+        if [ ! -L "/usr/bin/$symlink" ]; then
             all_exist=false
             break
         fi
@@ -262,29 +262,31 @@ if ! check_symlinks; then
     # Path to your welcome script
     welcome_script="$HOME/.config/hypr/scripts/hypr-welcome"
 
-    # Path to the symlink in ~/.local/bin
-    symlink="$HOME/.local/bin/hypr-welcome"
+    # Path to the symlink in /usr/bin
+    symlink="/usr/bin/hypr-welcome"
 
     # Create new symlink
-    ln -sf "$welcome_script" "$symlink"
+    sudo ln -sf "$welcome_script" "$symlink"
+
 
     # Path to your kill script
     kill_script="$HOME/.config/hypr/scripts/hypr-eos-kill-yad-zombies"
 
-    # Path to the symlink in ~/.local/bin
-    symlink="$HOME/.local/bin/hypr-eos-kill-yad-zombies"
+    # Path to the symlink in /usr/bin
+    symlink="/usr/bin/hypr-eos-kill-yad-zombies"
 
     # Create new symlink
-    ln -sf "$kill_script" "$symlink"
+    sudo ln -sf "$kill_script" "$symlink"
+
 
     # Path to your update script
     update_script="$HOME/.config/hypr/scripts/hypr_check_updates.sh"
 
-    # Path to the symlink in ~/.local/bin
-    symlink="$HOME/.local/bin/hypr_check_updates"
+    # Path to the symlink in /usr/bin
+    symlink="/usr/bin/hypr_check_updates"
 
     # Create new symlink
-    ln -sf "$update_script" "$symlink"
+    sudo ln -sf "$update_script" "$symlink"
 fi
 
 # Notify user about the end of the script
