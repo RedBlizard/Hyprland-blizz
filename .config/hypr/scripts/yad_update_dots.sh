@@ -228,13 +228,14 @@ rm -rf $HOME/sddm-images
 rm -rf $HOME/LICENSE
 rm -rf $HOME/sddm.conf
 
+
 # Change to the scripts directory
 cd "$HOME/.config/hypr/scripts" || { echo "Failed to change to the scripts directory." >&2; exit 1; }
 
 # Function to check if a symlink exists
 symlink_exists() {
     local symlink=$1
-    [[ -L $symlink ]]
+    [[ -L $symlink && -e $symlink ]]
 }
 
 # Function to create a symlink without sudo
@@ -255,7 +256,6 @@ else
     create_symlink "$HOME/.config/hypr/scripts/hypr-welcome" "/usr/bin/hypr-welcome"
     create_symlink "$HOME/.config/hypr/scripts/hypr-eos-kill-yad-zombies" "/usr/bin/hypr-eos-kill-yad-zombies"
 fi
-
 
 # Notify user about the end of the script
 notify-send "We are done enjoy your updated Hyprland experience"
