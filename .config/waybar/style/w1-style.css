@@ -38,7 +38,8 @@ window#waybar.hidden {
 }
 
 window#waybar.empty #window {  
- background:none;  
+ background:none;
+ border: none;   
 
     
 }
