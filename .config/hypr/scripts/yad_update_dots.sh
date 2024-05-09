@@ -232,6 +232,7 @@ cd "$HOME" || { echo 'Failed to change directory to home directory.'; exit 1; }
 rm -rf $HOME/README.md
 rm -rf $HOME/sddm-images
 rm -rf $HOME/LICENSE
+rm -rf $HOME/sddm.conf
 
 # Change to the scripts directory
 cd "$HOME/.config/hypr/scripts" || { echo "Failed to change to the scripts directory." >&2; exit 1; }
