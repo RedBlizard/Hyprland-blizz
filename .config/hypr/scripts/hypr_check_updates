@@ -27,12 +27,23 @@ send_notification() {
     dunstify -p "$urgency" -u "$urgency" "$message"
 }
 
-# Initial notification loop
-for (( i=1; i<=3; i++ )); do
+# Initial notification loop after boot/reboot
+for (( i=1; i<=1; i++ )); do
     if check_updates; then
-        echo "Updates are available for the dotfiles repository."
+        send_notification "Updates are available for the dotfiles repository." "normal"
     else
-        echo "No updates available for the dotfiles repository."
+        send_notification "No updates available for the dotfiles repository." "normal"
+    fi
+    # Wait for 10 seconds
+    sleep 10
+done
+
+# Initial notification loop
+for (( i=1; i<=2; i++ )); do
+    if check_updates; then
+        send_notification "Updates are available for the dotfiles repository." "normal"
+    else
+        send_notification "No updates available for the dotfiles repository." "normal"
     fi
     # Wait for 5 minutes
     sleep 300
@@ -41,9 +52,9 @@ done
 # Regular notification loop
 while true; do
     if check_updates; then
-        echo "Updates are available for the dotfiles repository."
+        send_notification "Updates are available for the dotfiles repository." "normal"
     else
-        echo "No updates available for the dotfiles repository."
+        send_notification "No updates available for the dotfiles repository." "normal"
     fi
     # Wait for 15 minutes
     sleep 900
