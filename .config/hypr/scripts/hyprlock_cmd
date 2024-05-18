@@ -1,0 +1,51 @@
+#!/bin/bash
+
+# Set background
+background() {
+    swww -f $HOME/.config/hypr/hyprland.png
+}
+
+# Set input field
+input_field() {
+    hyprlock
+}
+
+# Display current time
+display_time() {
+    while true; do
+        echo "<span foreground='#67449D'>$(date +"%X")</span>"
+        sleep 1
+    done
+}
+
+# Display current date
+display_date() {
+    while true; do
+        echo "<span foreground='#8281FD'>$(date +"%A %d %B %Y")</span>"
+        sleep 1
+    done
+}
+
+# Display user
+display_user() {
+    while true; do
+        echo "$USER"
+        sleep 1
+    done
+}
+
+# Main function
+main() {
+    background &
+    input_field &
+    display_time &
+    display_date &
+    display_user &
+    wait
+}
+
+
+# Run main function
+main
+
+
