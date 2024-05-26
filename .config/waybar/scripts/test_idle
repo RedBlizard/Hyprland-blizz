@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Define the icons
+icondisabled="<span font='10'>󰾪</span>"
+iconenabled="<span font='10'>󰅶</span>"
+fifo="/tmp/waybar_swayidle_fifo"
+
+if pgrep -x "swayidl" > /dev/null; then
+   # Swayidle is enabled, so disable it
+   killall swayidle
+   # Update the Waybar module to display the disabled coffee cup icon immediately
+   echo '{"text": "'"$icondisabled"'"}' > "$fifo"
+
+swayidle -w \
+         timeout 300 '$HOME/.config/hypr/scripts/test_idle' \
+         timeout 600 'hyprctl dispatch "output * dpms off"' \
+              resume 'hyprctl dispatch "output * dpms on"' \
+         before-sleep '$HOME/.config/hypr/scripts/test_idle'
+         
+   # Update the Waybar module to display the enabled coffee cup icon immediately
+   echo '{"text": "'"$iconenabled"'"}' > "$fifo"
