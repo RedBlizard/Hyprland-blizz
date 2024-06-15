@@ -8,17 +8,31 @@ https://hyprland.org/
 
 ## This repo is still work in progress, its still not official  released and under initial development.
 
-![20240218180601_1](https://github.com/RedBlizard/Hyprland-blizz/assets/108489214/7e44257a-76bb-408f-bbc1-bf154ae1093c)
+# The welcome app.
 
-![20240218180345_1](https://github.com/RedBlizard/Hyprland-blizz/assets/108489214/f2535303-c452-4a20-bd9f-65e6a176cd18)
+![2024-05-07-113345_hyprshot](https://github.com/RedBlizard/Hyprland-blizz/assets/108489214/cedab541-bb71-499f-9aa2-6f00707e34c3)
 
-![20240218180739_1](https://github.com/RedBlizard/Hyprland-blizz/assets/108489214/851b98e2-1418-4763-91fc-f3f3e696da4f)
+# The new settings app
 
-![20240218172423_1](https://github.com/RedBlizard/Hyprland-blizz/assets/108489214/77e86770-b890-45bb-82c9-53312e8c375b)
+![2024-04-28-225941_hyprshot](https://github.com/RedBlizard/Hyprland-blizz/assets/108489214/4154e1ff-c0e8-45eb-8ce2-bc78bb26dca0)
+
+# How to pick your waybar.
+
+![2024-06-15-164934_hyprshot](https://github.com/RedBlizard/Hyprland-blizz/assets/108489214/15f17845-8d5a-4782-b1e1-b4601449dcb3)
+
+# The new notifycation center
+
+![2024-06-15-140701_hyprshot](https://github.com/RedBlizard/Hyprland-blizz/assets/108489214/d0f7c492-c1e7-48d0-8929-22ba45e810d8)
+
+# The desktop
+
+![2024-06-15-165557_hyprshot](https://github.com/RedBlizard/Hyprland-blizz/assets/108489214/91a40c35-3542-4185-9f3b-fc5c7575305d)
 
 # waybar desktop version
 
-![20240218181113_1](https://github.com/RedBlizard/Hyprland-blizz/assets/108489214/af1a198e-d8ff-4332-a665-21d740d83ae2)
+![2024-06-15-165839_hyprshot](https://github.com/RedBlizard/Hyprland-blizz/assets/108489214/313b53b5-9074-40e3-9254-98c4a5ac8b7b)
+
+
 
 
 
