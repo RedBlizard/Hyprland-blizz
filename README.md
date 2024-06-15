@@ -20,7 +20,7 @@ https://hyprland.org/
 
 ![2024-06-15-164934_hyprshot](https://github.com/RedBlizard/Hyprland-blizz/assets/108489214/15f17845-8d5a-4782-b1e1-b4601449dcb3)
 
-# The new notifycation center
+# The new notification center
 
 ![2024-06-15-140701_hyprshot](https://github.com/RedBlizard/Hyprland-blizz/assets/108489214/d0f7c492-c1e7-48d0-8929-22ba45e810d8)
 
