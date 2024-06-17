@@ -1,0 +1,130 @@
+{
+  "$schema": "/etc/xdg/swaync/configSchema.json",
+  "positionX": "right",
+  "positionY": "top",
+  "layer": "overlay",
+  "layer-shell": "true",
+  "cssPriority": "application",
+  "control-center-margin-top": 10,
+  "control-center-margin-bottom": 10,
+  "control-center-margin-right": 10,
+  "control-center-margin-left": 10,
+  "notification-icon-size": 64,
+  "notification-body-image-height": 128,
+  "notification-body-image-width": 200,
+  "timeout": 10,
+  "timeout-low": 5,
+  "timeout-critical": 0,
+  "fit-to-screen": false,
+  "control-center-width": 430,
+  "control-center-height": 1005,
+  "notification-window-width": 375,
+  "keyboard-shortcuts": true,
+  "image-visibility": "when-available",
+  "transition-time": 200,
+  "hide-on-clear": true,
+  "hide-on-action": true,
+  "script-fail-notify": true,
+  "widgets": [
+    "title",
+    "menubar#desktop",    
+    "volume",
+    "mpris",
+    "dnd",
+    "notifications",
+    "buttons-grid"
+  ],
+  "widget-config": {
+    "title": {
+      "text": "Quick settings",
+      "clear-all-button": true,
+      "button-text": ""
+    },
+    "menubar#desktop": {
+      "menu#screenshot": {
+        "label": "  \t   Screenshot\t\t",
+        "position": "left",
+        "actions": [
+          {
+            "label": "Whole screen",
+            "command": "grimblast --notify --cursor --freeze --wait 3 copysave output"
+          },
+          {
+            "label": "Whole window / Select region",
+            "command": "grimblast --notify --cursor --freeze --wait 3 copysave area"
+          }
+        ]
+      },
+      "menu#screen-recorder": {
+        "label": " 󰕧\t    Record\t\t ",
+        "position": "left",
+        "actions": [
+          {
+            "label": "Screen-Recorder",
+            "command": "obs-studio"
+          }
+        ]
+      }
+    },
+    "buttons-grid": {
+            "actions": [
+                {
+                    "label": "󰐥",
+                    "command": "systemctl poweroff"
+                },
+                {
+                    "label": "󰜉",
+                    "command": "systemctl reboot"
+                },
+                {
+                    "label": "󰌾",
+                    "command": "hyprlock"
+                },
+                {
+                    "label": "󰍃",
+                    "command": "hyprctl dispatch exit"    
+                },
+                {
+                    "label": "󰤄",
+                    "command": "hyprlock & systemctl suspend"
+
+                },
+                {
+                    "label": "󰕾",
+                    "command": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+                },
+                {
+                    "label": "󰍬",
+                    "command": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+                },
+                {
+                    "label": "",
+                    "command": "nm-connection-editor"
+        }
+      ]
+    },
+    "volume": {
+      "label": "",
+      "expand-button-label": "",
+      "collapse-button-label": "",
+      "show-per-app": true,
+      "show-per-app-icon": true,
+      "show-per-app-label": false
+    },
+    "backlight#mobile": {
+      "label": "󰃠 ",
+       "device": "panel"  
+    },
+    "dnd": {
+      "text": "Do Not Disturb"
+    },
+    "mpris": {
+      "image-size": 96,
+      "image-radius": 4
+    },
+    "label": {
+      "text": "",
+      "clear-all-button": false
+    }
+  }
+}
