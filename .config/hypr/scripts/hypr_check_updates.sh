@@ -12,7 +12,7 @@ check_updates() {
     local commits_behind=$(git rev-list --count HEAD..origin/main)
     if [ "$commits_behind" -gt 0 ]; then
         # Updates are available
-        send_notification "Updates are available for the dotfiles repository. Run the Hyprland welcome app to apply updates." "critical"
+        send_notification "Critical Alert" "Updates are available for the dotfiles repository. Run the welcome app to update." "critical"
         return 0
     else
         # No updates available
@@ -30,7 +30,7 @@ send_notification() {
 # Initial notification loop after boot/reboot
 for (( i=1; i<=1; i++ )); do
     if check_updates; then
-        send_notification "Updates are available for the dotfiles repository." "normal"
+        send_notification "Normal Alert" "Updates are available for the dotfiles repository. Please update." "normal"
         # Wait for 10 seconds
         sleep 10
     else
@@ -42,7 +42,7 @@ done
 # Initial notification loop
 for (( i=1; i<=2; i++ )); do
     if check_updates; then
-        send_notification "Updates are available for the dotfiles repository." "normal"
+        send_notification "Normal Alert" "Updates are available for the dotfiles repository. Please update." "normal"
         # Wait for 5 minutes
         sleep 300        
     else
@@ -54,7 +54,7 @@ done
 # Regular notification loop
 while true; do
     if check_updates; then
-        send_notification "Updates are available for the dotfiles repository." "normal"
+        send_notification "Normal Alert" "Updates are available for the dotfiles repository." "normal"
         # Wait for 15 minutes
         sleep 900
     else
