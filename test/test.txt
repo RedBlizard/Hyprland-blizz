@@ -1,0 +1,2 @@
+ 
+hypr_check_updates script test file !!!
