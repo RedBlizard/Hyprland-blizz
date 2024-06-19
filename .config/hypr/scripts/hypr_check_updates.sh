@@ -1,0 +1,66 @@
+#!/bin/bash
+
+# Function to check for updates and generate notification if updates are available
+check_updates() {
+    # Change to the dotfiles directory
+    cd "$HOME/Hyprland-blizz" || { echo "Failed to change to dotfiles directory." >&2; exit 1; }
+
+    # Fetch the latest changes from the remote repository
+    git fetch origin main
+
+    # Compare the local branch with the remote repository
+    local commits_behind=$(git rev-list --count HEAD..origin/main)
+    if [ "$commits_behind" -gt 0 ]; then
+        # Updates are available
+        send_notification "Updates are available for the dotfiles repository. Run the Hyprland welcome app to apply updates." "critical"
+        return 0
+    else
+        # No updates available
+        return 1
+    fi
+}
+
+# Function to send a notification using dunst
+send_notification() {
+    local message="$1"
+    local urgency="$2"
+    dunstify -p "$urgency" -u "$urgency" "$message"
+}
+
+# Initial notification loop after boot/reboot
+for (( i=1; i<=1; i++ )); do
+    if check_updates; then
+        send_notification "Updates are available for the dotfiles repository." "normal"
+        # Wait for 10 seconds
+        sleep 10
+    else
+        # send_notification "No updates available for the dotfiles repository." "normal"
+    fi
+        # Wait for 10 seconds
+        sleep 10
+done
+
+# Initial notification loop
+for (( i=1; i<=2; i++ )); do
+    if check_updates; then
+        send_notification "Updates are available for the dotfiles repository." "normal"
+        # Wait for 5 minutes
+        sleep 300        
+    else
+        # send_notification "No updates available for the dotfiles repository." "normal"
+    fi
+        # Wait for 5 minutes
+        sleep 300
+done
+
+# Regular notification loop
+while true; do
+    if check_updates; then
+        send_notification "Updates are available for the dotfiles repository." "normal"
+        # Wait for 15 minutes
+        sleep 900
+    else
+        # No updates available, wait for 15 minutes without notification
+        sleep 900
+    fi
+done
