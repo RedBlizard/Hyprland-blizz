@@ -1,0 +1,1 @@
+hypr_check_updates.sh test for notifications !!!! 
