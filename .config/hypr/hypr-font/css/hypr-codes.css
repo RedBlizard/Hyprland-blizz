@@ -1,0 +1,6 @@
+
+.hyprland-logo {
+    background-image: url('$HOME/.config/hypr/hypr-fonts/hypr.svg');
+    width: 12px; /* Adjust as needed */
+    height: 12px; /* Adjust as needed */
+}

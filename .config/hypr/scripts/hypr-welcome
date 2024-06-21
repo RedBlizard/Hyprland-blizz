@@ -1,0 +1,55 @@
+#!/bin/bash
+
+# Define paths
+logo_path="$HOME/.config/hypr/imgs/hypr-welcome.png"
+settings_script="$HOME/.config/hypr/scripts/yad_settings.sh"
+update_mirrors_script="$HOME/.config/hypr/scripts/reflector_simple.sh"
+eos_rankmirrors_script="$HOME/.config/hypr/scripts/eos-rankmirrors.sh"
+arch_news_script="$HOME/.config/hypr/scripts/eos-arch-news.sh"
+eos_log_tool_script="$HOME/.config/hypr/scripts/eos-log-tool.sh"
+cleanup_script="$HOME/.config/hypr/scripts/cleanup.sh"
+kitty_script="$HOME/.config/hypr/scripts/yad_update_dots.sh"
+waybar_script="$HOME/.config/hypr/scripts/yad_switch-waybar-config.sh"
+kill_script="$HOME/.config/hypr/scripts/kill-hypr-welcome"
+flag_path="$HOME/.config/hypr/flags/welcome_flag"
+
+# Function to show the main menu
+hypr_welcome() {
+    yad --title="Welcome" --form --image="$logo_path" --image-on-top-center --columns=3 --borders=4 --text-align=center --width=900 --height=390 --no-buttons \
+        --field=":LBL" "" \
+        --field="    WIKI:BTN" "" \
+        --field="Wiki Hyprland:FBTN" "$HOME/.config/hypr/scripts/welcome_browser.sh 'https://wiki.hyprland.org/'" \
+        --field="Waybar Wiki:FBTN" "$HOME/.config/hypr/scripts/welcome_browser.sh 'https://github.com/Alexays/Waybar/wiki'" \
+        --field="Discovery:FBTN" "$HOME/.config/hypr/scripts/welcome_browser.sh 'https://discovery.endeavouros.com/'" \
+        --field="Arch Wiki:FBTN" "$HOME/.config/hypr/scripts/welcome_browser.sh 'https://wiki.archlinux.org/'" \
+        --field="<span foreground='white'>   </span>                                        :LBL" "" \
+        --field="<span foreground='white'>   </span>                                        :LBL" "" \
+        --field="    Arch News:FBTN" "bash $arch_news_script" \
+        --field=":LBL" "" \
+        --field="  ENDEAVOUROS:BTN" "" \
+        --field="Update Mirrors:FBTN" "bash $update_mirrors_script" \
+        --field="Rank Mirrors:FBTN" "bash $eos_rankmirrors_script" \
+        --field="Endeavouros:FBTN" "$HOME/.config/hypr/scripts/welcome_browser.sh 'https://endeavouros.com/'" \
+        --field="Forum:FBTN" "$HOME/.config/hypr/scripts/welcome_browser.sh 'https://forum.endeavouros.com/'" \
+        --field="<span foreground='white'>   </span>                                        :LBL" "" \
+        --field="<span foreground='white'>   </span>                                        :LBL" "" \
+        --field="  Trouble Shoot Logs:FBTN" "bash $eos_log_tool_script" \
+        --field=":LBL" "" \
+        --field="  HYPRLAND:BTN" "" \
+        --field="Update Hyprland:FBTN" "bash $kitty_script" \
+        --field="Switch  Your Waybar:FBTN" "bash $waybar_script" \
+        --field="Settings:FBTN" "bash $settings_script" \
+        --field="Maintenance:FBTN" "bash $cleanup_script" \
+        --field="<span foreground='white'>   </span>                                        :LBL" "" \
+        --field="<span foreground='white'>   </span>                                        :LBL" "" \
+        --field="   Hide me forever ...:FBTN" "bash $kill_script" \
+        --button-layout=spread &
+
+    # Trap to clean up zombie processes
+    trap "sleep 0.2 ; hypr-eos-kill-yad-zombies --silent" EXIT
+}
+
+# Call the function to launch the welcome app
+hypr_welcome
+
+exit 0
