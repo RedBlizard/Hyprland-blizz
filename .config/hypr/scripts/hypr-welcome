@@ -30,14 +30,16 @@ hypr_welcome() {
             --form \
             --columns=3 \
             --field="<b>Placeholder 1 Under construction</b>:FBTN" "bash -c 'yad --notebook --tab=\"Under construction 1\" --form \
-                --geometry=800x300+100+100 \
+                --geometry=900x405+100+100 \
                 --columns=3 \
+                --image="$logo_path" \
+                --image-on-top-center \
                 --field=\"Tab name Placeholder:LBL\" \"\" \
                 --field=\"set name 1:FBTN\" \"bash $example_script\" \
                 --field=\"Set name 1:FBTN\" \"bash $example_script\" \
                 --field=\"Set name 1:FBTN\" \"bash $example_script\" \
                 --field=\"Set name 1:FBTN\" \"bash $example_script\" \
-                --button=\"   Hide me forever ...\" \
+                --button=\"   Lets go back to main ...\" \
                 --field=\":LBL\" \"\"'" \
             --field="<span foreground='white'>   </span>                                        :LBL" "" \
             --field="    WIKI HYPRLAND:FBTN" "$HOME/.config/hypr/scripts/welcome_browser.sh 'https://wiki.hyprland.org/'" \
@@ -51,14 +53,16 @@ hypr_welcome() {
             --form \
             --columns=3 \
             --field="<b>Placeholder 2 Under construction</b>:FBTN" "bash -c 'yad --notebook --tab=\"Under construction 2\" --form \
-                --geometry=800x300+100+100 \
+                --geometry=900x405+100+100 \
                 --columns=3 \
+                --image="$logo_path" \
+                --image-on-top-center \
                 --field=\"Tab name Placeholder:LBL\" \"\" \
                 --field=\"set name 2:FBTN\" \"bash $example_script\" \
                 --field=\"Set name 2:FBTN\" \"bash $example_script\" \
                 --field=\"Set name 2:FBTN\" \"bash $example_script\" \
                 --field=\"Set name 2:FBTN\" \"bash $example_script\" \
-                --button=\"   Hide me forever ...\" \
+                --button=\"   Lets go back to main ...\" \
                 --field=\":LBL\" \"\"'" \
             --field="<span foreground='white'>   </span>                                        :LBL" "" \
             --field="  ENDEAVOUROS:FBTN" "$HOME/.config/hypr/scripts/welcome_browser.sh 'https://endeavouros.com/'" \
@@ -72,14 +76,16 @@ hypr_welcome() {
             --form \
             --columns=3 \
             --field="<b>Placeholder 3 Under construction</b>:FBTN" "bash -c 'yad --notebook --tab=\"Under construction 3\" --form \
-                --geometry=800x300+100+100 \
+                --geometry=900x405+100+100 \
                 --columns=3 \
+                --image="$logo_path" \
+                --image-on-top-center \
                 --field=\"Tab name Placeholder:LBL\" \"\" \
                 --field=\"set name 3:FBTN\" \"bash $example_script\" \
                 --field=\"Set name 3:FBTN\" \"bash $example_script\" \
                 --field=\"Set name 3:FBTN\" \"bash $example_script\" \
                 --field=\"Set name 3:FBTN\" \"bash $example_script\" \
-                --button=\"   Hide me forever ...\" \
+                --button=\"   Lets go back to main ...\" \
                 --field=\":LBL\" \"\"'" \
             --field="<span foreground='white'>   </span>                                        :LBL" "" \
             --field="   UPDATE HYPRLAND:FBTN" "bash $kitty_script" \
