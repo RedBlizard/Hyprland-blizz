@@ -22,7 +22,7 @@ hypr_welcome() {
         --image-on-top-center \
         --borders=3 \
         --text-align=center \
-        --geometry=900x400+800+200 \
+        --geometry=900x410+800+200 \
         --width=900 \
         --height=400 \
         --fixed \
@@ -32,7 +32,7 @@ hypr_welcome() {
             --form \
             --columns=3 \
             --field="<b>   Visit our repos</b>:FBTN" "bash -c 'yad --notebook --tab=\"Visit our repos\" --form \
-                --geometry=900x405+100+100 \
+                --geometry=900x410+100+100 \
                 --columns=3 \
                 --image=\"$logo_path\" \
                 --image-on-top-center \
@@ -53,7 +53,7 @@ hypr_welcome() {
             --form \
             --columns=3 \
             --field="<b>󱌢   Assistant</b>:FBTN" "bash -c 'yad --notebook --tab=\"Assistant\" --form \
-                --geometry=900x405+100+100 \
+                --geometry=900x410+100+100 \
                 --columns=3 \
                 --image=\"$logo_path\" \
                 --image-on-top-center \
@@ -79,7 +79,7 @@ hypr_welcome() {
             --form \
             --columns=3 \
             --field="<b>󰦬   Hardware and Drivers</b>:FBTN" "bash -c 'yad --notebook --tab=\"Hardware and Drivers\" --form \
-                --geometry=900x405+100+100 \
+                --geometry=900x410+100+100 \
                 --columns=3 \
                 --image=\"$logo_path\" \
                 --image-on-top-center \
