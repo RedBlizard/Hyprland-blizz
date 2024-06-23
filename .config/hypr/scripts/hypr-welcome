@@ -37,7 +37,7 @@ hypr_welcome() {
         --tab="Repositories" \
             --form \
             --columns=3 \
-            --field="<b>   Visit our repos</b>:FBTN" "bash -c 'yad --notebook --tab=\"Visit our repos\" --form \
+            --field="<b>   Repositories</b>:FBTN" "bash -c 'yad --notebook --tab=\"Repositories\" --form \
                 --geometry=900x410+100+100 \
                 --columns=3 \
                 --image=\"$logo_path\" \
