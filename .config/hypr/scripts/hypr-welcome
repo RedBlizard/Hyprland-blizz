@@ -14,22 +14,6 @@ waybar_script="$HOME/.config/hypr/scripts/yad_switch-waybar-config.sh"
 kill_script="$HOME/.config/hypr/scripts/kill-hypr-welcome"
 flag_path="$HOME/.config/hypr/flags/welcome_flag"
 
-# Function to run pacdiff and meld as root
-run_pacdiff_and_meld() {
-    # Check if sudo is available
-    if ! command -v sudo &> /dev/null; then
-        echo "Error: sudo command not found. Aborting."
-        exit 1
-    fi
-
-    # Run pacdiff as root
-    echo "Running pacdiff as root..."
-    sudo pacdiff
-
-    # Run meld as root
-    echo "Running meld as root..."
-    sudo meld
-}
 
 # Function to show the main menu
 hypr_welcome() {
