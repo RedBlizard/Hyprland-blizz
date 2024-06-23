@@ -7,7 +7,7 @@ WAYBAR_CONFIGS=("Desktop" "Laptop")
 logo_path="$HOME/.config/hypr/imgs/hypr-welcome.png"
 
 # Use yad to present the user with a menu
-selected_config=$(printf "%s\n" "${WAYBAR_CONFIGS[@]}" | yad --list --column="Configuration" --separator="" --no-headers --title="Choose Configuration" --text="" --center --button="   Close me if you dare ..." --geometry=900x360+800+600 --width=900 --height=360 --fixed --image="$logo_path")
+selected_config=$(printf "%s\n" "${WAYBAR_CONFIGS[@]}" | yad --list --column="Configuration" --separator="" --no-headers --title="Choose Configuration" --text="" --center --button="   Close me if you dare ..." --geometry=900x410+800+600 --width=900 --height=410 --fixed --image="$logo_path")
 
 # Check if the escape button was pressed or the dialog was closed
   if [ "$selected_config" == "" ]; then
