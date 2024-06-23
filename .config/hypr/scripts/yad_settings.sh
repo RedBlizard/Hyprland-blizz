@@ -7,7 +7,7 @@ logo_path="$HOME/.config/hypr/imgs/hypr-welcome.png"
 show_main_menu() {
     while true; do
         main_menu="Hyprland\nWaybar configs\nWaybar styles\nSwww options"
-        selected_config=$(echo -e "$main_menu" | yad --title="Settings" --text="" --geometry=900x360+800+600 --width=900 --height=360 --fixed --list --column="Settings" --separator='\n' --borders=9 -timeout=5 --button="   Kill me i dare you ..." --center --image="$logo_path")
+        selected_config=$(echo -e "$main_menu" | yad --title="Settings" --text="" --geometry=900x410+800+600 --width=900 --height=410 --fixed --list --column="Settings" --separator='\n' --borders=9 -timeout=5 --button="   Kill me i dare you ..." --center --image="$logo_path")
 
         # Check if the escape button was pressed or the dialog was closed
         if [ "$selected_config" == "" ]; then
@@ -36,7 +36,7 @@ show_main_menu() {
 launch_hyprland_settings() {
     while true; do
         submenu="Back to main menu\n~/.config/hypr/hyprland.conf\n~/.config/hypr/conf/exec_once.conf\n~/.config/hypr/conf/env_var.conf\n~/.config/hypr/conf/monitor.conf\n~/.config/hypr/conf/workspaces.conf\n~/.config/hypr/conf/key_binds.conf\n~/.config/hypr/conf/window_binds.conf\n~/.config/hypr/conf/window_rules.conf"
-        selected_submenu=$(echo -e "$submenu" | yad --title="Hyprland Settings" --text="" --geometry=900x360+800+600 --width=900 --height=360 --fixed --list --column="Settings" --separator='\n' --borders=9 -timeout=5 --button="   Kill me i dare you ..." --center --image="$logo_path") 
+        selected_submenu=$(echo -e "$submenu" | yad --title="Hyprland Settings" --text="" --geometry=900x410+800+600 --width=900 --height=410 --fixed --list --column="Settings" --separator='\n' --borders=9 -timeout=5 --button="   Kill me i dare you ..." --center --image="$logo_path") 
         
         # Check if the escape button was pressed or the dialog was close
         if [ "$selected_submenu" == "" ]; then
@@ -58,7 +58,7 @@ launch_hyprland_settings() {
 launch_waybar_configs() {
     while true; do
         submenu="Back to main menu\n~/.config/waybar/conf/w1-config-desktop.jsonc\n~/.config/waybar/conf/w2-config-laptop.jsonc"
-        selected_submenu=$(echo -e "$submenu" | yad --title="Waybar Configs" --text="" --geometry=900x360+800+600 --width=900 --height=360 --fixed --list --column="Configs" --separator='\n' --borders=9 -timeout=5 --button="   Kill me i dare you ..." --center --image="$logo_path")
+        selected_submenu=$(echo -e "$submenu" | yad --title="Waybar Configs" --text="" --geometry=900x410+800+600 --width=900 --height=410 --fixed --list --column="Configs" --separator='\n' --borders=9 -timeout=5 --button="   Kill me i dare you ..." --center --image="$logo_path")
         
         # Check if the escape button was pressed or the dialog was closed
         if [ "$selected_submenu" == "" ]; then
@@ -80,7 +80,7 @@ launch_waybar_configs() {
 launch_waybar_styles() {
     while true; do
         submenu="Back to main menu\n~/.config/waybar/style/w1-style.css\n~/.config/waybar/style/w2-style.css"
-        selected_submenu=$(echo -e "$submenu" | yad --title="Waybar Styles" --text="" --geometry=900x360+800+600 --width=900 --height=360 --fixed --list --column="Styles" --separator='\n' --borders=9 -timeout=5 --button="   Kill me i dare you ..." --center --image="$logo_path")
+        selected_submenu=$(echo -e "$submenu" | yad --title="Waybar Styles" --text="" --geometry=900x410+800+600 --width=900 --height=410 --fixed --list --column="Styles" --separator='\n' --borders=9 -timeout=5 --button="   Kill me i dare you ..." --center --image="$logo_path")
         
         # Check if the escape button was pressed or the dialog was closed
         if [ "$selected_submenu" == "" ]; then
