@@ -228,6 +228,22 @@ else
     exit 0
 fi
 
+echo "Setting GTK theme..."
+
+# Set default theme
+default_theme='Catppuccino-Frappe-Standard-Blue-Dark'
+
+# Check if the theme is already set
+current_theme=$(gsettings get org.gnome.desktop.interface gtk-theme)
+if [ "$current_theme" != "'$default_theme'" ]; then
+    echo "Setting GTK theme to default: $default_theme"
+    gsettings set org.gnome.desktop.interface gtk-theme "$default_theme"
+    current_theme="$default_theme"  # Update current_theme variable
+fi
+
+echo "Selected GTK theme: $current_theme"
+
+
 # Enable hypridle.service if not already enabled
 if ! systemctl --user is-enabled hypridle.service >/dev/null 2>&1; then
     systemctl --user enable --now hypridle.service
