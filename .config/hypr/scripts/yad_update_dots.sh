@@ -302,50 +302,36 @@ if ! check_symlinks; then
 
     # Create new symlink
     sudo ln -sf "$update_script" "$symlink"
-    
-    # Change to the scripts directory
-cd "$HOME/.config/hypr/apps" || { echo "Failed to change to the scripts directory." >&2; exit 1; }
+fi
 
-# Function to check if all required symlinks exist
-check_symlinks() {
-    local symlinks=("hypr-settings")
-    local all_exist=true
+# Change to the apps directory
+cd "$HOME/.config/hypr/apps" || { echo "Failed to change to the apps directory." >&2; exit 1; }
+
+# Function to check if the required symlink exists
+check_settings_symlink() {
+    local symlink="hypr-settings"
     
-    for symlink in "${symlinks[@]}"; do
-        if [ ! -L "/usr/bin/$symlink" ]; then
-            all_exist=false
-            break
-        fi
-    done
-    
-    if $all_exist; then
-        echo "All required symlinks exist."
+    if [ -L "/usr/bin/$symlink" ]; then
+        echo "Settings symlink exists."
         return 0
     else
-        echo "Some symlinks are missing."
+        echo "Settings symlink is missing."
         return 1
     fi
 }
 
-
-# Check if the symlinks exist
-if ! check_symlinks; then
-    echo "Creating missing symlinks..."
+# Check if the settings symlink exists
+if ! check_settings_symlink; then
+    echo "Creating missing settings symlink..."
     
-    # Change to the scripts directory
-    cd "$HOME/.config/hypr/apps" || { echo "Failed to change to the scripts directory." >&2; exit 1; }
-
-    # Path to your welcome script
-    settings_script="$HOME/.config/hypr/apps/hypr-settings"
+    # Path to your settings script
+    settings_script="$HOME/.config/hypr/apps/AppRun"
 
     # Path to the symlink in /usr/bin
     symlink="/usr/bin/hypr-settings"
 
     # Create new symlink
-    sudo ln -sf "$welcome_settingst" "$symlink"
-
-
-    
+    sudo ln -sf "$settings_script" "$symlink"
 fi
 
 # Notify user about the end of the script
