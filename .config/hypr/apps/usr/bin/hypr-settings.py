@@ -404,7 +404,7 @@ class MyApp(Adw.Application):
             application_name="Hypr Settings App",
             developer_name="RedBlizard",
             version="1.1",
-            support_url="https://github.com/RedBlizard/hypr-settings.git",
+            support_url="https://github.com/RedBlizard/hypr-settings",
             copyright="© 2024 RedBlizard",
             license_type=Gtk.License.GPL_3_0_ONLY
         )

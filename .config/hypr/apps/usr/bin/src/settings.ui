@@ -55,7 +55,7 @@
             <child>
               <object class="GtkLinkButton">
                 <property name="label" translatable="true">Github Repository</property>
-                <property name="uri">https://github.com/RedBlizard/hypr-settings.git</property>
+                <property name="uri">https://github.com/RedBlizard/hypr-settings</property>
               </object>
             </child>
           </object>
