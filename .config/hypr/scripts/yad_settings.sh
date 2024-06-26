@@ -102,7 +102,7 @@ launch_waybar_styles() {
 launch_swww_options() {
     while true; do
         submenu="Back to main menu\nKill swww\nChange Wallpaper Directory\nInitialize swww"
-        selected_submenu=$(echo -e "$submenu" | yad --title="Swww Options" --text="" --geometry=900x360+800+600 --width=900 --height=360 --fixed --list --column="Options" --separator='\n' --borders=9 -timeout=5 --button=Close --center --image="$logo_path")
+        selected_submenu=$(echo -e "$submenu" | yad --title="Swww Options" --text="" --geometry=900x360+800+600 --width=410 --height=410 --fixed --list --column="Options" --separator='\n' --borders=9 -timeout=5 --button=Close --center --image="$logo_path")
         
         # Check if the escape button was pressed or the dialog was closed
         if [ "$selected_submenu" == "" ]; then
