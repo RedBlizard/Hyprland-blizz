@@ -1,0 +1,6 @@
+#!/bin/bash
+HERE="$(dirname "$(readlink -f "${0}")")"
+EXEC="${HERE}/usr/bin/hypr-settings.py"
+
+# RUN APPLICATION
+python ${EXEC}
