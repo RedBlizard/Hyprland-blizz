@@ -333,7 +333,7 @@
   "custom/language": {
       "exec": "cat /tmp/kb_layout",
       "interval": 3,
-      "format": "<span font='9'> </span> {} ",
+      "format": "<span font='9'>  </span> {} ",
       "on-click": "~/.config/hypr/scripts/switch_kb_layout.sh", 
       "tooltip": true // be carefull when clicking the module
 
@@ -420,7 +420,7 @@
  
   },
   "custom/cycle_wall":{     
-      "format": "<span font='9'></span> Swww",
+      "format": "<span font='9'> </span> Swww",
       "on-click": "~/.config/hypr/scripts/changeWallpaper",
       "on-click-right": "waypaper",
       //"on-click-right": "azote",
