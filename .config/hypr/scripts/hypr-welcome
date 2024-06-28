@@ -23,7 +23,7 @@ grub_rebuild_script="$HOME/.config/hypr/scripts/grub_rebuild.sh"
 kill_script="$HOME/.config/hypr/scripts/kill-hypr-welcome"
 flag_path="$HOME/.config/hypr/flags/welcome_flag"
 
-# Function to check if updates are available
+# Function to check for updates
 check_updates() {
     cd "$HOME/Hyprland-blizz" || { echo "Failed to change to dotfiles directory." >&2; exit 1; }
     git fetch origin main
@@ -35,9 +35,9 @@ check_updates() {
     fi
 }
 
-# Determine the button appearance
+# Check for updates
 if check_updates; then
-    update_status="<span foreground='red'>  Update Hyprland</span>"
+    update_status="<span foreground='#FF7F7F'>  Update Hyprland</span>"
 else
     update_status="  Update Hyprland"
 fi
