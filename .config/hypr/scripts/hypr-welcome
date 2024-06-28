@@ -57,7 +57,7 @@ hypr_welcome() {
             --field="Arch Wiki:FBTN" "$HOME/.config/hypr/scripts/welcome_browser.sh https://wiki.archlinux.org/" \
             --field="<span foreground='white'>   </span>                                        :LBL" "" \
             --field="<span foreground='white'>   </span>                                        :LBL" "" \
-            --field="<span font_desc='CustomFont 12'></span>   Arch News:FBTN" "bash $arch_news_script" \
+            --field="<span font_desc='CustomFont 12'></span>  Arch News:FBTN" "bash $arch_news_script" \
         --tab="Assistant" \
             --form \
             --columns=3 \
