@@ -1,6 +1,0 @@
-vim.keymap.set({ "n", "x" }, "*", function()
-	require("lasterisk").search({ is_whole = false })
-end)
-vim.keymap.set({ "n", "x" }, "g*", function()
-	require("lasterisk").search()
-end)
