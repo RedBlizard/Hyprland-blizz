@@ -55,9 +55,7 @@ if status is-interactive
     
     set -x XDG_MENU_PRE arch
     
-    if not pgrep -f watch-hyprland-config.sh > /dev/null
-    ~/.config/hypr/scripts/watch-hyprland-config.sh > /dev/null 2>&1 &
-    end
+
 
 
 
