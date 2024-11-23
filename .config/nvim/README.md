@@ -1,4 +1,4 @@
-# viis-Lazyvim
+# RedBlizards Neovim
 
 ### This is no longer the exact Neovim config I use, but I still think it's a good building block on top of LazyVim.
 
