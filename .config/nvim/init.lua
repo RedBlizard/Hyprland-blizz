@@ -1,33 +1,74 @@
-require("rc/base")
+ require("config.lazy")
 
--- ===============================
-local function load_my_plugins(path)
-	for file, _ in vim.fs.dir(path) do
-		require("rc/myplugins/" .. vim.fs.basename(path) .. "/" .. file:gsub("%.lua$", ""))
-	end
+
+vim.o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+
+vim.o.undofile = true
+vim.o.undodir = vim.fn.stdpath("cache") .. "/undo"
+
+
+vim.api.nvim_create_autocmd("User", {
+  pattern = "AlphaReady",
+  callback = function()
+    vim.opt.laststatus = 0 -- Hide statusline
+    vim.opt.showtabline = 0 -- Hide tabline (if you have one)
+  end,
+})
+
+vim.api.nvim_create_autocmd("BufUnload", {
+  buffer = 0,
+  callback = function()
+    vim.opt.laststatus = 3 -- Restore global statusline
+    vim.opt.showtabline = 2 -- Restore tabline
+  end,
+})
+
+vim.cmd.colorscheme("catppuccin")
+
+-- Function to set a random highlight color for LineNr
+function SetRandomLineNrColor()
+  math.randomseed(os.time())
+
+  local colors = {
+    "#b4befe", -- Lavender
+    "#eba0ac", -- Maroon
+    "#d2fac5", -- Green
+    "#f2cdcd", -- Flamingo
+    "#cba6f7", -- Mauve
+    "#fcc6a7", -- Peach
+    "#89b4fa", -- Blue
+    "#89dceb", -- Sky
+  }
+
+  local index = math.random(#colors)
+  vim.api.nvim_set_hl(0, "LineNr", { fg = colors[index], bold = true })
 end
 
--- ===============================
-require("rc/option")
-require("rc/display")
-load_my_plugins(vim.fn.stdpath("config") .. "/lua/rc/myplugins/start")
-require("rc/pluginlist")
-require("rc/mappings")
-if vim.g.vscode then
-	require("rc/vscode-neovim/mappings")
-end
-vim.defer_fn(function()
-	require("rc/command")
-end, 50)
-require("rc/autocmd")
+-- Ensure the random color is selected after dashboard loads
+vim.api.nvim_create_autocmd("User", {
+    pattern = "DashboardLoaded",
+    callback = SetRandomLineNrColor,
+})
 
--- ===============================
-vim.schedule(function()
-	load_my_plugins(vim.fn.stdpath("config") .. "/lua/rc/myplugins/opt")
-end)
+-- Setting highlights for lines above and below
+vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#6e738d", bold = false })
+vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#6e738d", bold = false })
 
--- ===============================
--- Local Configuration
-if vim.fn.filereadable(vim.fs.normalize("~/.nvim_local_init.lua")) ~= 0 then
-	dofile(vim.fs.normalize("~/.nvim_local_init.lua"))
-end
+-- Create a LazyExtras command
+vim.api.nvim_create_user_command("LazyExtras", function()
+  vim.ui.select(
+    { "Show Lazy UI", "Run Custom Script", "Toggle Plugins" },
+    { prompt = "Choose an action:" },
+    function(choice)
+      if choice == "Show Lazy UI" then
+        require("lazy").show()
+      elseif choice == "Run Custom Script" then
+        vim.notify("Running your custom script...", vim.log.levels.INFO)
+        -- Add custom script logic here
+      elseif choice == "Toggle Plugins" then
+        vim.notify("Toggling plugins...", vim.log.levels.INFO)
+        -- Add plugin toggling logic here
+      end
+    end
+  )
+end, { desc = "Open Lazy Extras with options" })
