@@ -1,27 +1,38 @@
  require("config.lazy")
-
+ 
+ require('nvim-web-devicons').setup {
+  -- Example: Override the icon for markdown files
+  override = {
+    markdown = {
+      icon = "",
+      color = "#ffffff",
+      cterm_color = "white",
+      name = "Markdown"
+    },
+  },
+}
 
 vim.o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
 vim.o.undofile = true
 vim.o.undodir = vim.fn.stdpath("cache") .. "/undo"
 
-
 vim.api.nvim_create_autocmd("User", {
   pattern = "AlphaReady",
   callback = function()
-    vim.opt.laststatus = 0 -- Hide statusline
-    vim.opt.showtabline = 0 -- Hide tabline (if you have one)
+    vim.opt.laststatus = 0
+    vim.opt.showtabline = 0
   end,
 })
 
 vim.api.nvim_create_autocmd("BufUnload", {
   buffer = 0,
   callback = function()
-    vim.opt.laststatus = 3 -- Restore global statusline
-    vim.opt.showtabline = 2 -- Restore tabline
+    vim.opt.laststatus = 3
+    vim.opt.showtabline = 2
   end,
 })
+
 
 vim.cmd.colorscheme("catppuccin")
 

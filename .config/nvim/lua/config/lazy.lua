@@ -19,6 +19,7 @@ require("lazy").setup({
     -- Add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
     { import = "plugins" },
+
     -- Add dashboard-nvim
     {
       "nvimdev/dashboard-nvim",
@@ -61,6 +62,7 @@ require("lazy").setup({
         }
       end,
     },
+
     -- Add nvim-tree
     {
       "nvim-tree/nvim-tree.lua",
@@ -79,6 +81,7 @@ require("lazy").setup({
         }
       end,
     },
+
     -- Add barbar.nvim for tab management
     {
       "romgrk/barbar.nvim",
@@ -87,29 +90,34 @@ require("lazy").setup({
         "nvim-tree/nvim-web-devicons",   -- OPTIONAL: for file icons
       },
       init = function()
-        vim.g.barbar_auto_setup = false
+        vim.g.barbar_auto_setup = false  -- Disable automatic setup if manual configuration is preferred
       end,
       opts = {
-        animation = true,              -- Enable animation for tab transitions
-        insert_at_start = true,        -- Insert new tabs at the start (optional)
-        tabpages = true,               -- Enable tab pages (optional)
-        clickable = true,              -- Allow clicking on tabs to switch between them
+        animation = true,               -- Enable animation for tab transitions
+        insert_at_start = false,        -- Ensure new tabs are inserted at the end (right side)
+        tabpages = true,                -- Enable tab pages
+        clickable = true,               -- Allow clicking on tabs to switch between them
         sidebar_filetypes = {
-          NvimTree = true,             -- Ensure NvimTree opens in a tab as well
+          NvimTree = true,              -- Open NvimTree as a sidebar tab
         },
+        icons = true                    -- Enable icons for tabs
       },
-      version = '^1.0.0', -- optional: only update when a new 1.x version is released
+      version = "^1.0.0", -- Optional: only update when a new 1.x version is released
     },
+
   },
+
   defaults = {
-    lazy = false,
-    version = false, -- always use the latest git commit
+    lazy = false,      -- Load plugins eagerly
+    version = false,   -- Always use the latest git commit
   },
+
   install = { colorscheme = { "tokyonight", "catppuccin" } },
-  checker = { enabled = true }, -- automatically check for plugin updates
+
+  checker = { enabled = true }, -- Enable plugin update checker
+
   performance = {
     rtp = {
-      -- disable some rtp plugins
       disabled_plugins = {
         "gzip",
         "tarPlugin",
@@ -121,16 +129,6 @@ require("lazy").setup({
   },
 })
 
--- Custom function to open monitors.conf in a new tab (top left)
-local function open_monitors_conf_in_tab()
-  vim.cmd("tabnew | edit ~/.config/hypr/monitors.conf")
-end
-
--- Keybinding to open monitors.conf in a new tab
-vim.keymap.set("n", "<leader>tm", open_monitors_conf_in_tab)
-
--- Keybinding for NvimTree (optional)
-vim.keymap.set("n", "<leader>ee", "<cmd>NvimTreeToggle<CR>")
-vim.keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>")
-
-
+-- Keybindings for NvimTree (optional)
+vim.keymap.set("n", "<leader>ee", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle NvimTree" })
+vim.keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "Refresh NvimTree" })
