@@ -48,7 +48,7 @@ function SetRandomLineNrColor()
     "#cba6f7", -- Mauve
     "#fcc6a7", -- Peach
     "#89b4fa", -- Blue
-    "#89dceb", -- Sky
+    "#7CB6F5", -- Sky
   }
 
   local index = math.random(#colors)
