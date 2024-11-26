@@ -29,29 +29,33 @@ return {
             separator = { left = "", right = "" },
             color = { fg = "#1c1d21", bg = "#85C1DC" },
           },
-          
           {
             "diff",
             icons = { added = " ", modified = " ", removed = " " },
             separator = { left = "", right = "" },
-            color = { fg = "#1c1d21", bg = "#7d83ac" },                      
+            color = { fg = "#1c1d21", bg = "#7d83ac" },
           },
         },
-         lualine_c = {
+        lualine_c = {
           {
             "diagnostics",
             separator = { left = "", right = "" },
-            color = { fg = "#E78284", bg = "#45475A" }, -- Red foreground and dark gray background
-            symbols = { error = " ", warn = " ", info = " ", hint = " " }, -- Optional
-            diagnostics_color = { error = { fg = "#E78284" } }, -- Ensure red fg for errors         
-          },       
+            symbols = { error = " ", warn = " ", info = " ", hint = " " },
+            color = { fg = "#E78284", bg = "#45475A" }, -- Default red for all diagnostics
+            diagnostics_color = {
+              error = { fg = "#E78284", bg = "#45475A" },  -- Red for errors
+              warn = { fg = "#EF9F76", bg = "#45475A" },   -- Orange for warnings
+              info = { fg = "#E5C890", bg = "#45475A" },   -- Yellowish for info
+              hint = { fg = "#99D1DB", bg = "#45475A" },   -- Blue for hints
+            },
+          },
           {
             "filename",
             path = 1, -- Show relative path
             shorting_target = 40, -- Truncate if too long
             separator = { left = "", right = "" },
             color = { fg = "#1c1d21", bg = "#99D1DB" },
-           }
+          }
         },
         lualine_x = {
           {
