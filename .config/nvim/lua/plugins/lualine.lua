@@ -2,7 +2,6 @@ return {
   "nvim-lualine/lualine.nvim",
   opts = function()
     local icons = require("lazyvim.config").icons
-    local Util = require("lazyvim.util")
 
     return {
       options = {
@@ -10,17 +9,9 @@ return {
         theme = "catppuccin",
         component_separators = { left = "", right = "" },
         section_separators = { left = "", right = "" },
-        disabled_filetypes = {
-          winbar = {},
-        },
-        ignore_focus = {},
+        disabled_filetypes = { winbar = {} },
         always_divide_middle = true,
-        globalstatus = false,
-        refresh = {
-          statusline = 1000,
-          tabline = 1000,
-          winbar = 1000,
-        },
+        globalstatus = true
       },
       sections = {
         lualine_a = {
@@ -28,10 +19,7 @@ return {
             "mode",
             icon = "",
             separator = { left = "", right = "" },
-            color = {
-              fg = "#1c1d21",
-              bg = "#b4befe",
-            },
+            color = { fg = "#1c1d21", bg = "#8CAAEE" },
           },
         },
         lualine_b = {
@@ -39,58 +27,58 @@ return {
             "branch",
             icon = "",
             separator = { left = "", right = "" },
-            color = {
-              fg = "#1c1d21",
-              bg = "#7d83ac",
-            },
+            color = { fg = "#1c1d21", bg = "#85C1DC" },
           },
+          
           {
             "diff",
+            icons = { added = " ", modified = " ", removed = " " },
             separator = { left = "", right = "" },
-            color = {
-              fg = "#1c1d21",
-              bg = "#7d83ac",
-            },
+            color = { fg = "#1c1d21", bg = "#7d83ac" },                      
           },
         },
-        lualine_c = {
+         lualine_c = {
           {
             "diagnostics",
             separator = { left = "", right = "" },
-            color = {
-              bg = "#45475a",
-            },
-          },
+            color = { fg = "#E78284", bg = "#45475A" }, -- Red foreground and dark gray background
+            symbols = { error = " ", warn = " ", info = " ", hint = " " }, -- Optional
+            diagnostics_color = { error = { fg = "#E78284" } }, -- Ensure red fg for errors         
+          },       
           {
             "filename",
+            path = 1, -- Show relative path
+            shorting_target = 40, -- Truncate if too long
             separator = { left = "", right = "" },
-            color = {
-              fg = "#CDD6F4",
-              bg = "#39404f",
-            },
-          },
+            color = { fg = "#1c1d21", bg = "#99D1DB" },
+           }
         },
         lualine_x = {
-          "filesize",
+          {
+            "filesize",
+            separator = { left = "", right = "" },
+            color = { fg = "#1c1d21", bg = "#FF7F7F" },
+          },
+          {
+            "encoding",
+            separator = { left = "", right = "" },
+            color = { fg = "#1c1d21", bg = "#E78284" },
+          },
         },
         lualine_y = {
           {
             "filetype",
+            separator = { left = "", right = "" },
             icons_enabled = false,
-            color = {
-              fg = "#1C1D21",
-              bg = "#eba0ac",
-            },
+            color = { fg = "#1c1d21", bg = "#EA999C" },
           },
         },
         lualine_z = {
           {
             "location",
             icon = "",
-            color = {
-              fg = "#1c1d21",
-              bg = "#f2cdcd",
-            },
+            separator = { left = "", right = "" },
+            color = { fg = "#1c1d21", bg = "#F2D5CF" },
           },
         },
       },
