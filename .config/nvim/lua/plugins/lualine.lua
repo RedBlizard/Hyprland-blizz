@@ -2,6 +2,7 @@ return {
   "nvim-lualine/lualine.nvim",
   opts = function()
     local icons = require("lazyvim.config").icons
+    local Util = require("lazyvim.util")
 
     return {
       options = {
@@ -73,7 +74,7 @@ return {
           {
             "filetype",
             separator = { left = "", right = "" },
-            icons_enabled = false,
+            icons_enabled = true,
             color = { fg = "#1c1d21", bg = "#EA999C" },
           },
         },
