@@ -1,0 +1,17 @@
+{
+  "extras": [
+    "lazyvim.plugins.extras.coding.nvim-cmp",
+    "lazyvim.plugins.extras.editor.mini-diff",
+    "lazyvim.plugins.extras.editor.mini-files",
+    "lazyvim.plugins.extras.editor.mini-move",
+    "lazyvim.plugins.extras.editor.telescope",
+    "lazyvim.plugins.extras.lang.git",
+    "lazyvim.plugins.extras.ui.alpha",
+    "lazyvim.plugins.extras.util.dot",
+    "lazyvim.plugins.extras.util.gitui"
+  ],
+  "news": {
+    "NEWS.md": "10960"
+  },
+  "version": 7
+}
