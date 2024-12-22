@@ -8,8 +8,8 @@ return {
       options = {
         icons_enabled = true,
         theme = "catppuccin",
-        component_separators = { left = "", right = "" },
-        section_separators = { left = "", right = "" },
+        component_separators = '|',
+        section_separators = { left = '', right = '' },
         disabled_filetypes = { winbar = {} },
         always_divide_middle = true,
         globalstatus = true
@@ -19,7 +19,7 @@ return {
           {
             "mode",
             icon = "",
-            separator = { left = "", right = "" },
+            separator = { left = "", right = "" },
             color = { fg = "#1c1d21", bg = "#8CAAEE" },
           },
         },
@@ -27,20 +27,20 @@ return {
           {
             "branch",
             icon = "",
-            separator = { left = "", right = "" },
+            separator = { left = "", right = "" },
             color = { fg = "#1c1d21", bg = "#85C1DC" },
           },
           {
             "diff",
             icons = { added = " ", modified = " ", removed = " " },
-            separator = { left = "", right = "" },
+            separator = { left = "", right = "" },
             color = { fg = "#1c1d21", bg = "#7d83ac" },
           },
         },
         lualine_c = {
           {
             "diagnostics",
-            separator = { left = "", right = "" },
+            separator = { left = "", right = "" },
             symbols = { error = " ", warn = " ", info = " ", hint = " " },
             color = { fg = "#E78284", bg = "#45475A" }, -- Default red for all diagnostics
             diagnostics_color = {
@@ -54,26 +54,26 @@ return {
             "filename",
             path = 1, -- Show relative path
             shorting_target = 40, -- Truncate if too long
-            separator = { left = "", right = "" },
+            separator = { left = "", right = "" },
             color = { fg = "#1c1d21", bg = "#99D1DB" },
           }
         },
         lualine_x = {
           {
             "filesize",
-            separator = { left = "", right = "" },
+            separator = { left = "", right = "" },
             color = { fg = "#1c1d21", bg = "#FF7F7F" },
           },
           {
             "encoding",
-            separator = { left = "", right = "" },
+            separator = { left = "", right = "" },
             color = { fg = "#1c1d21", bg = "#E78284" },
           },
         },
         lualine_y = {
           {
             "filetype",
-            separator = { left = "", right = "" },
+            separator = { left = "", right = "" },
             icons_enabled = true,
             color = { fg = "#1c1d21", bg = "#EA999C" },
           },
@@ -82,7 +82,7 @@ return {
           {
             "location",
             icon = "",
-            separator = { left = "", right = "" },
+            separator = { left = "", right = "" },
             color = { fg = "#1c1d21", bg = "#F2D5CF" },
           },
         },
