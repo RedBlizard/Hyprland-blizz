@@ -10,7 +10,7 @@ elif [[ "$status" == "connected" ]]; then
   if [ "$wow" == "ethernet" ]
   then
     #printf "Wierd In "
-    printf "⠀\n"
+    printf " Eth⠀\n"
   else
     #ssid="$(echo $(nmcli -g name connection show --active | awk 'NR==1'))"
     #printf "$ssid  "
