@@ -8,18 +8,18 @@ STATUS="$(cat /sys/class/power_supply/BAT0/status | tr -d '[:space:]')"
 # Determine icon and output
 if [[ "$STATUS" == "Discharging" || "$STATUS" == "Full" ]]; then
   if [[ "$PERCENT" -le 0 ]]; then
-    printf "  %s%%" "$PERCENT"
+    printf " %s%%" "$PERCENT"
   elif [[ "$PERCENT" -le 25 ]]; then
-    printf "  %s%%" "$PERCENT"
+    printf " %s%%" "$PERCENT"
   elif [[ "$PERCENT" -le 50 ]]; then
-    printf "  %s%%" "$PERCENT"
+    printf " %s%%" "$PERCENT"
   elif [[ "$PERCENT" -le 75 ]]; then
-    printf "  %s%%" "$PERCENT"
+    printf " %s%%" "$PERCENT"
   elif [[ "$PERCENT" -le 100 ]]; then
-    printf "  %s%%" "$PERCENT"
+    printf " %s%%" "$PERCENT"
   fi
 elif [[ "$STATUS" == "Charging" ]]; then
-  printf "  %s%%" "$PERCENT"
+  printf " %s%%" "$PERCENT"
 else
   # Unknown status
   printf "Unknown status"
