@@ -1,15 +1,35 @@
 #!/bin/bash
 
-# Stop swaybg if running
+# Directory for wallpapers
+DIR=$HOME/Pictures/wallpapers-redblizard/
+
+# Terminate any existing swaybg processes if running
 if [[ $(pidof swaybg) ]]; then
   pkill swaybg
 fi
 
-# Initialize swww if not already initialized
+# Initialize or check if swww is running
 swww query || swww init
 
-# Command to set random wallpapers with transitions every 3 minutes
+# Loop to change wallpaper every 3 minutes with transition effects
 while true; do
-    swww img "$HOME/Pictures/wallpapers-redblizard/$(ls "$HOME/Pictures/wallpapers-redblizard" | shuf -n 1)" --transition-step 20 --transition-fps 20
+    # Randomly select a wallpaper
+    PICS=($(find ${DIR} -type f -name "*.jpg" -o -name "*.png" -o -name "*.gif"))
+    RANDOMPICS=${PICS[ $RANDOM % ${#PICS[@]} ]}
+
+    # Change wallpaper using swww with transition effects
+    swww img "$RANDOMPICS" --transition-step 20 --transition-fps 20
+
+    # Generate color scheme with pywal
+    wal -c
+    wal -i "$RANDOMPICS"
+
+    # Uncomment the following line if you use Firefox with pywalfox extension
+    # pywalfox update
+
+    # Optionally clear the swww cache (comment out if not needed)
+    # rm -rf $HOME/.cache/swww
+
+    # Wait for 3 minutes before changing the wallpaper again
     sleep 180
 done
