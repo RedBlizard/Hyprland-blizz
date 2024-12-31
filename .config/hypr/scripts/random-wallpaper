@@ -20,6 +20,9 @@ while true; do
     # Change wallpaper using swww with transition effects
     swww img "$RANDOMPICS" --transition-step 20 --transition-fps 20
 
+    # Copy the selected wallpaper to $HOME/.cache/swww as current_wallpaper.jpg
+    cp "$RANDOMPICS" $HOME/.cache/swww/current_wallpaper.png
+
     # Generate color scheme with pywal
     wal -c
     wal -i "$RANDOMPICS"
