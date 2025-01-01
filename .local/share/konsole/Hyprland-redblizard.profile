@@ -1,6 +1,6 @@
 [Appearance]
 ColorScheme=Hyprland-Redblizard
-Font=NotoMono Nerd Font,12,-1,5,50,0,0,0,0,0
+Font=NotoSansM Nerd Font Propo,12,-1,5,700,0,0,0,0,0,0,0,0,0,0,1,Bold
 
 [General]
 Name=Hyprland-redblizard
