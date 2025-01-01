@@ -4,7 +4,6 @@
 PERCENT="$(cat /sys/class/power_supply/BAT0/capacity)"
 STATUS="$(cat /sys/class/power_supply/BAT0/status | tr -d '[:space:]')"
 
-
 # Determine icon and output
 if [[ "$STATUS" == "Discharging" || "$STATUS" == "Full" ]]; then
   if [[ "$PERCENT" -le 0 ]]; then
@@ -20,7 +19,4 @@ if [[ "$STATUS" == "Discharging" || "$STATUS" == "Full" ]]; then
   fi
 elif [[ "$STATUS" == "Charging" ]]; then
   printf " %s%%" "$PERCENT"
-else
-  # Unknown status
-  printf "Unknown status"
 fi
