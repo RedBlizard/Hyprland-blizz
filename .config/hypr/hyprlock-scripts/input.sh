@@ -6,21 +6,21 @@ layout=$(hyprctl devices | grep "active keymap:" | awk '{print $3}' | tr -d '()'
 # Map the layout to language labels
 case "$layout" in
     "English")
-        echo "US ⠀⠀"
+        echo " US ⠀⠀"
         ;;
     "Dutch")
-        echo "NL ⠀⠀"
+        echo " NL ⠀⠀"
         ;;
     "Spanish")
-        echo "ES ⠀⠀"
+        echo " ES ⠀⠀"
         ;;
     "German")
-        echo "DE ⠀⠀"
+        echo " DE ⠀⠀"
         ;;
     "Russian")
-        echo "RU ⠀⠀"
+        echo " RU ⠀⠀"
         ;;
     *)
-        echo "Unknown ⠀⠀"
+        echo " Unknown ⠀⠀"
         ;;
 esac
