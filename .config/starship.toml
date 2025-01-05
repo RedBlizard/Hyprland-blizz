@@ -27,7 +27,7 @@ $line_break\
 $character"""
 
 add_newline = true
-palette = 'frappe'
+palette = 'RedBlizard'
 
 [character]
 success_symbol = " [](#7F3FBF)[](#FF7F7F)[](#8CAAEE)"
@@ -115,21 +115,22 @@ min_time = 500
 style = 'fg:sapphire'
 format = '[$duration]($style)'
 
-[palettes.frappe]
-rosewater = '#F2D5CF'
-flamingo = '#EEBEBE'
-pink = '#F4B8E4'
-mauve = '#CA9EE6'
-red = '#E78284'
-maroon = '#EA999C'
-peach = '#EF9F76'
-yellow = '#E5C890'
-green = '#A6D189'
-teal = '#81C8BE'
-sky = '#99D1DB'
-sapphire = '#85C1DC'
-blue = '#8CAAEE'
-lavender = '#BABBF1'
+[palettes.RedBlizard]
+rosewater = '#f4dbd6'  # Matches color15
+flamingo  = '#f0c6c6'  # Matches color7
+pink      = '#f5bde6'  # Matches color13
+mauve     = '#8358E1'  # Matches color5
+red       = '#ed8796'  # Matches color1
+maroon    = '#FF7F7F'  # Matches color9
+peach     = '#EF9F76'  # Matches color11
+yellow    = '#E5C890'  # Matches color3
+green     = '#A3BE8C'  # Matches color10
+teal      = '#7F3FBF'  # Matches color2
+sky       = '#7dc4e4'  # Matches color14
+sapphire  = '#7f7fff'  # Matches color6
+blue      = '#7CB6F5'  # Matches color4
+lavender  = '#8aadf4'  # Matches color12
+
 
 [os.symbols]
 Alpaquita = "alq "
