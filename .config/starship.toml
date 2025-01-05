@@ -6,126 +6,130 @@
 ## rxyhn's starship configuration
 ## The minimal, blazing-fast, and infinitely customizable prompt for any shell!
 
+format = """
+$directory\
+$git_branch\
+$git_status\
+$fill\
+$python\
+$lua\
+$nodejs\
+$golang\
+$haskell\
+$rust\
+$ruby\
+$package\
+$aws\
+$docker_context\
+$jobs\
+$cmd_duration\
+$line_break\
+$character"""
+
+add_newline = true
+palette = 'frappe'
 
 [character]
 success_symbol = " [](#7F3FBF)[](#FF7F7F)[](#8CAAEE)"
 error_symbol = " [](#CC3980)"
 vicmd_symbol = "[](#A6D189)"
 
-[git_commit]
-tag_symbol = " tag "
-
-[git_status]
-ahead = ">"
-behind = "<"
-diverged = "<>"
-renamed = "r"
-deleted = "x"
-
-[aws]
-symbol = "aws "
-
-[azure]
-symbol = "az "
-
-[bun]
-symbol = "bun "
-
-[c]
-symbol = "C "
-
-[cobol]
-symbol = "cobol "
-
-[conda]
-symbol = "conda "
-
-[crystal]
-symbol = "cr "
-
-[cmake]
-symbol = "cmake "
-
-[daml]
-symbol = "daml "
-
-[dart]
-symbol = "dart "
-
-[deno]
-symbol = "deno "
-
-[dotnet]
-symbol = ".NET "
-
 [directory]
-read_only = " ro"
+style = 'bold fg:sky'
+format = '[$path ]($style)'
+truncation_length = 3
+truncation_symbol = '…/'
+truncate_to_repo = false
 
-[docker_context]
-symbol = "docker "
-
-[elixir]
-symbol = "exs "
-
-[elm]
-symbol = "elm "
-
-[fennel]
-symbol = "fnl "
-
-[fossil_branch]
-symbol = "fossil "
-
-[gcloud]
-symbol = "gcp "
+[directory.substitutions]
+'Documents' = '󰈙'
+'Downloads' = ' '
+'Music' = ' '
+'Pictures' = ' '
 
 [git_branch]
-symbol = "git "
+style = 'fg:green'
+symbol = ' '
+format = '[on](white) [$symbol$branch ]($style)'
 
-[golang]
-symbol = "go "
+[git_status]
+style = 'fg:green'
+format = '([$all_status$ahead_behind]($style) )'
 
-[gradle]
-symbol = "gradle "
+[fill]
+symbol = ' '
 
-[guix_shell]
-symbol = "guix "
-
-[hg_branch]
-symbol = "hg "
-
-[java]
-symbol = "java "
-
-[julia]
-symbol = "jl "
-
-[kotlin]
-symbol = "kt "
+[python]
+style = 'teal'
+symbol = ' '
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+pyenv_version_name = true
+pyenv_prefix = ''
 
 [lua]
-symbol = "lua "
+symbol = ' '
 
 [nodejs]
-symbol = "nodejs "
+style = 'blue'
+symbol = ' '
 
-[memory_usage]
-symbol = "memory "
+[golang]
+style = 'blue'
+symbol = ' '
 
-[meson]
-symbol = "meson "
+[haskell]
+style = 'blue'
+symbol = ' '
 
-[nim]
-symbol = "nim "
+[rust]
+style = 'orange'
+symbol = ' '
 
-[nix_shell]
-symbol = "nix "
+[ruby]
+style = 'blue'
+symbol = ' '
 
-[ocaml]
-symbol = "ml "
+[package]
+symbol = '󰏗 '
 
-[opa]
-symbol = "opa "
+[aws]
+symbol = ' '
+style = 'yellow'
+format = '[$symbol($profile )(\[$duration\] )]($style)'
+
+[docker_context]
+symbol = ' '
+style = 'fg:#06969A'
+format = '[$symbol]($style) $path'
+detect_files = ['docker-compose.yml', 'docker-compose.yaml', 'Dockerfile']
+detect_extensions = ['Dockerfile']
+
+[jobs]
+symbol = ' '
+style = 'red'
+number_threshold = 1
+format = '[$symbol]($style)'
+
+[cmd_duration]
+min_time = 500
+style = 'fg:sapphire'
+format = '[$duration]($style)'
+
+[palettes.frappe]
+rosewater = '#F2D5CF'
+flamingo = '#EEBEBE'
+pink = '#F4B8E4'
+mauve = '#CA9EE6'
+red = '#E78284'
+maroon = '#EA999C'
+peach = '#EF9F76'
+yellow = '#E5C890'
+green = '#A6D189'
+teal = '#81C8BE'
+sky = '#99D1DB'
+sapphire = '#85C1DC'
+blue = '#8CAAEE'
+lavender = '#BABBF1'
 
 [os.symbols]
 Alpaquita = "alq "
@@ -169,60 +173,3 @@ SUSE = "suse "
 Ubuntu = "ubnt "
 Unknown = "unk "
 Windows = "win "
-
-[package]
-symbol = "pkg "
-
-[perl]
-symbol = "pl "
-
-[php]
-symbol = "php "
-
-[pijul_channel]
-symbol = "pijul "
-
-[pulumi]
-symbol = "pulumi "
-
-[purescript]
-symbol = "purs "
-
-[python]
-symbol = "py "
-
-[raku]
-symbol = "raku "
-
-[ruby]
-symbol = "rb "
-
-[rust]
-symbol = "rs "
-
-[scala]
-symbol = "scala "
-
-[spack]
-symbol = "spack "
-
-[solidity]
-symbol = "solidity "
-
-[status]
-symbol = "[x](bold red) "
-
-[sudo]
-symbol = "sudo "
-
-[swift]
-symbol = "swift "
-
-[typst]
-symbol = "typst "
-
-[terraform]
-symbol = "terraform "
-
-[zig]
-symbol = "zig "
