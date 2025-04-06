@@ -40,7 +40,7 @@ volume_up() {
     remaining_space=$(seq -s "$space" 0 $((20 - vol / 5)) | sed 's/[0-9]//g')
 
     # Display notification with volume level and icon for volume decrease
-    dunstify -a "Volume up" "  $volume_bar$remaining_space : $(printf "%s%%" "$vol")"
+    # dunstify -a "Volume up" "  $volume_bar$remaining_space : $(printf "%s%%" "$vol")"
 
     # Remove lock file
     rm $lockfile
@@ -70,7 +70,7 @@ volume_down() {
     remaining_space=$(seq -s "$space" 0 $((20 - vol / 5)) | sed 's/[0-9]//g')
 
     # Display notification with volume level and icon for volume decrease
-    dunstify -a "Volume down" "  $volume_bar$remaining_space : $(printf "%s%%" "$vol")"
+    # dunstify -a "Volume down" "  $volume_bar$remaining_space : $(printf "%s%%" "$vol")"
 
     # Remove lock file
     rm $lockfile
@@ -135,7 +135,7 @@ mic_volume_up() {
     remaining_space=$(seq -s "$space" 0 $((20 - vol / 5)) | sed 's/[0-9]//g')
 
     # Display notification with volume level and icon for volume decrease
-    dunstify -a "Microphone volume up" "  $volume_bar$remaining_space : $(printf "%s%%" "$vol")"
+    # dunstify -a "Microphone volume up" "  $volume_bar$remaining_space : $(printf "%s%%" "$vol")"
 
     # Remove lock file
     rm $lockfile
@@ -165,7 +165,7 @@ mic_volume_down() {
     remaining_space=$(seq -s "$space" 0 $((20 - vol / 5)) | sed 's/[0-9]//g')
 
     # Display notification with volume level and icon for volume decrease
-    dunstify -a "Microphone volume down" "  $volume_bar$remaining_space : $(printf "%s%%" "$vol")"
+    # dunstify -a "Microphone volume down" "  $volume_bar$remaining_space : $(printf "%s%%" "$vol")"
 
     # Remove lock file
     rm $lockfile
