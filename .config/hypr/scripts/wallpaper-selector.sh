@@ -59,4 +59,11 @@ cp $selected_background "$HOME/.cache/swww/current_wallpaper.png"
 swww img $selected_background  --transition-step 20 --transition-fps 20
 
 # Send a notification with the new background name and an icon from the current background
-notify-send -i $selected_background "Background changed" "$(basename "$selected_background")"
+# notify-send -i $selected_background "Background changed" "$(basename "$selected_background")"
+
+yad --picture --file-op \
+  --title="Picture viewer" \
+  --size=fit \
+  --geometry=900x400+800+200 \
+  --filename="$HOME/.cache/swww/current_wallpaper.png"
+
