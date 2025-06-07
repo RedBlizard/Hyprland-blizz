@@ -9,7 +9,7 @@ if [[ $(pidof swaybg) ]]; then
 fi
 
 # Initialize or check if swww is running
-swww query || swww init
+swww query || swww-daemon
 
 # Loop to change wallpaper every 3 minutes with transition effects
 while true; do
