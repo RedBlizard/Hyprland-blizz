@@ -14,7 +14,7 @@ swww query || swww-daemon
 # Loop to change wallpaper every 3 minutes with transition effects
 while true; do
     # Randomly select a wallpaper
-    PICS=($(find ${DIR} -type f -name "*.jpg" -o -name "*.png" -o -name "*.gif"))
+    PICS=($(find "${DIR}" -type f \( -iname "*.jpg" -o -iname "*.png" -o -iname "*.gif" \)))
     RANDOMPICS=${PICS[ $RANDOM % ${#PICS[@]} ]}
 
     # Change wallpaper using swww with transition effects
