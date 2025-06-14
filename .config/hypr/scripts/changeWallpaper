@@ -7,7 +7,7 @@ DIR=$HOME/Pictures/wallpapers-redblizard/
 swww query || swww-daemon
 
 # Randomly select a wallpaper
-PICS=($(find ${DIR} -type f -name "*.jpg" -o -name "*.png" -o -name "*.gif"))
+PICS=($(find "${DIR}" -type f \( -iname "*.jpg" -o -iname "*.png" -o -iname "*.gif" \)))
 RANDOMPICS=${PICS[ $RANDOM % ${#PICS[@]} ]}
 
 # Change wallpaper using swww with transition effects
