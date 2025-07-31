@@ -6,6 +6,8 @@
 # /_/\_\____/ \____|
 #
 
+export XDG_CURRENT_DESKTOP=Hyprland
+
 # Setup Timers
 _sleep1="0.1"
 _sleep2="0.5"
