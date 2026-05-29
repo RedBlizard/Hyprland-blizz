@@ -1,2 +1,0 @@
-# hypr-welcome
-welcome app
