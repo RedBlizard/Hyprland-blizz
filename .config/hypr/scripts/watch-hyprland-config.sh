@@ -1,5 +1,7 @@
 #!/bin/bash
-# watch-hyprland-config.sh - Stable, Optimized & Change-Logging for Hyprland 0.55+
+# watch-hyprland-config.sh - Stable & Change-Logging for Hyprland 0.55+
+# Watches main config + modules directory, logs changes, and triggers hyprctl reload.
+
 sleep 3
 
 CONFIG_DIR="$HOME/.config/hypr/modules"
@@ -9,7 +11,7 @@ CACHE_DIR="$HOME/.config/hypr/.watcher-cache"
 
 mkdir -p "$CACHE_DIR" "$(dirname "$LOG_FILE")"
 
-# 🛡️ Auto-clean log if it exceeds 50MB
+# 🛡️ Auto-clean log if it exceeds 50MB (prevents disk bloat)
 if [ -f "$LOG_FILE" ]; then
     LOG_SIZE=$(stat -c%s "$LOG_FILE" 2>/dev/null || echo 0)
     [ "$LOG_SIZE" -gt 52428800 ] && > "$LOG_FILE"
@@ -30,29 +32,28 @@ for f in "$HYPRLAND_MAIN" "$CONFIG_DIR"/*.lua; do
     cp -f "$f" "$CACHE_DIR/$REL"
 done
 
-# ⏱️ Debounce (seconds)
+# ⏱️ Debounce (seconds) - prevents reload spam during rapid edits
 DEBOUNCE=2
 LAST_RELOAD=0
 
-echo "$(date): Monitoring $HYPRLAND_MAIN & $CONFIG_DIR (with change logging)" >> "$LOG_FILE" 2>&1
+echo "$(date): Monitoring $HYPRLAND_MAIN & $CONFIG_DIR" >> "$LOG_FILE" 2>&1
 
-# Watch for changes
-inotifywait -m -e modify -e close_write "$HYPRLAND_MAIN" "$CONFIG_DIR" --format '%w%f' | while read -r FILE; do
+# 🔍 Listen for save actions (close_write ensures 1 trigger per save)
+inotifywait -m -e close_write "$HYPRLAND_MAIN" "$CONFIG_DIR" --format '%w%f' | while read -r FILE; do
     [[ "$FILE" == *.lua ]] || continue
     [[ -f "$FILE" ]] || continue
 
     NOW=$(date +%s)
     if (( NOW - LAST_RELOAD < DEBOUNCE )); then continue; fi
 
-    # Determine cache path
     REL="${FILE#$HOME/.config/hypr/}"
     CACHE_FILE="$CACHE_DIR/$REL"
 
     echo "$(date): Change in $FILE → Reloading..." >> "$LOG_FILE" 2>&1
 
-    # 📝 Log actual changed lines (max 5 for readability)
+    # 📝 Log actual changed lines (max 6 for readability)
     if [ -f "$CACHE_FILE" ]; then
-        CHANGES=$(diff -u0 "$CACHE_FILE" "$FILE" 2>/dev/null | grep -E "^[+-]" | grep -v "^---" | grep -v "^+++" | tail -n 5)
+        CHANGES=$(diff -u0 "$CACHE_FILE" "$FILE" 2>/dev/null | grep -E "^[+-]" | grep -v "^---" | grep -v "^+++" | tail -n 6)
         if [ -n "$CHANGES" ]; then
             echo "   Modified lines:" >> "$LOG_FILE" 2>&1
             echo "$CHANGES" >> "$LOG_FILE" 2>&1
