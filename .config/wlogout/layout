@@ -18,7 +18,7 @@
 }
 {
    "label" : "logout",
-    "action": "sleep 1; hyprctl dispatch exit",
+    "action" : "hyprctl clients -j | jq -r '.[].pid' | xargs kill; pkill Hyprland || pkill sway || pkill niri || loginctl terminate-user $USER",
     "text" : "Logout",
     "keybind" : "e"
 }
