@@ -1,0 +1,321 @@
+vr 29 mei 2026 19:03:32 CEST: Watcher started
+vr 29 mei 2026 19:03:32 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules
+vr 29 mei 2026 19:05:29 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+ok
+vr 29 mei 2026 19:11:04 CEST: Watcher started
+vr 29 mei 2026 19:11:04 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 19:11:40 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+   Modified lines:
++    
++    -- test
++    hl.exec_cmd(os.getenv("HOME") .. "/.config/hypr/scripts/test.sh")      
+ok
+vr 29 mei 2026 19:13:58 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+ok
+vr 29 mei 2026 19:41:00 CEST: Watcher started
+vr 29 mei 2026 19:41:00 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 19:41:47 CEST: Watcher started
+vr 29 mei 2026 19:41:47 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 19:58:01 CEST: Watcher started
+vr 29 mei 2026 19:58:01 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 20:00:35 CEST: Watcher started
+vr 29 mei 2026 20:00:35 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 20:02:09 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+   Modified lines:
++hl.spawn("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
++hl.spawn("udev-block-notify")
++hl.spawn("hypridle")
++-- Cursor
++hl.exec("hyprctl setcursor Qogir-white-cursors 24")
+ok
+vr 29 mei 2026 20:09:23 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+   Modified lines:
++hl.exec_cmd("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
++hl.exec_cmd("udev-block-notify")
++hl.exec_cmd("hypridle")
+-hl.exec("hyprctl setcursor Qogir-white-cursors 24")
++hl.exec_cmd("hyprctl setcursor Qogir-white-cursors 24")
+ok
+vr 29 mei 2026 20:09:26 CEST: Watcher started
+vr 29 mei 2026 20:09:26 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 20:09:27 CEST: Watcher started
+vr 29 mei 2026 20:09:27 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 20:09:59 CEST: Watcher started
+vr 29 mei 2026 20:09:59 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 20:09:59 CEST: Watcher started
+vr 29 mei 2026 20:09:59 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 20:11:25 CEST: Watcher started
+vr 29 mei 2026 20:11:25 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 20:11:25 CEST: Watcher started
+vr 29 mei 2026 20:11:25 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 20:19:41 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+vr 29 mei 2026 20:19:41 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+   Modified lines:
++hl.spawn("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
++hl.spawn("udev-block-notify")
++hl.spawn("hypridle")
+-hl.exec_cmd("hyprctl setcursor Qogir-white-cursors 24")
++hl.exec("hyprctl setcursor Qogir-white-cursors 24")
+   Modified lines:
++hl.spawn("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
++hl.spawn("udev-block-notify")
++hl.spawn("hypridle")
+-hl.exec_cmd("hyprctl setcursor Qogir-white-cursors 24")
++hl.exec("hyprctl setcursor Qogir-white-cursors 24")
+HYPRLAND_INSTANCE_SIGNATURE not set! (is hyprland running?)
+
+ok
+vr 29 mei 2026 20:19:44 CEST: Watcher started
+vr 29 mei 2026 20:19:44 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 20:19:45 CEST: Watcher started
+vr 29 mei 2026 20:19:45 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 20:22:46 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+vr 29 mei 2026 20:22:46 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+vr 29 mei 2026 20:22:46 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+   Modified lines:
+   Modified lines:
++    hl.exec_cmd("hypridle")
++
++    -- Cursor
++    hl.exec_cmd("hyprctl setcursor Qogir-white-cursors 24")
++    hl.exec_cmd("hypridle")
++
++    -- Cursor
++    hl.exec_cmd("hyprctl setcursor Qogir-white-cursors 24")
++end)
++end)
+   Modified lines:
++    hl.exec_cmd("hypridle")
++
++    -- Cursor
++    hl.exec_cmd("hyprctl setcursor Qogir-white-cursors 24")
++end)
+ok
+ok
+ok
+vr 29 mei 2026 20:24:53 CEST: Watcher started
+vr 29 mei 2026 20:24:53 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 20:24:54 CEST: Watcher started
+vr 29 mei 2026 20:24:54 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 20:25:35 CEST: Watcher started
+vr 29 mei 2026 20:25:35 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 20:25:35 CEST: Watcher started
+vr 29 mei 2026 20:25:35 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 20:28:14 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+vr 29 mei 2026 20:28:14 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+   Modified lines:
+-    hl.exec_cmd("waybar")
+-    hl.exec_cmd(home .. "/.config/waybar/scripts/update_waybar_network-device.sh")
+-    hl.exec_cmd(home .. "/.config/hypr/scripts/random-wallpaper.sh")
++    -- Services
++
+   Modified lines:
+-    hl.exec_cmd("waybar")
+-    hl.exec_cmd(home .. "/.config/waybar/scripts/update_waybar_network-device.sh")
+-    hl.exec_cmd(home .. "/.config/hypr/scripts/random-wallpaper.sh")
++    -- Services
++
+ok
+ok
+vr 29 mei 2026 20:28:41 CEST: Watcher started
+vr 29 mei 2026 20:28:41 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 20:28:41 CEST: Watcher started
+vr 29 mei 2026 20:28:41 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 20:31:22 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+vr 29 mei 2026 20:31:22 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+vr 29 mei 2026 20:31:43 CEST: Watcher started
+vr 29 mei 2026 20:31:43 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 20:31:44 CEST: Watcher started
+vr 29 mei 2026 20:31:44 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 20:34:33 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+vr 29 mei 2026 20:34:33 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   Modified lines:
+-    hl.exec_cmd("hyprctl setcursor Qogir-white-cursors 24")
++    -- Clipboard
++    hl.exec_cmd("wl-paste --type text --watch cliphist store")
++    hl.exec_cmd("wl-paste --type image --watch cliphist store")
++
+ok
+ok
+vr 29 mei 2026 20:35:25 CEST: Watcher started
+vr 29 mei 2026 20:35:25 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 20:35:26 CEST: Watcher started
+vr 29 mei 2026 20:35:26 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 20:36:42 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+vr 29 mei 2026 20:36:42 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+vr 29 mei 2026 20:37:06 CEST: Watcher started
+vr 29 mei 2026 20:37:06 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 20:37:06 CEST: Watcher started
+vr 29 mei 2026 20:37:06 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 20:40:51 CEST: Watcher started
+vr 29 mei 2026 20:40:51 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 20:40:51 CEST: Watcher started
+vr 29 mei 2026 20:40:51 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 20:42:51 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+vr 29 mei 2026 20:42:51 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+   Modified lines:
+-    hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+-    hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+-
+-    
++        
+   Modified lines:
+-    hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+-    hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+-
+-    
++        
+ok
+ok
+vr 29 mei 2026 20:43:56 CEST: Watcher started
+vr 29 mei 2026 20:43:56 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 20:43:56 CEST: Watcher started
+vr 29 mei 2026 20:43:56 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 21:09:59 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+vr 29 mei 2026 21:09:59 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+   Modified lines:
++    -- check for Nvidia
++    hl.exec_cmd(home .. "/.config/hypr/scripts/nvidia_gpu_check.sh")
++    
++    -- CHMOD ALL SCRIPTS USED
++    hl.exec_cmd(home .. "/.config/hypr/scripts/chmod_scripts.sh")
+   Modified lines:
++    -- check for Nvidia
++    hl.exec_cmd(home .. "/.config/hypr/scripts/nvidia_gpu_check.sh")
++    
++    -- CHMOD ALL SCRIPTS USED
++    hl.exec_cmd(home .. "/.config/hypr/scripts/chmod_scripts.sh")
+ok
+ok
+vr 29 mei 2026 21:10:34 CEST: Watcher started
+vr 29 mei 2026 21:10:34 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 21:10:34 CEST: Watcher started
+vr 29 mei 2026 21:10:34 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 21:12:08 CEST: Watcher started
+vr 29 mei 2026 21:12:08 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 21:12:09 CEST: Watcher started
+vr 29 mei 2026 21:12:09 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 21:13:45 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+vr 29 mei 2026 21:13:45 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+   Modified lines:
+   Modified lines:
+-    hl.exec_cmd(home .. "/.config/waybar/scripts/firewall-applet.sh")
+-    hl.exec_cmd(home .. "/.config/hypr/scripts/unlock-pacman.sh")    
++    hl.exec_cmd(home .. "/.config/hypr/scripts/unlock-pacman.sh")
++    hl.exec_cmd(home .. "/.config/waybar/scripts/hypridle-toggle.sh")
+-    hl.exec_cmd(home .. "/.config/waybar/scripts/firewall-applet.sh")
++    hl.exec_cmd(home .. "/.config/waybar/scripts/firewall-applet.sh")    
+-    hl.exec_cmd(home .. "/.config/hypr/scripts/unlock-pacman.sh")    
++    hl.exec_cmd(home .. "/.config/hypr/scripts/unlock-pacman.sh")
++    hl.exec_cmd(home .. "/.config/waybar/scripts/hypridle-toggle.sh")
++    hl.exec_cmd(home .. "/.config/waybar/scripts/firewall-applet.sh")    
+ok
+ok
+vr 29 mei 2026 21:14:07 CEST: Watcher started
+vr 29 mei 2026 21:14:07 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 21:14:07 CEST: Watcher started
+vr 29 mei 2026 21:14:07 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 21:23:39 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+vr 29 mei 2026 21:23:39 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+vr 29 mei 2026 21:24:10 CEST: Watcher started
+vr 29 mei 2026 21:24:10 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 21:24:11 CEST: Watcher started
+vr 29 mei 2026 21:24:11 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 21:25:56 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+vr 29 mei 2026 21:25:56 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+vr 29 mei 2026 21:26:20 CEST: Watcher started
+vr 29 mei 2026 21:26:20 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 21:26:20 CEST: Watcher started
+vr 29 mei 2026 21:26:20 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 21:30:51 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+vr 29 mei 2026 21:30:51 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+   Modified lines:
+-
+-    -- UI
+-    hl.exec_cmd("waybar")
+-    hl.exec_cmd(home .. "/.config/waybar/scripts/update_waybar_network-device.sh")
+-    hl.exec_cmd(home .. "/.config/hypr/scripts/random-wallpaper.sh")
+   Modified lines:
+-
+-    -- UI
+-    hl.exec_cmd("waybar")
+-    hl.exec_cmd(home .. "/.config/waybar/scripts/update_waybar_network-device.sh")
+-    hl.exec_cmd(home .. "/.config/hypr/scripts/random-wallpaper.sh")
+ok
+ok
+vr 29 mei 2026 21:31:15 CEST: Watcher started
+vr 29 mei 2026 21:31:15 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 21:31:15 CEST: Watcher started
+vr 29 mei 2026 21:31:15 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 21:35:50 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+vr 29 mei 2026 21:35:50 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+   Modified lines:
+-    -- check for Nvidia
+-    hl.exec_cmd(home .. "/.config/hypr/scripts/nvidia_gpu_check.sh")
+-    
+-    -- CHMOD ALL SCRIPTS USED
+-    hl.exec_cmd(home .. "/.config/hypr/scripts/chmod_scripts.sh")
+   Modified lines:
+-    -- check for Nvidia
+-    hl.exec_cmd(home .. "/.config/hypr/scripts/nvidia_gpu_check.sh")
+-    
+-    -- CHMOD ALL SCRIPTS USED
+-    hl.exec_cmd(home .. "/.config/hypr/scripts/chmod_scripts.sh")
+ok
+ok
+vr 29 mei 2026 21:45:15 CEST: Watcher started
+vr 29 mei 2026 21:45:15 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 21:45:15 CEST: Watcher started
+vr 29 mei 2026 21:45:15 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 21:46:40 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+vr 29 mei 2026 21:46:40 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+   Modified lines:
+   Modified lines:
++    hl.exec_cmd(home .. "/.config/hypr/scripts/xdg.sh")
++    
+-    -- Kill all possible running xdg-desktop-portals
++    hl.exec_cmd(home .. "/.config/hypr/scripts/xdg.sh")
++    
+-    -- Kill all possible running xdg-desktop-portals
+-    hl.exec_cmd(home .. "/.config/hypr/scripts/xdg.sh")
+-    hl.exec_cmd(home .. "/.config/hypr/scripts/xdg.sh")
+-
+-
+ok
+ok
+vr 29 mei 2026 21:47:30 CEST: Watcher started
+vr 29 mei 2026 21:47:30 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 21:47:30 CEST: Watcher started
+vr 29 mei 2026 21:47:30 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 21:51:27 CEST: Watcher started
+vr 29 mei 2026 21:51:28 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 21:51:28 CEST: Watcher started
+vr 29 mei 2026 21:51:28 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 21:52:29 CEST: Watcher started
+vr 29 mei 2026 21:52:29 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 21:52:30 CEST: Watcher started
+vr 29 mei 2026 21:52:30 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules (with change logging)
+vr 29 mei 2026 21:57:52 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+vr 29 mei 2026 21:57:52 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
