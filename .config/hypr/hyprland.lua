@@ -3,6 +3,7 @@
 
 ---- HYPRLAND LUA ----
 
+require("modules/debug")
 require("modules/autostart")
 require("modules/env_var")
 require("modules/animations")
@@ -133,14 +134,3 @@ hl.config({
         key_press_enables_dpms  = true,
     },
 })
-
-
-
-
-
-
-
-
-
-
-
