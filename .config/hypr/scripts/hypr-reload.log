@@ -1,0 +1,1695 @@
+za 30 mei 2026  8:56:13 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026  8:56:13 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
++    "hypr-welcome",    
+   Modified lines:
++    "hypr-welcome",    
+ok
+ok
+za 30 mei 2026  9:11:39 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026  9:11:39 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
++    match = { title = exact_match("hypr-welcome") },
++    size = { 1889, 1006 }
++})
++
++hl.window_rule({
+   Modified lines:
++    match = { title = exact_match("hypr-welcome") },
++    size = { 1889, 1006 }
++})
++
++hl.window_rule({
+ok
+ok
+za 30 mei 2026  9:17:40 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026  9:17:40 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
++    match = { title = exact_match("System Info") },
++    size = { 1889, 1006 }
++})
++
++hl.window_rule({
++    match = { title = exact_match("Updates") },
+   Modified lines:
++    size = { 1889, 1006 }
++})
++
++hl.window_rule({
++    match = { title = exact_match("Updates") },
+ok
+ok
+za 30 mei 2026  9:19:53 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026  9:19:53 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
++    match = { title = exact_match("hypr-welcome") },
++    size = { 1889, 1006 }
++})
++
++hl.window_rule({
+   Modified lines:
++    match = { title = exact_match("hypr-welcome") },
++    size = { 1889, 1006 }
++})
++
++hl.window_rule({
+ok
+ok
+za 30 mei 2026  9:26:14 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026  9:26:14 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
++    match = { title = exact_match("YAD") },
++    size = { 1889, 1006 }
++})
++
++hl.window_rule({
+   Modified lines:
++    match = { title = exact_match("YAD") },
++    size = { 1889, 1006 }
++})
++
++hl.window_rule({
+ok
+ok
+za 30 mei 2026  9:34:47 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026  9:34:47 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
+-hl.window_rule({
+-    match = { title = exact_match("YAD") },
+-    size = { 1889, 1006 }
+-})
+   Modified lines:
+-hl.window_rule({
+-    match = { title = exact_match("YAD") },
+-    size = { 1889, 1006 }
+-})
+ok
+ok
+za 30 mei 2026  9:40:00 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026  9:40:00 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
++    match = { title = exact_match("YAD") },
++    size = { 1889, 1006 }
++})
++
++hl.window_rule({
+   Modified lines:
++    match = { title = exact_match("YAD") },
++    size = { 1889, 1006 }
++})
++
++hl.window_rule({
+ok
+ok
+za 30 mei 2026  9:41:30 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026  9:41:30 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
+-
+-hl.window_rule({
+-    match = { title = exact_match("Updates") },
+-    size = { 1889, 1006 }
++    size = { 890, 410 }
+   Modified lines:
+-})
+-
+-hl.window_rule({
+-    match = { title = exact_match("Updates") },
+-    size = { 1889, 1006 }
++    size = { 890, 410 }
+ok
+ok
+za 30 mei 2026  9:42:06 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026  9:42:06 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
+-    size = { 890, 410 }
++    size = { 890, 445 }
+   Modified lines:
+-    size = { 890, 410 }
++    size = { 890, 445 }
+ok
+ok
+za 30 mei 2026  9:42:38 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026  9:42:38 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
+-    size = { 890, 410 }
++    size = { 890, 390 }
+   Modified lines:
+-    size = { 890, 410 }
++    size = { 890, 390 }
+ok
+ok
+za 30 mei 2026  9:43:03 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026  9:43:03 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
+-    size = { 890, 390 }
++    size = { 890, 350 }
+   Modified lines:
+-    size = { 890, 390 }
++    size = { 890, 350 }
+ok
+ok
+za 30 mei 2026  9:43:39 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026  9:43:39 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
+   Modified lines:
+-    size = { 890, 350 }
++    size = { 900, 445 }
+-    size = { 890, 445 }
++    size = { 900, 445 }
+-    size = { 890, 350 }
++    size = { 900, 445 }
+-    size = { 890, 445 }
++    size = { 900, 445 }
+ok
+ok
+za 30 mei 2026  9:53:07 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026  9:53:07 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
++    "kitty_floats
++})
++
++hl.window_rule({
++    match = { title = exact_match("kitty_floats") },
++    size = { 800, 600 }
+   Modified lines:
++})
++
++hl.window_rule({
++    match = { title = exact_match("kitty_floats") },
++    size = { 800, 600 }
+ok
+ok
+za 30 mei 2026  9:53:59 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026  9:53:59 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
+-    match = { title = exact_match("kitty_floats") },
++    match = { title = exact_match("kitty --title kitty_floats") },
+   Modified lines:
+-    match = { title = exact_match("kitty_floats") },
++    match = { title = exact_match("kitty --title kitty_floats") },
+ok
+ok
+za 30 mei 2026  9:54:16 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026  9:54:16 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
+-    "kitty_floats
++    "kitty_floats,
+   Modified lines:
+-    "kitty_floats
++    "kitty_floats,
+ok
+ok
+za 30 mei 2026  9:54:24 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026  9:54:24 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026  9:54:43 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026  9:54:43 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
+-    match = { title = exact_match("kitty --title kitty_floats") },
++    match = { title = exact_match("kitty_floats") },
+   Modified lines:
+-    match = { title = exact_match("kitty --title kitty_floats") },
++    match = { title = exact_match("kitty_floats") },
+ok
+ok
+za 30 mei 2026 10:03:43 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 10:03:43 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
++    match = { title = exact_match("kitty --start-as=fullscreen") },
++    fullscreen = true
++})
++
++
++
+   Modified lines:
++    fullscreen = true
++})
++
++
++
+ok
+ok
+za 30 mei 2026 10:05:58 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 10:05:58 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
+-
+-    match = { title = exact_match("kitty --start-as=fullscreen") },
++    match = { class = exact_match("kitty") },
+-
+-
+   Modified lines:
+-
+-    match = { title = exact_match("kitty --start-as=fullscreen") },
++    match = { class = exact_match("kitty") },
+-
+-
+ok
+ok
+za 30 mei 2026 10:07:22 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 10:07:22 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 10:08:25 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 10:08:25 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 10:08:49 CEST: Change in /home/denise/.config/hypr/modules/key_binds.lua → Reloading...
+za 30 mei 2026 10:08:49 CEST: Change in /home/denise/.config/hypr/modules/key_binds.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 10:10:57 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 10:10:57 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 10:13:17 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 10:13:17 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
+   Modified lines:
+-
+-        title = not_exact_match("kitty_floats")
++        title = exact_match("kitty_floats")
+-    fullscreen = true
++    floating = true,
++    size = { 800, 600 }
+-        title = not_exact_match("kitty_floats")
++        title = exact_match("kitty_floats")
+-    fullscreen = true
++    floating = true,
++    size = { 800, 600 }
+ok
+ok
+za 30 mei 2026 10:14:19 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 10:14:19 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
+-    floating = true,
++    float = true,
+   Modified lines:
+-    floating = true,
++    float = true,
+ok
+ok
+za 30 mei 2026 10:14:57 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 10:14:57 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
++        title = not_exact_match("kitty_floats") -- ❌ NIET doen (bestaat vaak niet)
++    },
++    fullscreen = true
++})
++
++hl.window_rule({
+   Modified lines:
++    },
++    fullscreen = true
++})
++
++hl.window_rule({
+ok
+ok
+za 30 mei 2026 10:16:34 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 10:16:34 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
+-        title = not_exact_match("kitty_floats") -- ❌ NIET doen (bestaat vaak niet)
++        match = { title = exact_match("kitty") },
+   Modified lines:
+-        title = not_exact_match("kitty_floats") -- ❌ NIET doen (bestaat vaak niet)
++        match = { title = exact_match("kitty") },
+ok
+ok
+za 30 mei 2026 10:16:50 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 10:16:50 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 10:21:21 CEST: Change in /home/denise/.config/hypr/modules/key_binds.lua → Reloading...
+za 30 mei 2026 10:21:21 CEST: Change in /home/denise/.config/hypr/modules/key_binds.lua → Reloading...
+   Modified lines:
+-hl.bind(mainMod .. " + ALT + T", hl.dsp.exec_cmd("kitty"))
++hl.bind(mainMod .. " + ALT + T", hl.dsp.exec_cmd("kitty --class kitty --instance main"))
+   Modified lines:
+-hl.bind(mainMod .. " + ALT + T", hl.dsp.exec_cmd("kitty"))
++hl.bind(mainMod .. " + ALT + T", hl.dsp.exec_cmd("kitty --class kitty --instance main"))
+ok
+ok
+za 30 mei 2026 10:21:49 CEST: Change in /home/denise/.config/hypr/modules/key_binds.lua → Reloading...
+za 30 mei 2026 10:21:49 CEST: Change in /home/denise/.config/hypr/modules/key_binds.lua → Reloading...
+   Modified lines:
+-hl.bind(mainMod .. " + SHIFT + T", hl.dsp.exec_cmd("kitty --title kitty_floats"))
++hl.bind(mainMod .. " + SHIFT + T", hl.dsp.exec_cmd("kitty --class kitty --instance float"))
+   Modified lines:
+-hl.bind(mainMod .. " + SHIFT + T", hl.dsp.exec_cmd("kitty --title kitty_floats"))
++hl.bind(mainMod .. " + SHIFT + T", hl.dsp.exec_cmd("kitty --class kitty --instance float"))
+ok
+ok
+za 30 mei 2026 10:22:26 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 10:22:26 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
++    floating = true,
++-- NORMAL FULLSCREEN kitty
+-        class = exact_match("kitty"),       
++        class = exact_match("kitty"),
++        instance = exact_match("main")
+   Modified lines:
+-    float = true,
++    floating = true,
++-- NORMAL FULLSCREEN kitty
+-        class = exact_match("kitty"),       
++        class = exact_match("kitty"),
++        instance = exact_match("main")
+ok
+ok
+za 30 mei 2026 10:22:44 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 10:22:44 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 10:23:51 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 10:23:51 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
+-        instance = exact_match("float")
++        
+   Modified lines:
+-        instance = exact_match("float")
++        
+ok
+ok
+za 30 mei 2026 10:24:02 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 10:24:02 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
+-        instance = exact_match("main")
++       
+   Modified lines:
+-        instance = exact_match("main")
++       
+ok
+ok
+za 30 mei 2026 10:25:17 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 10:25:17 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
+-    match = {
+-        class = exact_match("kitty"),
+-       
+-    },
+-    fullscreen = true
+   Modified lines:
+-hl.window_rule({
+-    match = {
+-        class = exact_match("kitty"),
+-       
+-    },
+-    fullscreen = true
+ok
+ok
+za 30 mei 2026 10:25:26 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 10:25:26 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
+   Modified lines:
+-    floating = true,
++    float = true,
+-    floating = true,
++    float = true,
+ok
+ok
+za 30 mei 2026 10:26:41 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 10:26:41 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
++
++
++hl.window_rule({
++    match = { class = exact_match("kitty") },
++    fullscreen = true
+   Modified lines:
++})
++
++
++hl.window_rule({
++    match = { class = exact_match("kitty") },
++    fullscreen = true
+ok
+ok
+za 30 mei 2026 10:26:48 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 10:26:48 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
+-    floating = true,
++    float = true,
+   Modified lines:
+-    floating = true,
++    float = true,
+ok
+ok
+za 30 mei 2026 10:27:52 CEST: Change in /home/denise/.config/hypr/modules/key_binds.lua → Reloading...
+za 30 mei 2026 10:27:52 CEST: Change in /home/denise/.config/hypr/modules/key_binds.lua → Reloading...
+   Modified lines:
+-hl.bind(mainMod .. " + SHIFT + T", hl.dsp.exec_cmd("kitty --class kitty --instance float"))
+-hl.bind(mainMod .. " + ALT + T", hl.dsp.exec_cmd("kitty --class kitty --instance main"))
++hl.bind(mainMod .. " + SHIFT + T", hl.dsp.exec_cmd("kitty --title kitty_floats"))
++hl.bind(mainMod .. " + ALT + T", hl.dsp.exec_cmd("kitty --start-as=fullscreen"))
+   Modified lines:
+-hl.bind(mainMod .. " + SHIFT + T", hl.dsp.exec_cmd("kitty --class kitty --instance float"))
+-hl.bind(mainMod .. " + ALT + T", hl.dsp.exec_cmd("kitty --class kitty --instance main"))
++hl.bind(mainMod .. " + SHIFT + T", hl.dsp.exec_cmd("kitty --title kitty_floats"))
++hl.bind(mainMod .. " + ALT + T", hl.dsp.exec_cmd("kitty --start-as=fullscreen"))
+ok
+ok
+za 30 mei 2026 10:28:09 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 10:28:09 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
+-    match = { class = exact_match("kitty") },
++    match = { class = exact_match("kitty --start-as=fullscreen") },
+   Modified lines:
+-    match = { class = exact_match("kitty") },
++    match = { class = exact_match("kitty --start-as=fullscreen") },
+ok
+ok
+za 30 mei 2026 10:28:38 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 10:28:38 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
+-    match = { class = exact_match("kitty --start-as=fullscreen") },
+-    fullscreen = true
+-})
+-
+-hl.window_rule({
+   Modified lines:
+-    match = { class = exact_match("kitty --start-as=fullscreen") },
+-    fullscreen = true
+-})
+-
+-hl.window_rule({
+ok
+ok
+za 30 mei 2026 10:32:27 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 10:32:27 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
+-
+   Modified lines:
+-
+ok
+ok
+za 30 mei 2026 10:33:31 CEST: Change in /home/denise/.config/hypr/modules/key_binds.lua → Reloading...
+za 30 mei 2026 10:33:31 CEST: Change in /home/denise/.config/hypr/modules/key_binds.lua → Reloading...
+   Modified lines:
+-hl.bind(mainMod .. " + ALT + T", hl.dsp.exec_cmd("kitty --start-as=fullscreen"))
++hl.bind(mainMod .. " + ALT + T", hl.dsp.exec_cmd("$HOME/.config/hypr/scripts/kitty_fullscreen"))
+   Modified lines:
+-hl.bind(mainMod .. " + ALT + T", hl.dsp.exec_cmd("kitty --start-as=fullscreen"))
++hl.bind(mainMod .. " + ALT + T", hl.dsp.exec_cmd("$HOME/.config/hypr/scripts/kitty_fullscreen"))
+ok
+ok
+za 30 mei 2026 10:50:47 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 10:50:47 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
+-hl.window_rule({ match = { title = exact_match("hypr-welcome") }, workspace = 10 })
++--hl.window_rule({ match = { title = exact_match("hypr-welcome") }, workspace = 10 })
+   Modified lines:
+-hl.window_rule({ match = { title = exact_match("hypr-welcome") }, workspace = 10 })
++--hl.window_rule({ match = { title = exact_match("hypr-welcome") }, workspace = 10 })
+ok
+ok
+za 30 mei 2026 10:51:39 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 10:51:39 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 11:00:33 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 11:00:33 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 11:17:15 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 11:17:15 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
+-    size = { 900, 445 }
++    size = { 1889, 1006 }
+   Modified lines:
+-    size = { 900, 445 }
++    size = { 1889, 1006 }
+ok
+ok
+za 30 mei 2026 11:18:00 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 11:18:00 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 11:19:26 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 11:19:26 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 11:33:00 CEST: Change in /home/denise/.config/hypr/hyprland.lua → Reloading...
+za 30 mei 2026 11:33:00 CEST: Change in /home/denise/.config/hypr/hyprland.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 11:37:49 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+za 30 mei 2026 11:37:49 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 11:39:40 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+za 30 mei 2026 11:39:40 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+   Modified lines:
++hl.animation({ leaf = "fade", enabled = true, speed = 5, bezier = "easeOutBack" })
++hl.animation({ leaf = "fadeDim", enabled = true, speed = 5, bezier = "easeOutBack" })
++hl.animation({ leaf = "workspaces", enabled = true, speed = 10, bezier = "easeOutExpo" })
++  
++  
++  
+   Modified lines:
++hl.animation({ leaf = "fadeDim", enabled = true, speed = 5, bezier = "easeOutBack" })
++hl.animation({ leaf = "workspaces", enabled = true, speed = 10, bezier = "easeOutExpo" })
++  
++  
++  
+ok
+ok
+za 30 mei 2026 11:40:11 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+za 30 mei 2026 11:40:11 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 11:41:03 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+za 30 mei 2026 11:41:03 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+   Modified lines:
+-  --------------------------------------------------------------------------------
++  
++--------------------------------------------------------------------------------
+-})
++
+   Modified lines:
+-  --------------------------------------------------------------------------------
++  
++--------------------------------------------------------------------------------
+-})
++
+ok
+ok
+za 30 mei 2026 11:43:04 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+za 30 mei 2026 11:43:04 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+   Modified lines:
+-hl.animation({ leaf = "border", enabled = true, speed = 5, bezier = "default" })
++hl.animation({ leaf = "border", enabled = true, speed = 25, bezier = "default" })
+   Modified lines:
+-hl.animation({ leaf = "border", enabled = true, speed = 5, bezier = "default" })
++hl.animation({ leaf = "border", enabled = true, speed = 25, bezier = "default" })
+ok
+ok
+za 30 mei 2026 11:46:07 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+za 30 mei 2026 11:46:07 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+   Modified lines:
+-hl.animation({ leaf = "border", enabled = true, speed = 25, bezier = "default" })
++hl.animation({ leaf = "border", enabled = true, speed = 25, bezier = "linear" })
++hl.animation({ leaf = "borderangle", enabled = true, speed = 75, style = loop, bezier = "linear" })
+   Modified lines:
+-hl.animation({ leaf = "border", enabled = true, speed = 25, bezier = "default" })
++hl.animation({ leaf = "border", enabled = true, speed = 25, bezier = "linear" })
++hl.animation({ leaf = "borderangle", enabled = true, speed = 75, style = loop, bezier = "linear" })
+ok
+ok
+za 30 mei 2026 11:47:30 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+za 30 mei 2026 11:47:30 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+   Modified lines:
+-hl.animation({ leaf = "borderangle", enabled = true, speed = 75, style = loop, bezier = "linear" })
++hl.animation({ leaf = "borderangle", enabled = true, speed = 75.0, bezier = "linear", style = "loop" })
+   Modified lines:
+-hl.animation({ leaf = "borderangle", enabled = true, speed = 75, style = loop, bezier = "linear" })
++hl.animation({ leaf = "borderangle", enabled = true, speed = 75.0, bezier = "linear", style = "loop" })
+ok
+ok
+za 30 mei 2026 11:47:40 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+za 30 mei 2026 11:47:40 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+   Modified lines:
+-hl.animation({ leaf = "border", enabled = true, speed = 25, bezier = "linear" })
++hl.animation({ leaf = "border", enabled = true, speed = 25.0, bezier = "linear" })
+   Modified lines:
+-hl.animation({ leaf = "border", enabled = true, speed = 25, bezier = "linear" })
++hl.animation({ leaf = "border", enabled = true, speed = 25.0, bezier = "linear" })
+ok
+ok
+za 30 mei 2026 11:49:01 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+za 30 mei 2026 11:49:01 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 11:53:08 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+za 30 mei 2026 11:53:08 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+   Modified lines:
++hl.animation({ leaf = "workspaces", enabled = true, speed = 6, bezier = "default", style = "slide" })
++
++hl.animation({ leaf = "workspaces", enabled = true, speed = 7, bezier = "menu_decel", style = "slide" })
++
++hl.animation({ leaf = "specialWorkspace", enabled = true, speed = 3, bezier = "md3_decel", style = "slidevert" })
+   Modified lines:
++
++hl.animation({ leaf = "workspaces", enabled = true, speed = 6, bezier = "default", style = "slide" })
++
++hl.animation({ leaf = "workspaces", enabled = true, speed = 7, bezier = "menu_decel", style = "slide" })
++
++hl.animation({ leaf = "specialWorkspace", enabled = true, speed = 3, bezier = "md3_decel", style = "slidevert" })
+ok
+ok
+za 30 mei 2026 11:55:37 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+za 30 mei 2026 11:55:37 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+   Modified lines:
++    { leaf = "fade", enabled = true, speed = 10, bezier = "default" },
++    { leaf = "workspaces", enabled = true, speed = 6, bezier = "default", style = "slide" },
++    { leaf = "workspaces", enabled = true, speed = 7, bezier = "menu_decel", style = "slide" },
++    { leaf = "specialWorkspace", enabled = true, speed = 3, bezier = "md3_decel", style = "slidevert" }
++}
+   Modified lines:
++    { leaf = "borderangle", enabled = true, speed = 75, bezier = "liner", style = "loop" },
++    { leaf = "fade", enabled = true, speed = 10, bezier = "default" },
++    { leaf = "workspaces", enabled = true, speed = 6, bezier = "default", style = "slide" },
++    { leaf = "workspaces", enabled = true, speed = 7, bezier = "menu_decel", style = "slide" },
++    { leaf = "specialWorkspace", enabled = true, speed = 3, bezier = "md3_decel", style = "slidevert" }
++}
+ok
+ok
+za 30 mei 2026 11:56:09 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+za 30 mei 2026 11:56:09 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+   Modified lines:
+-  style = "slide"
+-})
+-
+-
+-  
++ 
+   Modified lines:
+-})
+-
+-
+-  
++ 
+ok
+ok
+za 30 mei 2026 11:57:10 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+za 30 mei 2026 11:57:10 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+   Modified lines:
+-    { leaf = "border", enabled = true, speed = 1, bezier = "liner" },
+-    { leaf = "borderangle", enabled = true, speed = 75, bezier = "liner", style = "loop" },
++    { leaf = "border", enabled = true, speed = 1, bezier = "linear" },
++    { leaf = "borderangle", enabled = true, speed = 75, bezier = "linear", style = "loop" },
+   Modified lines:
+-    { leaf = "border", enabled = true, speed = 1, bezier = "liner" },
+-    { leaf = "borderangle", enabled = true, speed = 75, bezier = "liner", style = "loop" },
++    { leaf = "border", enabled = true, speed = 1, bezier = "linear" },
++    { leaf = "borderangle", enabled = true, speed = 75, bezier = "linear", style = "loop" },
+ok
+ok
+za 30 mei 2026 11:58:21 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+za 30 mei 2026 11:58:21 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+   Modified lines:
+-    { leaf = "border", enabled = true, speed = 1, bezier = "linear" },
++    { leaf = "border", enabled = true, speed = 10, bezier = "linear" },
+   Modified lines:
+-    { leaf = "border", enabled = true, speed = 1, bezier = "linear" },
++    { leaf = "border", enabled = true, speed = 10, bezier = "linear" },
+ok
+ok
+za 30 mei 2026 11:58:57 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+za 30 mei 2026 11:58:57 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+   Modified lines:
+-    { leaf = "border", enabled = true, speed = 10, bezier = "linear" },
+-    { leaf = "borderangle", enabled = true, speed = 75, bezier = "linear", style = "loop" },
++    { leaf = "border", enabled = true, speed = 10, bezier = "liner" },
++    { leaf = "borderangle", enabled = true, speed = 75, bezier = "liner", style = "loop" },
+   Modified lines:
+-    { leaf = "border", enabled = true, speed = 10, bezier = "linear" },
+-    { leaf = "borderangle", enabled = true, speed = 75, bezier = "linear", style = "loop" },
++    { leaf = "border", enabled = true, speed = 10, bezier = "liner" },
++    { leaf = "borderangle", enabled = true, speed = 75, bezier = "liner", style = "loop" },
+ok
+ok
+za 30 mei 2026 12:00:14 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+za 30 mei 2026 12:00:14 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+   Modified lines:
+-  
++hl.animation({ leaf = "borderangle", enabled = true, speed = 75.0, bezier = "linear", style = "loop" })  
+   Modified lines:
+-  
++hl.animation({ leaf = "borderangle", enabled = true, speed = 75.0, bezier = "linear", style = "loop" })  
+ok
+ok
+za 30 mei 2026 12:04:31 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+za 30 mei 2026 12:04:31 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+   Modified lines:
+   Modified lines:
++hl.animation({ leaf = "borderangle",     enabled = true, speed = 75,  bezier = "liner",      style = "loop" })
++hl.animation({ leaf = "fade",            enabled = true, speed = 10,  bezier = "default" })
++hl.animation({ leaf = "workspaces",      enabled = true, speed = 6,   bezier = "default",    style = "slide" })
++hl.animation({ leaf = "workspaces",      enabled = true, speed = 7,   bezier = "menu_decel", style = "slide" })
++hl.animation({ leaf = "border",          enabled = true, speed = 1,   bezier = "liner" })
++hl.animation({ leaf = "specialWorkspace",enabled = true, speed = 3,   bezier = "md3_decel",  style = "slidevert" })
++hl.animation({ leaf = "borderangle",     enabled = true, speed = 75,  bezier = "liner",      style = "loop" })
++hl.animation({ leaf = "fade",            enabled = true, speed = 10,  bezier = "default" })
++hl.animation({ leaf = "workspaces",      enabled = true, speed = 6,   bezier = "default",    style = "slide" })
++hl.animation({ leaf = "workspaces",      enabled = true, speed = 7,   bezier = "menu_decel", style = "slide" })
++hl.animation({ leaf = "specialWorkspace",enabled = true, speed = 3,   bezier = "md3_decel",  style = "slidevert" })
+ok
+ok
+za 30 mei 2026 12:05:06 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+za 30 mei 2026 12:05:06 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+   Modified lines:
+-hl.animation({ leaf = "border",          enabled = true, speed = 10,  bezier = "default" })
+-hl.animation({ leaf = "borderangle",     enabled = true, speed = 75,  bezier = "liner",      style = "loop" })
++hl.animation({ leaf = "borderangle",     enabled = true, speed = 75,0,  bezier = "liner",      style = "loop" })
+   Modified lines:
+-hl.animation({ leaf = "border",          enabled = true, speed = 10,  bezier = "default" })
+-hl.animation({ leaf = "borderangle",     enabled = true, speed = 75,  bezier = "liner",      style = "loop" })
++hl.animation({ leaf = "borderangle",     enabled = true, speed = 75,0,  bezier = "liner",      style = "loop" })
+ok
+ok
+za 30 mei 2026 12:07:36 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+za 30 mei 2026 12:07:36 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+   Modified lines:
++hl.animation({ leaf = "border", enabled = true, speed = 1, bezier = "liner" })
++hl.animation({ leaf = "borderangle", enabled = true, speed = 75, bezier = "liner", style = "loop" })
++hl.animation({ leaf = "fade", enabled = true, speed = 10, bezier = "default" })
++hl.animation({ leaf = "workspaces", enabled = true, speed = 6, bezier = "default", style = "slide" })
++hl.animation({ leaf = "workspaces", enabled = true, speed = 7, bezier = "menu_decel", style = "slide" })
++hl.animation({ leaf = "specialWorkspace", enabled = true, speed = 3, bezier = "md3_decel", style = "slidevert" })
+   Modified lines:
++hl.animation({ leaf = "borderangle", enabled = true, speed = 75, bezier = "liner", style = "loop" })
++hl.animation({ leaf = "fade", enabled = true, speed = 10, bezier = "default" })
++hl.animation({ leaf = "workspaces", enabled = true, speed = 6, bezier = "default", style = "slide" })
++hl.animation({ leaf = "workspaces", enabled = true, speed = 7, bezier = "menu_decel", style = "slide" })
++hl.animation({ leaf = "specialWorkspace", enabled = true, speed = 3, bezier = "md3_decel", style = "slidevert" })
+ok
+ok
+za 30 mei 2026 12:07:57 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+za 30 mei 2026 12:07:57 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 12:08:23 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+za 30 mei 2026 12:08:23 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+   Modified lines:
+-hl.animation({ leaf = "border", enabled = true, speed = 10, bezier = "liner" })
+-hl.animation({ leaf = "borderangle", enabled = true, speed = 75, bezier = "liner", style = "loop" })
++hl.animation({ leaf = "border", enabled = true, speed = 10, bezier = "linear" })
++hl.animation({ leaf = "borderangle", enabled = true, speed = 75, bezier = "linear", style = "loop" })
+   Modified lines:
+-hl.animation({ leaf = "border", enabled = true, speed = 10, bezier = "liner" })
+-hl.animation({ leaf = "borderangle", enabled = true, speed = 75, bezier = "liner", style = "loop" })
++hl.animation({ leaf = "border", enabled = true, speed = 10, bezier = "linear" })
++hl.animation({ leaf = "borderangle", enabled = true, speed = 75, bezier = "linear", style = "loop" })
+ok
+ok
+za 30 mei 2026 12:09:38 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+za 30 mei 2026 12:09:38 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 12:11:37 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+za 30 mei 2026 12:11:37 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 12:11:57 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+za 30 mei 2026 12:11:57 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 12:12:42 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+za 30 mei 2026 12:12:42 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+   Modified lines:
+-hl.animation({ leaf = "border", enabled = true, speed = 25.0, bezier = "linear" })
+-hl.animation({ leaf = "borderangle", enabled = true, speed = 75.0, bezier = "linear", style = "loop" })
+   Modified lines:
+-hl.animation({ leaf = "border", enabled = true, speed = 25.0, bezier = "linear" })
+-hl.animation({ leaf = "borderangle", enabled = true, speed = 75.0, bezier = "linear", style = "loop" })
+ok
+ok
+za 30 mei 2026 12:15:25 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+za 30 mei 2026 12:15:25 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+   Modified lines:
++    leaf = "borderangle",
++    enabled = true,
++    speed = 75.0,
++    bezier = "linear",
++    style = "loop",
++})
+   Modified lines:
++    enabled = true,
++    speed = 75.0,
++    bezier = "linear",
++    style = "loop",
++})
+ok
+ok
+za 30 mei 2026 12:16:20 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+za 30 mei 2026 12:16:20 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 12:16:59 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+za 30 mei 2026 12:16:59 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 12:17:25 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+za 30 mei 2026 12:17:25 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+   Modified lines:
++hl.animation({ leaf = "borderangle", enabled = true, speed = 75.0, bezier = "linear", style = "loop" })
+   Modified lines:
++hl.animation({ leaf = "borderangle", enabled = true, speed = 75.0, bezier = "linear", style = "loop" })
+ok
+ok
+za 30 mei 2026 12:17:55 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+za 30 mei 2026 12:17:55 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+   Modified lines:
++hl.animation({ leaf = "border", enabled = true, speed = 25.0, bezier = "linear" })
+   Modified lines:
++hl.animation({ leaf = "border", enabled = true, speed = 25.0, bezier = "linear" })
+ok
+ok
+za 30 mei 2026 12:18:44 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+za 30 mei 2026 12:18:44 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+   Modified lines:
+-hl.animation({ leaf = "border", enabled = true, speed = 25.0, bezier = "linear" })
+-hl.animation({ leaf = "borderangle", enabled = true, speed = 75.0, bezier = "linear", style = "loop" })
++
+   Modified lines:
+-hl.animation({ leaf = "border", enabled = true, speed = 25.0, bezier = "linear" })
+-hl.animation({ leaf = "borderangle", enabled = true, speed = 75.0, bezier = "linear", style = "loop" })
++
+ok
+ok
+za 30 mei 2026 12:25:27 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+za 30 mei 2026 12:25:27 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+   Modified lines:
++hl.animation({ leaf = "fadeLayersIn", enabled = true, speed = 2, bezier = "menu_decel", })
++hl.animation({ leaf = "fadeLayersOut", enabled = true, speed = 4.5, bezier = "menu_accel", })
++hl.animation({ leaf = "fade", enabled = true, speed = 10, bezier = "default", })
++hl.animation({ leaf = "workspaces", enabled = true, speed = 6, bezier = "default", style = "slide", })
++hl.animation({ leaf = "workspaces", enabled = true, speed = 7, bezier = "menu_decel", style = "slide", })
++hl.animation({ leaf = "specialWorkspace", enabled = true, speed = 3, bezier = "md3_decel", style = "slidevert", })
+   Modified lines:
++hl.animation({ leaf = "fadeLayersOut", enabled = true, speed = 4.5, bezier = "menu_accel", })
++hl.animation({ leaf = "fade", enabled = true, speed = 10, bezier = "default", })
++hl.animation({ leaf = "workspaces", enabled = true, speed = 6, bezier = "default", style = "slide", })
++hl.animation({ leaf = "workspaces", enabled = true, speed = 7, bezier = "menu_decel", style = "slide", })
++hl.animation({ leaf = "specialWorkspace", enabled = true, speed = 3, bezier = "md3_decel", style = "slidevert", })
+ok
+ok
+za 30 mei 2026 12:26:40 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+za 30 mei 2026 12:26:40 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+   Modified lines:
++hl.animation({ leaf = "border", enabled = true, speed = 25.0, bezier = "linear",})
++hl.animation({ leaf = "borderangle", enabled = true, speed = 75.0, bezier = "linear",})
++
+   Modified lines:
++hl.animation({ leaf = "border", enabled = true, speed = 25.0, bezier = "linear",})
++hl.animation({ leaf = "borderangle", enabled = true, speed = 75.0, bezier = "linear",})
++
+ok
+ok
+za 30 mei 2026 12:28:03 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+za 30 mei 2026 12:28:03 CEST: Change in /home/denise/.config/hypr/modules/animations.lua → Reloading...
+   Modified lines:
+-hl.animation({ leaf = "windowsOut", enabled = true, speed = 3, bezier = "md3_accel", style = "popin 60%" })
++hl.animation({ leaf = "windowsOut", enabled = true, speed = 3, bezier = "md3_accel", style = "popin 60%", })
++hl.animation({ leaf = "border", enabled = true, speed = 10, bezier = "default", })
+   Modified lines:
+-hl.animation({ leaf = "windowsOut", enabled = true, speed = 3, bezier = "md3_accel", style = "popin 60%" })
++hl.animation({ leaf = "windowsOut", enabled = true, speed = 3, bezier = "md3_accel", style = "popin 60%", })
++hl.animation({ leaf = "border", enabled = true, speed = 10, bezier = "default", })
+ok
+ok
+za 30 mei 2026 12:39:57 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 12:39:57 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
+-    size = { 1889, 1006 }
++   
+   Modified lines:
+-    size = { 1889, 1006 }
++   
+ok
+ok
+za 30 mei 2026 12:48:17 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 12:48:17 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
++hl.window_rule({ match = { class = exact_match("yad") }, tile = true })
+   Modified lines:
++hl.window_rule({ match = { class = exact_match("yad") }, tile = true })
+ok
+ok
+za 30 mei 2026 12:49:21 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 12:49:21 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
+-   
++    tile = true
++    no_anim = true
+   Modified lines:
+-   
++    tile = true
++    no_anim = true
+ok
+ok
+za 30 mei 2026 12:49:31 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 12:49:31 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 12:52:16 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 12:52:16 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 12:52:58 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 12:52:58 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
++    float = true,
+   Modified lines:
++    float = true,
+ok
+ok
+za 30 mei 2026 12:55:17 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 12:55:17 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
+-    tile = true,
+-    no_anim = true
++    pseudo-tiling = true,
++    no_anim = true,
++    center = true,
++    
+   Modified lines:
+-    no_anim = true
++    pseudo-tiling = true,
++    no_anim = true,
++    center = true,
++    
+ok
+ok
+za 30 mei 2026 12:55:25 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 12:55:25 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
+-    pseudo-tiling = true,
++    pseudo-tile = true,
+   Modified lines:
+-    pseudo-tiling = true,
++    pseudo-tile = true,
+ok
+ok
+za 30 mei 2026 12:55:40 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 12:55:40 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
+-    pseudo-tile = true,
++    pseudo = true,
+   Modified lines:
+-    pseudo-tile = true,
++    pseudo = true,
+ok
+ok
+za 30 mei 2026 12:56:26 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 12:56:26 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 12:57:44 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 12:57:44 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
+   Modified lines:
+-    
++    size = { 900, 445 }    
+-    
++    size = { 900, 445 }    
+ok
+ok
+za 30 mei 2026 12:59:16 CEST: Change in /home/denise/.config/hypr/modules/window_binds.lua → Reloading...
+za 30 mei 2026 12:59:16 CEST: Change in /home/denise/.config/hypr/modules/window_binds.lua → Reloading...
+   Modified lines:
+-hl.bind(mainMod .. " + Z", hl.dsp.window.pseudo(), { desc = "Toggle pseudo-tiling (dwindle)" })   
++hl.bind(mainMod .. " + SPACE", hl.dsp.window.pseudo(), { desc = "Toggle pseudo-tiling (dwindle)" })   
+   Modified lines:
+-hl.bind(mainMod .. " + Z", hl.dsp.window.pseudo(), { desc = "Toggle pseudo-tiling (dwindle)" })   
++hl.bind(mainMod .. " + SPACE", hl.dsp.window.pseudo(), { desc = "Toggle pseudo-tiling (dwindle)" })   
+ok
+ok
+za 30 mei 2026 13:00:25 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 13:00:25 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 13:02:11 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 13:02:11 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
+-    float = true,
++    pseudo = true,
++    no_anim = true,
++    center = true,
+   Modified lines:
+-    float = true,
++    pseudo = true,
++    no_anim = true,
++    center = true,
+ok
+ok
+za 30 mei 2026 13:07:49 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 13:07:49 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 13:08:11 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 13:08:11 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 13:08:33 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 13:08:33 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 13:11:49 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 13:11:49 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 13:13:30 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 13:13:30 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 13:30:22 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 13:30:22 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 13:32:22 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 13:32:22 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 13:34:35 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 13:34:35 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
+-    tile = true,
++    float = true,
+   Modified lines:
+-    tile = true,
++    float = true,
+ok
+ok
+za 30 mei 2026 13:35:23 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 13:35:23 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 13:36:56 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 13:36:56 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 13:37:33 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 13:37:33 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 13:42:22 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 13:42:22 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 13:43:37 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 13:43:37 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 13:45:11 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 13:45:11 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 13:49:23 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 13:49:23 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 13:51:59 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 13:51:59 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 13:55:21 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 13:55:21 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
++    tile = true,
++    pseudo = true,
++    no_anim = true,
++    center = true,    
++    size = { 900, 454 }    
++})
+   Modified lines:
++    pseudo = true,
++    no_anim = true,
++    center = true,    
++    size = { 900, 454 }    
++})
+ok
+ok
+za 30 mei 2026 13:58:02 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 13:58:02 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 14:00:30 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 14:00:30 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 14:01:55 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 14:01:55 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 14:04:39 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 14:04:39 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 14:07:59 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 14:07:59 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 14:14:17 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 14:14:17 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
+-    match = { title = exact_match("Settings") },
++    match = { title = exact_match("Configs") },
+   Modified lines:
+-    match = { title = exact_match("Settings") },
++    match = { title = exact_match("Configs") },
+ok
+ok
+za 30 mei 2026 14:15:15 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 14:15:15 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 14:18:01 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 14:18:01 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
++    center = true,    
++    size = { 900, 454 }    
++})
++
++
+   Modified lines:
++    no_anim = true,
++    center = true,    
++    size = { 900, 454 }    
++})
++
++
+ok
+ok
+za 30 mei 2026 14:19:55 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 14:19:55 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 14:21:14 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 14:21:14 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 14:22:50 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 14:22:50 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 14:40:02 CEST: Change in /home/denise/.config/hypr/modules/key_binds.lua → Reloading...
+za 30 mei 2026 14:40:02 CEST: Change in /home/denise/.config/hypr/modules/key_binds.lua → Reloading...
+   Modified lines:
++
++---- Hypr Welcome Float Toggle ----
++hl.bind(mainMod .. " + F", hl.dsp.exec_cmd("$HOME/.config/hypr/scripts/toggle_float.sh"))
++
++
+   Modified lines:
++
++---- Hypr Welcome Float Toggle ----
++hl.bind(mainMod .. " + F", hl.dsp.exec_cmd("$HOME/.config/hypr/scripts/toggle_float.sh"))
++
++
+ok
+ok
+za 30 mei 2026 14:56:11 CEST: Watcher started
+za 30 mei 2026 14:56:11 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules
+za 30 mei 2026 14:56:11 CEST: Watcher started
+za 30 mei 2026 14:56:12 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules
+za 30 mei 2026 15:27:19 CEST: Watcher started
+za 30 mei 2026 15:27:19 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules
+za 30 mei 2026 15:27:20 CEST: Watcher started
+za 30 mei 2026 15:27:20 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules
+za 30 mei 2026 15:36:22 CEST: Watcher started
+za 30 mei 2026 15:36:22 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules
+za 30 mei 2026 15:36:22 CEST: Watcher started
+za 30 mei 2026 15:36:22 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules
+za 30 mei 2026 15:39:43 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+za 30 mei 2026 15:39:43 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+   Modified lines:
+-    hl.exec_cmd("waybar")
++    hl.exec_cmd(home .. "/.toggle-waybar.sh")
+   Modified lines:
+-    hl.exec_cmd("waybar")
++    hl.exec_cmd(home .. "/.toggle-waybar.sh")
+ok
+ok
+za 30 mei 2026 15:41:04 CEST: Watcher started
+za 30 mei 2026 15:41:04 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules
+za 30 mei 2026 15:41:05 CEST: Watcher started
+za 30 mei 2026 15:41:05 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules
+za 30 mei 2026 15:44:20 CEST: Watcher started
+za 30 mei 2026 15:44:20 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules
+za 30 mei 2026 15:44:21 CEST: Watcher started
+za 30 mei 2026 15:44:21 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules
+za 30 mei 2026 15:48:28 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+za 30 mei 2026 15:48:28 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+   Modified lines:
+-    -- UI
++        -- UI
++    
++    -- DBus & Environment
++    hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
++    hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+   Modified lines:
+-    -- UI
++        -- UI
++    
++    -- DBus & Environment
++    hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
++    hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+ok
+ok
+za 30 mei 2026 15:48:48 CEST: Watcher started
+za 30 mei 2026 15:48:48 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules
+za 30 mei 2026 15:48:48 CEST: Watcher started
+za 30 mei 2026 15:48:48 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules
+za 30 mei 2026 15:54:38 CEST: Watcher started
+za 30 mei 2026 15:54:38 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules
+za 30 mei 2026 15:54:38 CEST: Watcher started
+za 30 mei 2026 15:54:38 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules
+za 30 mei 2026 15:57:28 CEST: Watcher started
+za 30 mei 2026 15:57:28 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules
+za 30 mei 2026 15:57:28 CEST: Watcher started
+za 30 mei 2026 15:57:28 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules
+za 30 mei 2026 16:02:42 CEST: Watcher started
+za 30 mei 2026 16:02:42 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules
+za 30 mei 2026 16:03:56 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+   Modified lines:
++    hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
++        
++    -- UI
++    hl.exec_cmd(home .. "/.toggle-waybar.sh")
++    hl.exec_cmd(home .. "/.config/waybar/scripts/update_waybar_network-device.sh")
++    hl.exec_cmd(home .. "/.config/hypr/scripts/random-wallpaper.sh")
+HYPRLAND_INSTANCE_SIGNATURE not set! (is hyprland running?)
+
+za 30 mei 2026 16:04:20 CEST: Watcher started
+za 30 mei 2026 16:04:20 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules
+za 30 mei 2026 16:04:20 CEST: Watcher started
+za 30 mei 2026 16:04:21 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules
+za 30 mei 2026 16:09:51 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+za 30 mei 2026 16:09:51 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+   Modified lines:
+-    hl.exec_cmd(home .. "/.config/hypr/scripts/disable-eos-welcome.sh")    
++    hl.exec_cmd(home .. "/.config/hypr/scripts/restart-hyprland-config.sh")      
+-    hl.exec_cmd(home .. "/.config/hypr/scripts/monitor_workspaces_configurator.sh")
++    
+-    hl.exec_cmd(home .. "/.config/hypr-welcome/scripts/welcome.sh")
++    
+   Modified lines:
+-    hl.exec_cmd(home .. "/.config/hypr/scripts/disable-eos-welcome.sh")    
++    hl.exec_cmd(home .. "/.config/hypr/scripts/restart-hyprland-config.sh")      
+-    hl.exec_cmd(home .. "/.config/hypr/scripts/monitor_workspaces_configurator.sh")
++    
+-    hl.exec_cmd(home .. "/.config/hypr-welcome/scripts/welcome.sh")
++    
+ok
+ok
+za 30 mei 2026 16:12:28 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+za 30 mei 2026 16:12:28 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 16:16:42 CEST: Watcher started
+za 30 mei 2026 16:16:42 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules
+za 30 mei 2026 16:16:43 CEST: Watcher started
+za 30 mei 2026 16:16:43 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules
+za 30 mei 2026 16:22:41 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+za 30 mei 2026 16:22:41 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+   Modified lines:
+-     hl.exec_cmd(home .. "/.config/hypr-welcome/scripts/hypr_check_updates.sh")
++    hl.exec_cmd(home .. "/.config/hypr-welcome/scripts/hypr_check_updates.sh")
+   Modified lines:
+-     hl.exec_cmd(home .. "/.config/hypr-welcome/scripts/hypr_check_updates.sh")
++    hl.exec_cmd(home .. "/.config/hypr-welcome/scripts/hypr_check_updates.sh")
+ok
+ok
+za 30 mei 2026 16:26:48 CEST: Watcher started
+za 30 mei 2026 16:26:49 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules
+za 30 mei 2026 16:26:49 CEST: Watcher started
+za 30 mei 2026 16:26:49 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules
+za 30 mei 2026 16:32:19 CEST: Watcher started
+za 30 mei 2026 16:32:19 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules
+za 30 mei 2026 16:32:20 CEST: Watcher started
+za 30 mei 2026 16:32:20 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules
+za 30 mei 2026 17:27:47 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+za 30 mei 2026 17:27:47 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+   Modified lines:
++    hl.exec_cmd(home .. "/.config/hypr/scripts/restart-hyprland-config.sh")
++    hl.exec_cmd(home .. "/.config/hypr/scripts/disable-eos-welcome.sh")    
++    hl.exec_cmd(home .. "/.config/hypr/scripts/monitors.sh")
++    hl.exec_cmd(home .. "/.config/hypr/scripts/monitor_workspaces_configurator.sh")
++    hl.exec_cmd(home .. "/.config/hypr-welcome/scripts/hypr_check_updates.sh")
++    hl.exec_cmd(home .. "/.config/hypr-welcome/scripts/welcome.sh")
+   Modified lines:
++    hl.exec_cmd(home .. "/.config/hypr/scripts/restart-hyprland-config.sh")
++    hl.exec_cmd(home .. "/.config/hypr/scripts/disable-eos-welcome.sh")    
++    hl.exec_cmd(home .. "/.config/hypr/scripts/monitors.sh")
++    hl.exec_cmd(home .. "/.config/hypr/scripts/monitor_workspaces_configurator.sh")
++    hl.exec_cmd(home .. "/.config/hypr-welcome/scripts/hypr_check_updates.sh")
++    hl.exec_cmd(home .. "/.config/hypr-welcome/scripts/welcome.sh")
+ok
+ok
+za 30 mei 2026 17:28:24 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+za 30 mei 2026 17:28:24 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 17:30:31 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+za 30 mei 2026 17:30:31 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+   Modified lines:
+-    hl.exec_cmd(home .. "/.config/hypr/scripts/monitor_workspaces_configurator.sh")
++    hl.exec_cmd(home .. "/.config/hypr-welcome/scripts/hypr-welcome")
++    hl.exec_cmd(home .. "/.config/hypr-welcome/scripts/welcome.sh")    
+-
+-        
++            
+   Modified lines:
+-    hl.exec_cmd(home .. "/.config/hypr/scripts/monitor_workspaces_configurator.sh")
++    hl.exec_cmd(home .. "/.config/hypr-welcome/scripts/hypr-welcome")
++    hl.exec_cmd(home .. "/.config/hypr-welcome/scripts/welcome.sh")    
+-
+-        
++            
+ok
+ok
+za 30 mei 2026 17:33:48 CEST: Watcher started
+za 30 mei 2026 17:33:48 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules
+za 30 mei 2026 17:33:49 CEST: Watcher started
+za 30 mei 2026 17:33:49 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules
+za 30 mei 2026 17:37:21 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+za 30 mei 2026 17:37:21 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+   Modified lines:
++    hl.exec_cmd(home .. "/.config/hypr/scripts/monitor_workspaces_configurator.sh")
+   Modified lines:
++    hl.exec_cmd(home .. "/.config/hypr/scripts/monitor_workspaces_configurator.sh")
+ok
+ok
+za 30 mei 2026 17:40:18 CEST: Watcher started
+za 30 mei 2026 17:40:18 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules
+za 30 mei 2026 17:40:19 CEST: Watcher started
+za 30 mei 2026 17:40:19 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules
+za 30 mei 2026 17:52:51 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 17:52:51 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
+   Modified lines:
++---------------------------
++
++
++---- Hypr-welcome ----
++
++---- Hypr-welcome / Tabs done here ----
++---------------------------
++
++
++---- Hypr-welcome ----
++
++---- Hypr-welcome / Tabs done here ----
+ok
+ok
+za 30 mei 2026 18:18:34 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 18:18:34 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
+   Modified lines:
++        pseudo = true,
++        no_anim = true,
++        center = true,    
++        size = { 900, 454 }    
++    })
++end
++        pseudo = true,
++        no_anim = true,
++        center = true,    
++        size = { 900, 454 }    
++    })
++end
+ok
+ok
+za 30 mei 2026 18:19:10 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 18:19:10 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
+   Modified lines:
+-        tile = true,
++        float = true,
+-        tile = true,
++        float = true,
+ok
+ok
+za 30 mei 2026 18:22:31 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 18:22:31 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 18:35:47 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 18:35:47 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
+   Modified lines:
+-        float = true,
++        float = false,
+-        float = true,
++        float = false,
+ok
+ok
+za 30 mei 2026 18:46:14 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 18:46:14 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
+-    "Waybar Styles"
++    "Waybar Styles",
++    "Awww"
+   Modified lines:
+-    "Waybar Styles"
++    "Waybar Styles",
++    "Awww"
+ok
+ok
+za 30 mei 2026 18:47:20 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+za 30 mei 2026 18:47:20 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
++    "Change your settings",
+   Modified lines:
++    "Change your settings",
+ok
+ok
+za 30 mei 2026 19:05:54 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+za 30 mei 2026 19:05:54 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 30 mei 2026 19:07:53 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+za 30 mei 2026 19:07:53 CEST: Change in /home/denise/.config/hypr/modules/autostart.lua → Reloading...
+   Modified lines:
+-    -- Security & Idle
+-    -- Cursor
++    -- Cursor & Keyboard
+-    
+-    -- Keyboard layout indicator (shell redirect needs sh -c)
+-
+   Modified lines:
+-    -- Security & Idle
+-    -- Cursor
++    -- Cursor & Keyboard
+-    
+-    -- Keyboard layout indicator (shell redirect needs sh -c)
+-
+ok
+ok
+za 30 mei 2026 19:17:58 CEST: Watcher started
+za 30 mei 2026 19:17:58 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules
+za 30 mei 2026 19:17:59 CEST: Watcher started
+za 30 mei 2026 19:17:59 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules
+za 30 mei 2026 19:29:23 CEST: Change in /home/denise/.config/hypr/modules/monitors.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+Couldn't connect to /run/user/1000/hypr/39d7e209c79d451efab1b21151d5938289da838d_1780161474_92181792/.socket.sock. (4)
+za 30 mei 2026 19:29:26 CEST: Watcher started
+za 30 mei 2026 19:29:26 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules
+za 30 mei 2026 19:29:26 CEST: Watcher started
+za 30 mei 2026 19:29:26 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules
+za 30 mei 2026 19:50:47 CEST: Change in /home/denise/.config/hypr/modules/monitors.lua → Reloading...
+za 30 mei 2026 19:50:47 CEST: Change in /home/denise/.config/hypr/modules/monitors.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+do  4 jun 2026  2:50:46 CEST: Watcher started
+do  4 jun 2026  2:50:46 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules
+do  4 jun 2026  2:50:47 CEST: Watcher started
+do  4 jun 2026  2:50:47 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules
+do  4 jun 2026  9:46:04 CEST: Change in /home/denise/.config/hypr/modules/monitors.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+Couldn't connect to /run/user/1000/hypr/39d7e209c79d451efab1b21151d5938289da838d_1780534242_2055629401/.socket.sock. (4)
+do  4 jun 2026  9:46:07 CEST: Watcher started
+do  4 jun 2026  9:46:07 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules
+do  4 jun 2026  9:46:07 CEST: Watcher started
+do  4 jun 2026  9:46:07 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules
+do  4 jun 2026  9:51:37 CEST: Watcher started
+do  4 jun 2026  9:51:37 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules
+do  4 jun 2026  9:51:37 CEST: Watcher started
+do  4 jun 2026  9:51:37 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules
+do  4 jun 2026 23:06:36 CEST: Watcher started
+do  4 jun 2026 23:06:36 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules
+do  4 jun 2026 23:06:36 CEST: Watcher started
+do  4 jun 2026 23:06:36 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules
+do  4 jun 2026 23:20:59 CEST: Change in /home/denise/.config/hypr/modules/monitors.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+Couldn't connect to /run/user/1000/hypr/39d7e209c79d451efab1b21151d5938289da838d_1780607192_901184686/.socket.sock. (4)
+do  4 jun 2026 23:21:02 CEST: Watcher started
+do  4 jun 2026 23:21:02 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules
+do  4 jun 2026 23:21:02 CEST: Watcher started
+do  4 jun 2026 23:21:02 CEST: Monitoring /home/denise/.config/hypr/hyprland.lua & /home/denise/.config/hypr/modules
+vr  5 jun 2026  0:03:37 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+vr  5 jun 2026  0:03:37 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
+-    "YAD",
++    "yad",
+-        size = { 900, 450 }    
++        size = { 900, 410 }    
+   Modified lines:
+-    "YAD",
++    "yad",
+-        size = { 900, 450 }    
++        size = { 900, 410 }    
+ok
+ok
+vr  5 jun 2026  0:04:15 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+vr  5 jun 2026  0:04:15 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+vr  5 jun 2026  0:05:26 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+vr  5 jun 2026  0:05:26 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   Modified lines:
+-        size = { 900, 410 }    
++        size = { 900, 419 }    
+   Modified lines:
+-        size = { 900, 410 }    
++        size = { 900, 419 }    
+ok
+ok
+vr  5 jun 2026  0:06:08 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+vr  5 jun 2026  0:06:08 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+vr  5 jun 2026  0:06:32 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+vr  5 jun 2026  0:06:32 CEST: Change in /home/denise/.config/hypr/modules/window_rules.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok
+za 20 jun 2026  1:05:34 CEST: Change in /home/denise/.config/hypr/modules/key_binds.lua → Reloading...
+za 20 jun 2026  1:05:34 CEST: Change in /home/denise/.config/hypr/modules/key_binds.lua → Reloading...
+   Modified lines:
++hl.bind("CTRL + W", hl.dsp.exec_cmd("waypaper"))
+-hl.bind(mainMod .. " + SHIFT + H", hl.dsp.exec_cmd("$HOME/.config/hypr/scripts/hyprmod.sh"))
++---- Set Kvantum Root Theme ----
++hl.bind(mainMod .. " + SHIFT + K", hl.dsp.exec_cmd("$HOME/.config/hypr/scripts/set_root_kvantum_wrapper.sh"))
++
++
+   Modified lines:
++hl.bind("CTRL + W", hl.dsp.exec_cmd("waypaper"))
+-hl.bind(mainMod .. " + SHIFT + H", hl.dsp.exec_cmd("$HOME/.config/hypr/scripts/hyprmod.sh"))
++---- Set Kvantum Root Theme ----
++hl.bind(mainMod .. " + SHIFT + K", hl.dsp.exec_cmd("$HOME/.config/hypr/scripts/set_root_kvantum_wrapper.sh"))
++
++
+ok
+ok
+za 20 jun 2026  2:19:56 CEST: Change in /home/denise/.config/hypr/modules/key_binds.lua → Reloading...
+za 20 jun 2026  2:19:56 CEST: Change in /home/denise/.config/hypr/modules/key_binds.lua → Reloading...
+   Modified lines:
+-hl.bind(mainMod .. " + ALT + H", hl.dsp.exec_cmd("cliphist list | wofi -dmenu | cliphist decode | wl-copy"))
++hl.bind(mainMod .. " + ALT + H", hl.dsp.exec_cmd("$HOME/.config/hypr/scripts/cliphist-copy.sh"))
+   Modified lines:
+-hl.bind(mainMod .. " + ALT + H", hl.dsp.exec_cmd("cliphist list | wofi -dmenu | cliphist decode | wl-copy"))
++hl.bind(mainMod .. " + ALT + H", hl.dsp.exec_cmd("$HOME/.config/hypr/scripts/cliphist-copy.sh"))
+ok
+ok
+za 20 jun 2026  6:43:59 CEST: Change in /home/denise/.config/hypr/modules/key_binds.lua → Reloading...
+za 20 jun 2026  6:43:59 CEST: Change in /home/denise/.config/hypr/modules/key_binds.lua → Reloading...
+   (No text diff detected - likely atomic editor save)
+   (No text diff detected - likely atomic editor save)
+ok
+ok

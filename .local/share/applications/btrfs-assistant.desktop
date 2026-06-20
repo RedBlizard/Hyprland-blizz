@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Btrfs Assistant
+Comment=Change system settings
+Exec=env QT_QPA_PLATFORM=wayland btrfs-assistant-launcher
+Terminal=false
+Type=Application
+Icon=btrfs-assistant
+Categories=System
+NoDisplay=false

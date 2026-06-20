@@ -1,0 +1,34 @@
+{
+    "workbench.editor.empty.hint": "hidden",
+    "security.workspace.trust.banner": "never",
+    "diffEditor.codeLens": true,
+    "window.autoDetectColorScheme": true,
+    "workbench.preferredDarkColorTheme": "Catppuccin Frappé",
+    "window.newWindowProfile": "Default",
+    "security.workspace.trust.startupPrompt": "never",
+    "catppuccin.accentColor": "blue",
+    "Lua.diagnostics.globals": [
+        "hl",
+        "user"
+        
+    ],
+    "Lua.workspace.library": ["${env:HOME}/.config/hypr/types"],  
+    "javascript.format.placeOpenBraceOnNewLineForFunctions": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "workbench.editor.autoLockGroups": {
+        "workbench.editors.gettingStartedInput": true
+    },
+    "catppuccin.bracketMode": "neovim",
+    "chatgpt.gpt3.provider": "Ollama",
+    "chatgpt.gpt3.apiKey": "ollama",
+    "chatgpt.gpt3.model": "custom",
+    "local.model.provider.serverUrl": "http://localhost:11434 ",
+    "local.model.provider.serverPresets": [
+        
+    ],
+    "omega.defaultModel": "Hybrid-Fusion:latest",
+    "continue.enableNextEdit": false,
+    "editor.unicodeHighlight.nonBasicASCII": false,
+    "workbench.preferredLightColorTheme": "Catppuccin Frappé",
+    "Lua.runtime.version": "Lua 5.5"
+}

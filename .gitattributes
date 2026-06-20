@@ -1,0 +1,11 @@
+# Forceer alle Hyprland configs als INI (geen Lua!)
+*.conf linguist-language=INI
+hyprland.conf linguist-language=INI
+
+# Specifiek voor jouw 'workspace binds' bestand (met of zonder spatie/extensie)
+workspace_binds linguist-language=INI
+workspace\ binds linguist-language=INI
+workspacebinds linguist-language=INI
+
+# Negeer eventuele test-bestanden die wel Lua zijn (als je die ooit toevoegt)
+*.lua linguist-vendored=true

@@ -1,0 +1,11 @@
+[Unit]
+Description=Hyprland Config Watcher
+After=graphical-session.target
+
+[Service]
+ExecStart=/home/denise/.config/hypr/scripts/watch-hyprland-config.sh
+Environment="XDG_RUNTIME_DIR=/run/user/1000"
+Restart=always
+
+[Install]
+WantedBy=default.target

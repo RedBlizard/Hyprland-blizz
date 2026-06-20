@@ -1,0 +1,25 @@
+width=1889
+height=1006
+location=center
+mode=dmenu
+run-always_parse_args=true
+show=drun
+show_all=true
+matching=fuzzy
+prompt=Search: Type to filter....
+filter_rate=100
+line_wrap=word
+allow_markup=true
+no_actions=true
+halign=fill
+orientation=vertical
+content_halign=fill
+insensitive=false
+hide_scroll=false
+print_command=true
+allow_images=true
+image_size=285
+gtk_dark=true
+term=kitty
+columns=6
+

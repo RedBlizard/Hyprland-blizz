@@ -1,0 +1,18 @@
+[Desktop Entry]
+Comment[en_US]=geany
+Comment=geany
+Exec=geany
+GenericName[en_US]=geany
+GenericName=geany
+Icon=geany
+MimeType=text/plain;
+Name[en_US]=geany
+Name=geany
+NoDisplay=true
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

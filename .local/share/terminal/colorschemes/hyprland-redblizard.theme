@@ -1,0 +1,12 @@
+[Scheme]
+Name=Hyprland-Redblizard
+ColorCursor=#F2D5CF
+ColorCursorForeground=#232634
+ColorCursorUseDefault=FALSE
+ColorForeground=#C6D0F5
+ColorBackground=#303446
+ColorSelectionBackground=#626880
+ColorSelection=#C6D0F5
+ColorSelectionUseDefault=FALSE
+TabActivityColor=#EF9F76
+ColorPalette=#626880;#E78284;#8358E1;#E5C890;#8CAAEE;#7F3FBF;#81C8BE;#F2D5CF;#626880;#E78284;#8358E1;#E5C890;#8CAAEE;#7F3FBF;#81C8BE;#F2D5CF 

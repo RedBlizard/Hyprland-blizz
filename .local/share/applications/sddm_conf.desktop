@@ -1,0 +1,18 @@
+[Desktop Entry]
+Categories=Qt;Settings;DesktopSettings;
+Comment[en_US]=
+Comment=
+Exec=sddm-conf
+GenericName[en_US]=
+GenericName=
+Icon=preferences-system
+MimeType=
+Name[en_US]=sddm-config-editor
+Name=sddm-config-editor
+Path=
+StartupNotify=false
+Terminal=false
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

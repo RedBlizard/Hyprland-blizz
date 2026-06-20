@@ -1,0 +1,26 @@
+#!/bin/bash
+# ~/.config/hypr/scripts/wofi-emoji.sh
+
+CONFIG="$HOME/.config/wofi/wofi-emoji/config"
+STYLE="$HOME/.config/wofi/wofi-emoji/style.css"
+
+if pgrep -x "wofi" > /dev/null; then
+    pkill wofi
+    exit 0
+fi
+
+# Emoji-data uit wofi-emoji zelf lezen en naar wofi pipen
+SELECTED=$(sed '1,/^### DATA ###$/d' /usr/bin/wofi-emoji | \
+    wofi --show dmenu \
+         --columns=2 \
+         --width=950 \
+         --height=425 \
+        -c "$CONFIG" \
+        -s "$STYLE" \
+        --prompt="Emoji")
+
+if [ -n "$SELECTED" ]; then
+    EMOJI_CHAR=$(echo "$SELECTED" | awk '{print $1}')
+    echo -n "$EMOJI_CHAR" | wl-copy
+    notify-send "Emoji" "Copied: $EMOJI_CHAR" -t 1500
+fi

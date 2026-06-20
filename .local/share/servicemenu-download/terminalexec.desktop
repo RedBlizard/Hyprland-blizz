@@ -1,0 +1,231 @@
+[Desktop Entry]
+Actions=getmyterminal;
+#Asctions=konsole;deepin;terminator;xterm;xfce4-terminal;gnome-terminal;lxterminal;roxterm;pantheon-terminal;sakuraterminal;kittyterminal;alacrittyopen;tilix;terminus;hyper
+Icon=utilities-terminal
+#MimeType=all/allfiles
+MimeType=application/x-executable;
+#ServiceTypes=KonqPopupMenu/Plugin
+Type=Service
+Version=1.1
+X-KDE-Priority=TopLevel
+X-KDE-ServiceTypes=KonqPopupMenu/Plugin
+X-KDE-AuthorizeAction=shell_access
+X-KDE-StartupNotify=false
+X-KDE-Submenu=Your Terminal
+X-KDE-Submenu[en]=Your Terminal
+
+[Desktop Action getmyterminal]
+#terminus hyper
+Exec=bash -c 'yourterminals="konsole konsole5 deepin-terminal terminator xterm xfce4-terminal gnome-terminal mate-terminal lxterminal roxterm roxterm-common io.elementary.terminal sakura kitty alacritty tilix guake tilda cool-retro-term yakuake stterm rxvt-unicode eterm terminology lilyterm qterminal aterm evilvte";test=$(echo "$yourterminals" | tr " " "\n" | tac);number=$(echo "$test" | wc -l);command="" ;for (( i=1; i <= $number; i++ )) do terminal=$(echo -e "$test" | awk "(NR == $i)"); if dpkg -s $terminal &> /dev/null; then command="$terminal;$command";fi;if pacman -Qi $terminal &> /dev/null; then command="$terminal;$command"; fi; if rpm -q $terminal &> /dev/null; then command="$terminal;$command"; fi done;sed "/^Exec=/!s/Actions=.*/Actions=$command;getmyterminal;/g" -i '' ~/.local/share/kservices5/ServiceMenus/terminalexec.desktop;'
+Icon=collection-rescan-amarok
+Name=Update list
+
+[Desktop Action konsole]
+TryExec=konsole
+Exec=konsole --hold -e %f
+Icon=utilities-terminal
+Name=Run in Konsole
+
+
+[Desktop Action konsole5]
+TryExec=konsole
+Exec=konsole --workdir %f
+Icon=utilities-terminal
+Name=Open Konsole here
+
+[Desktop Action deepin-terminal]
+X-TryExec=oocalc
+TryExec=deepin-terminal
+Exec=deepin-terminal -e %f
+Icon=deepin-terminal
+Name=Run in Deepin Terminal
+
+[Desktop Action terminator]
+# Exec=current_pid=$(crow -t 'en' -f %U); echo ${current_pid} > "translated_en"%n
+TryExec=terminator
+Exec=path=$(echo %f | sed 's@ @"&"@g' );terminator -e "$path"
+Icon=terminator
+Name=Run in Terminator
+
+
+[Desktop Action xterm]
+# Exec=current_pid=$(crow -t 'en' -f %U); echo ${current_pid} > "translated_en"%n
+TryExec=xterm
+Exec=xterm -hold -e %f
+Icon=mini.xterm
+Name=Run in Xterm
+
+
+[Desktop Action xfce4-terminal]
+TryExec=xfce4-terminal
+Exec=path=$(echo %f | sed 's@ @"&"@g' );xfce4-terminal -H -e="$path"
+#Exec=myvar=$(echo '%f' | sed 's@ @@g');xfce4-terminal -H -e "%f"
+#myvar="$(sed 's@ @\\ @g' <<< '/Рабочий стол/Паша/Scripts/newsfzf')";kdialog --msgbox "$myvar"
+#Exec=myvar=$(echo '%f' | sed 's@ @\\ @g');xfce4-terminal -H -e "$myvar"
+Icon=utilities-terminal
+Name=Run in Xfce-terminal
+
+[Desktop Action gnome-terminal]
+# Exec=current_pid=$(crow -t 'en' -f %U); echo ${current_pid} > "translated_en"%n
+TryExec=gnome-terminal
+Exec=path=$(echo %f | sed 's@ @"&"@g' );gnome-terminal -- $SHELL -c "$path;read -n 1 -s"
+Icon=org.gnome.Terminal
+Name=Run in Gnome-terminal
+
+[Desktop Action lxterminal]
+# Exec=current_pid=$(crow -t 'en' -f %U); echo ${current_pid} > "translated_en"%n
+TryExec=lxterminal
+Exec=path=$(echo %f | sed 's@ @"&"@g' );lxterminal -e "$path;read -s"
+Icon=lxterminal
+Name=Run in Lx-terminal
+
+[Desktop Action roxterm]
+# Exec=current_pid=$(crow -t 'en' -f %U); echo ${current_pid} > "translated_en"%n
+TryExec=roxterm
+Exec=path=$(echo %f | sed 's@ @"&"@g' );roxterm --hold -e "$path"
+Icon=roxterm
+Name=Run in Rox Term
+
+[Desktop Action roxterm-common]
+# Exec=current_pid=$(crow -t 'en' -f %U); echo ${current_pid} > "translated_en"%n
+TryExec=roxterm
+Exec=path=$(echo %f | sed 's@ @"&"@g' );roxterm --hold -e "$path"
+Icon=roxterm
+Name=Run in Rox Term
+
+[Desktop Action io.elementary.terminal]
+# Exec=current_pid=$(crow -t 'en' -f %U); echo ${current_pid} > "translated_en"%n
+TryExec=io.elementary.terminal
+Exec=io.elementary.terminal -e %f
+Icon=utilities-terminal
+Name=Run in Pantheon-terminal
+
+[Desktop Action sakura]
+# Exec=current_pid=$(crow -t 'en' -f %U); echo ${current_pid} > "translated_en"%n
+TryExec=sakura
+Exec=path=$(echo %f | sed 's@ @"&"@g' );sakura --hold -e "$path"
+Icon=terminal-tango
+Name=Run in Sakura
+
+
+[Desktop Action kitty]
+TryExec=kitty
+Icon=kitty
+Exec=path=$(echo %f | sed 's@ @"&"@g' );kitty --hold sh -c "$path"
+Name=Run in Kitty
+
+[Desktop Action alacritty]
+TryExec=alacritty
+Exec=alacritty --hold -e %f
+Icon=com.alacritty.Alacritty
+Name=Run in Alacritty
+
+
+[Desktop Action tilix]
+TryExec=tilix
+Exec=path=$(echo %f | sed 's@ @"&"@g' );tilix -e "$path"
+Icon=com.gexperts.Tilix
+Name=Run in Tilix
+
+
+[Desktop Action terminus]
+TryExec=/opt/Terminus/terminus
+Exec=/opt/Terminus/terminus %f
+Icon=terminus
+Name=Run in Terminus
+
+[Desktop Action hyper]
+TryExec=/opt/Hyper/hyper
+Exec="/opt/Hyper/hyper" %f
+Icon=hyper
+Name=Run in Hyper
+
+
+[Desktop Action guake]
+TryExec=guake
+Exec=path=$(echo %f | sed 's@ @"&"@g' );guake -n '%d%f ' -r "%f " --show -e "$path"
+Icon=guake
+Name=Run in Guake
+
+
+[Desktop Action tilda]
+TryExec=tilda
+Exec=path=$(echo %f | sed 's@ @"&"@g' );tilda -c "$path ;read -n 1 -s"
+Icon=tilda
+Name=Run in Tilda
+
+
+[Desktop Action cool-retro-term]
+TryExec=cool-retro-term
+Exec=cool-retro-term -e %f
+Icon=cool-retro-term
+Name=Run in Cool Retro Term
+
+
+[Desktop Action yakuake]
+TryExec=yakuake
+#folder=$(echo %d | sed 's@ @"&"@g' );basename=$(basename "$folder")
+Exec=folder=$(echo %d | sed 's@ @"&"@g' );path=$(echo %f | sed 's@ @"&"@g' );qdbus org.kde.yakuake /yakuake/sessions addSession;id="$(qdbus org.kde.yakuake /yakuake/sessions sessionIdList | tr , "\n" | sort -g | tail -1 | tr -d '\n')";qdbus org.kde.yakuake /yakuake/tabs setTabTitle "$id" "%n";qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal "$id" " cd $folder;clear;$path";qdbus org.kde.yakuake /yakuake/window toggleWindowState
+Icon=yakuake
+Name=Run in Yakuake
+
+
+[Desktop Action stterm]
+TryExec=stterm
+Exec=st -e %f
+Icon=utilities-terminal
+Name=Run in Simple Terminal
+
+
+[Desktop Action rxvt-unicode]
+TryExec=urxvt
+Exec=urxvt -hold -e %f 
+Icon=urxvt_48x48.xpm
+Name=Run in Rxvt Color Unicode Terminal
+
+
+[Desktop Action eterm]
+Exec=Eterm -e %f 
+Icon=utilities-terminal
+Name=Run in Eterm
+
+
+[Desktop Action terminology]
+Exec=path=$(echo %f | sed 's@ @"&"@g' );terminology -H -e "$path"
+Icon=terminology
+Name=Run in Terminology
+
+
+[Desktop Action lilyterm]
+Exec=lilyterm -H -x %f
+Icon=lilyterm
+Name=Run in LilyTerm
+
+
+[Desktop Action qterminal]
+Exec=qterminal -e %f
+Icon=qterminal
+Name=Run in Qterminal
+
+[Desktop Action mate-terminal]
+Exec=path=$(echo %f | sed 's@ @"&"@g' );mate-terminal -- $SHELL -c "$path;read -n 1 -s"
+Icon=utilities-terminal
+Name=Run in Mate-terminal
+
+
+[Desktop Action termite]
+Exec=path=$(echo %f | sed 's@ @"&"@g' );termite --hold -e "$path"
+Icon=utilities-terminal
+Name=Run in Termite
+
+
+[Desktop Action aterm]
+Exec=aterm -e %f 
+Icon=utilities-terminal
+Name=Run in Aterm
+
+
+[Desktop Action evilvte]
+Exec=evilvte -e %f
+Icon=evilvte
+Name=Run in Evilvte
