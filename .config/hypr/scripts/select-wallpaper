@@ -1,7 +1,7 @@
 #!/bin/bash
 # ==============================================================================
-# Select Wallpaper with Thumbnail Caching
-# Optimized for Wofi and Awww
+# Select Wallpaper with Parallel Thumbnail Caching
+# Optimized for Wofi and Awww (Handles 1000+ wallpapers efficiently)
 # ==============================================================================
 
 # Directory for wallpapers
@@ -13,6 +13,9 @@ THUMB_DIR="$HOME/.cache/select-wallpaper"
 # Wofi configuration paths for the wallpaper picker
 WOFI_CONFIG="$HOME/.config/wofi/dmenu-launcher/config"
 WOFI_STYLE="$HOME/.config/wofi/dmenu-launcher/style.css"
+
+# Thumbnail size (300x180 is the sweet spot for speed and quality)
+THUMB_SIZE="250x150"
 
 mkdir -p "$CACHE_DIR"
 mkdir -p "$THUMB_DIR"
@@ -35,38 +38,32 @@ echo "Starting awww-daemon at $(date)" >> "$CACHE_DIR/no_wallpaper_loop.log"
 awww-daemon & disown
 
 # ==============================================================================
-# Helper: Generate Thumbnail
+# PHASE 1: Parallel Thumbnail Generation
 # ==============================================================================
-generate_thumbnail() {
-    local img="$1"
-    local thumb="$THUMB_DIR/$(basename "$img").png"
+# Export THUMB_DIR so the subshells spawned by xargs can access it
+export THUMB_DIR
+
+# Find all images and process them in parallel using all available CPU cores (-P $(nproc))
+# -print0 and -0 are used to safely handle filenames with spaces
+find "${DIR}" -type f \( -iname "*.jpg" -o -iname "*.png" -o -iname "*.gif" \) -print0 | \
+xargs -0 -P $(nproc) -I {} bash -c '
+    img="{}"
+    thumb="$THUMB_DIR/$(basename "$img").png"
     
-    # Generate ONLY if missing or if original is newer than thumbnail
+    # Only generate if missing or if original is newer than thumbnail
     if [[ ! -f "$thumb" || "$img" -nt "$thumb" ]]; then
-        # Use magick to resize and center-crop. [0] ensures we only take the first frame for gifs
-        magick "$img[0]" -thumbnail 400x250^ -gravity center -extent 400x250 "$thumb" 2>/dev/null
+        # [0] ensures we only take the first frame for gifs
+        magick "$img[0]" -thumbnail '"$THUMB_SIZE"'^ -gravity center -extent '"$THUMB_SIZE"' "$thumb" 2>/dev/null
     fi
-    echo "$thumb"
-}
+'
 
 # ==============================================================================
-# Set Wallpaper Function
-# ==============================================================================
-set_wallpaper() {
-    local img="$1"
-    # Change wallpaper using awww with transition effects
-    awww img "$img" --transition-step 20 --transition-fps=20
-    # Copy the selected wallpaper to cache for other tools (waybar, hyprlock)
-    cp "$img" "$CURRENT_CACHE"
-}
-
-# ==============================================================================
-# Select Wallpaper Function (with Thumbnails)
+# PHASE 2: Build Wofi UI & Select
 # ==============================================================================
 select_wp() {
-    # Build the list with thumbnails
+    # Since thumbnails are now guaranteed to exist, we just map them quickly
     CHOICE=$(find "${DIR}" -type f \( -iname "*.jpg" -o -iname "*.png" -o -iname "*.gif" \) | sort | while IFS= read -r f; do
-        thumb=$(generate_thumbnail "$f")
+        thumb="$THUMB_DIR/$(basename "$f").png"
         printf 'img:%s:text: \n' "$thumb"
     done | wofi --show dmenu \
     --conf "$WOFI_CONFIG" \
@@ -81,10 +78,8 @@ select_wp() {
     THUMB_PATH=$(echo "$CHOICE" | sed 's/^img:\(.*\):text:.*$/\1/')
     
     # Map thumbnail back to original file
-    # The thumbnail is named "filename.ext.png". We need to find "filename.ext" in DIR.
     THUMB_BASENAME=$(basename "$THUMB_PATH")
     ORIGINAL_NAME="${THUMB_BASENAME%.png}"
-    
     FULLPATH="${DIR}/${ORIGINAL_NAME}"
 
     # Fallback check just in case
@@ -97,6 +92,17 @@ select_wp() {
     else
         echo "Error: Could not find original file for $ORIGINAL_NAME"
     fi
+}
+
+# ==============================================================================
+# Set Wallpaper Function
+# ==============================================================================
+set_wallpaper() {
+    local img="$1"
+    # Change wallpaper using awww with transition effects
+    awww img "$img" --transition-step 20 --transition-fps=20
+    # Copy the selected wallpaper to cache for other tools (waybar, hyprlock)
+    cp "$img" "$CURRENT_CACHE"
 }
 
 # Launch the selector directly
