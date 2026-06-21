@@ -65,7 +65,9 @@ hl.bind("ALT + SHIFT_L", hl.dsp.exec_cmd("$HOME/.config/hypr/scripts/switch_kb_l
 ---- Forces select-wallpaper wofi app to workspace 8 ----
 hl.bind(mainMod .. " + SHIFT + N", function()
     hl.dispatch(hl.dsp.focus({ workspace = 8 }))
-    hl.dispatch(hl.dsp.exec_cmd("~/.config/hypr/scripts/select-wallpaper"))
+    hl.dispatch(hl.dsp.exec_cmd(
+        "bash -c 'sleep 0.05 && ~/.config/hypr/scripts/select-wallpaper'"
+    ))
 end)
 
 ---- Close Wofi with mainMod + C ----
