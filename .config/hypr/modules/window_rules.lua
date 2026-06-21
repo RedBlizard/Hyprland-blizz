@@ -269,7 +269,7 @@ local welcome_titles = {
 -- Apply the rules to all titles in the list
 for _, title in ipairs(welcome_titles) do
     hl.window_rule({
-        match = { title = exact_match(title) },
+        match = { title = exact_match(title) },        
         float = true,
         pseudo = false,
         no_anim = true,
@@ -288,6 +288,7 @@ local network_titles = {
     "Available Wi-Fi Networks",
     "Network Connections",
     "Editing Wired connection",
+    "Editing Hypr",
     "YAD"
 }
 
@@ -295,6 +296,7 @@ local network_titles = {
 for _, title in ipairs(network_titles) do
     hl.window_rule({
         match = { title = exact_match(title) },
+        match = { class = exact_match("nm-connection-editor") },
         float = true,
         pseudo = false,
         no_anim = true,
