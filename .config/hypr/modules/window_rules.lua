@@ -79,8 +79,7 @@ hl.window_rule({ match = { class = exact_match("chrome-localhost__-Default")}, w
 hl.window_rule({ match = { class = exact_match("virt-manager") }, workspace = 7 })
 
 ---- Workspace 8
-hl.window_rule({ match = { class = exact_match("select-wallpaper") }, workspace = 8 })
-hl.window_rule({ match = { class = exact_match("waypaper") }, workspace = 8 })
+-- In use by select-wallpaper app see key_binds.lua
 
 ---- Workspace 9
 hl.window_rule({ match = { class = exact_match("obs") }, workspace = 9 })
@@ -116,7 +115,6 @@ hl.window_rule({ match = { class = exact_match("yad") }, opacity = "0.90 0.90" }
 hl.window_rule({ match = { title = exact_match("nvim") }, opacity = "0.90 0.90" })
 hl.window_rule({ match = { class = exact_match("code-oss") }, opacity = "0.90 0.90" })
 hl.window_rule({ match = { class = exact_match("hypr-welcome") }, opacity = "0.90 0.90" })
-hl.window_rule({ match = { class = exact_match("waypaper") }, opacity = "0.90 0.90" })
 hl.window_rule({ match = { class = exact_match("dolphin") }, opacity = "0.90 0.90" })
 
 ---- ═══════════════════════
@@ -135,7 +133,6 @@ hl.window_rule({
 
 hl.window_rule({ match = { class = regex_match("^libreoffice.*") }, tile = true })
 
-hl.window_rule({ match = { class = exact_match("azote") }, tile = true })
 hl.window_rule({ match = { class = exact_match("brave-browser") }, tile = true })
 hl.window_rule({ match = { class = exact_match("chromium.desktop") }, tile = true })
 hl.window_rule({ match = { class = exact_match("firedragon") }, tile = true })
