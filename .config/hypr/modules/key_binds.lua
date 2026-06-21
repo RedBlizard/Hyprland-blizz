@@ -60,9 +60,18 @@ hl.bind(mainMod .. " + SHIFT + I", hl.dsp.exec_cmd("$HOME/.config/waybar/scripts
 
 ---- Wallpaper & KB Layout ----
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("$HOME/.config/hypr/scripts/changeWallpaper.sh"))
-hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd("$HOME/.config/hypr/scripts/select-wallpaper"))
-hl.bind("CTRL + W", hl.dsp.exec_cmd("waypaper"))
 hl.bind("ALT + SHIFT_L", hl.dsp.exec_cmd("$HOME/.config/hypr/scripts/switch_kb_layout.sh"))
+
+---- Forces select-wallpaper wofi app to workspace 8 ----
+hl.bind(mainMod .. " + SHIFT + N", function()
+    hl.dispatch(hl.dsp.focus({ workspace = 8 }))
+    hl.dispatch(hl.dsp.exec_cmd("~/.config/hypr/scripts/select-wallpaper"))
+end)
+
+---- Close Wofi with mainMod + C ----
+hl.bind(mainMod .. " + C", function()
+    hl.dispatch(hl.dsp.exec_cmd("bash -c 'pgrep -x wofi && pkill -x wofi || hyprctl dispatch killactive'"))
+end)
 
 ---- Lock & Logout ----
 hl.bind("CTRL + ALT + L", hl.dsp.exec_cmd("hyprlock"))
