@@ -96,6 +96,7 @@ hl.window_rule({ match = { class = exact_match("nwg-look") }, workspace = 10 })
 hl.window_rule({ match = { title = exact_match("hypr-welcome") }, workspace = 10 })
 hl.window_rule({ match = { title = exact_match("Choose Configuration") }, workspace = 10 })
 hl.window_rule({ match = { title = exact_match("YAD Network Manager") }, workspace = 10 })
+hl.window_rule({ match = { title = exact_match("nm-connection-editor") }, workspace = 10 })
 hl.window_rule({ match = { class = exact_match("btrfs-assistant") }, workspace = 10 })
 hl.window_rule({ match = { class = exact_match("GParted") }, workspace = 10 })
 hl.window_rule({ match = { title = exact_match("HyprMod") }, workspace = 10 })
@@ -116,6 +117,7 @@ hl.window_rule({ match = { title = exact_match("nvim") }, opacity = "0.90 0.90" 
 hl.window_rule({ match = { class = exact_match("code-oss") }, opacity = "0.90 0.90" })
 hl.window_rule({ match = { class = exact_match("hypr-welcome") }, opacity = "0.90 0.90" })
 hl.window_rule({ match = { class = exact_match("dolphin") }, opacity = "0.90 0.90" })
+hl.window_rule({ match = { class = exact_match("nm-connection-editor") }, opacity = "0.90 0.90" })
 
 ---- ═══════════════════════
 ---- Fullscreen / Float
@@ -149,8 +151,7 @@ hl.window_rule({ match = { class = exact_match("Alacritty") }, float = true })
 hl.window_rule({ match = { class = exact_match("kitty_floats") }, float = true })
 hl.window_rule({ match = { class = exact_match("hypr-welcome") }, float = true })
 hl.window_rule({ match = { class = exact_match("pavucontrol-qt") }, float = true })
-hl.window_rule({ match = { class = exact_match("nm-connection-editor") }, float = true })
-hl.window_rule({ match = { class = exact_match("Wofi") }, float = true })
+hl.window_rule({ match = { class = exact_match("wofi") }, float = true })
 hl.window_rule({ match = { class = exact_match("rofi") }, float = true })
 hl.window_rule({ match = { class = exact_match("yad") }, float = true })
 
@@ -166,7 +167,7 @@ local floating_titles = {
     "Media viewer",
     "notification",
     "splash",
-    "xfce4-terminal"
+    "konsole"
 }
 
 for _, title in ipairs(floating_titles) do
@@ -189,11 +190,10 @@ local centered_titles = {
     "galculator",
     "konsole",
     "kitty_floats",
-    "nm-connection-editor",
     "Open File",
     "pavucontrol-qt",
-    "Wofi",
-    "Rofi",
+    "wofi",
+    "rofi",
     "yad"
 }
 
@@ -210,13 +210,13 @@ end
 ---- ═════════════════════
 
 hl.window_rule({
-    match = { title = exact_match("Rofi") },
+    match = { title = exact_match("rofi") },
     float = true,
     no_anim = true
 })
 
 hl.window_rule({
-    match = { title = exact_match("Wofi") },
+    match = { title = exact_match("rofi") },
     float = true,
     no_anim = true
 })
@@ -235,7 +235,6 @@ hl.window_rule({
     float = true,
     size = { 800, 500 }
 })
-
 
 hl.window_rule({
     match = { title = exact_match("download") },
@@ -279,6 +278,21 @@ for _, title in ipairs(welcome_titles) do
 end
 
 ---- ═════════════════════
+---- nm-connection-editor
+---- ═════════════════════
+
+hl.window_rule({
+    match = {
+        class = exact_match("nm-connection-editor"),
+    },
+        float = true,
+        pseudo = false,
+        no_anim = true,
+        center = true,    
+        size = { 900, 425 }        
+})
+
+---- ═════════════════════
 ---- Yad Network Manager
 ---- ═════════════════════
 
@@ -288,7 +302,6 @@ local network_titles = {
     "Available Wi-Fi Networks",
     "Network Connections",
     "Editing Wired connection",
-    "Editing Hypr",
     "YAD"
 }
 
@@ -296,7 +309,6 @@ local network_titles = {
 for _, title in ipairs(network_titles) do
     hl.window_rule({
         match = { title = exact_match(title) },
-        match = { class = exact_match("nm-connection-editor") },
         float = true,
         pseudo = false,
         no_anim = true,
